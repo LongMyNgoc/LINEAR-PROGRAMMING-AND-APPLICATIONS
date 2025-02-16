@@ -1,0 +1,84 @@
+/* Navbar Mới */
+.navbar {
+    background-color: #0C4874; /* Màu xanh */
+    padding: 20px 40px;  /* Tăng padding để navbar có chiều cao lớn hơn */
+    width: 100%;  /* Đảm bảo navbar chiếm toàn bộ chiều rộng màn hình */
+    position: fixed;  /* Để navbar luôn ở trên cùng */
+    top: 0;
+    left: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;  /* Đảm bảo navbar không bị các phần tử khác chồng lên */
+    display: flex;  /* Dùng flexbox để căn chỉnh các phần tử */
+    justify-content: flex-start;  /* Căn các phần tử về bên trái */
+    align-items: center;  /* Căn giữa theo chiều dọc */
+    height: 80px;  /* Đặt chiều cao navbar lớn hơn để hiển thị rõ logo */
+}
+
+img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Container chứa logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 200px;  /* Đặt chiều rộng cho logo */
+    height: auto;
+    margin-right: 15px;  /* Khoảng cách giữa logo và logo chữ */
+}
+
+.logo-word {
+    width: 200px;  /* Điều chỉnh kích thước logo chữ */
+    height: auto;
+}
+
+/* Container chứa menu navbar */
+.navbar-menu {
+    display: flex;
+    margin-left: 20px;  /* Khoảng cách giữa logo chữ và các mục navbar */
+}
+
+/* Mục trong navbar */
+.navbar-list {
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-item {
+    color: white;
+    font-size: 20px;
+    margin: 0 15px;  /* Khoảng cách giữa các mục navbar */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.navbar-item:hover {
+    text-decoration: underline;
+}
+
+/* Cập nhật để tránh nội dung bị che bởi navbar */
+body {
+    margin-top: 80px;  /* Điều chỉnh phần margin của body để nội dung không bị che bởi navbar */
+}
+
+/* Kiểu cho icon Home */
+.navbar-home-icon {
+    width: 95px;  /* Chiều rộng của ảnh Home */
+    height: auto;  /* Giữ tỷ lệ của ảnh */
+    margin-right: 10px;  /* Khoảng cách nếu cần */
+    cursor: pointer;  /* Thêm con trỏ chuột khi hover vào */
+}
+.navbar-aboutus-icon{
+    width: 90px;  /* Chiều rộng của ảnh Home */
+    height: auto;  /* Giữ tỷ lệ của ảnh */
+    margin-right: 10px;  /* Khoảng cách nếu cần */
+    cursor: pointer;  /* Thêm con trỏ chuột khi hover vào */
+}
