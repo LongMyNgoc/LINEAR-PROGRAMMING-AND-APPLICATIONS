@@ -1,0 +1,99 @@
+/* CSS cho màn hình login */
+.signin-container {
+    display: flex;
+    height: 100vh;
+}
+
+.signin-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: rgba(73, 84, 106, 1);  /* Đặt màu nền cho form login */
+    border-radius: 8px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    margin-top: 50px;
+}
+
+.signin-logo img {
+    max-width: 350px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.signin-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.signin-input {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.signin-input input {
+    width: 100%;
+    padding: 10px 15px; /* Thêm padding đều 2 bên */
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #E8F0FE;
+    box-sizing: border-box; /* Đảm bảo padding được tính vào chiều rộng của input */
+}
+
+.signin-button {
+    width: 100%; /* Đảm bảo button có chiều rộng bằng với input */
+    padding: 12px; /* Giữ padding giống như input */
+    font-size: 16px;
+    background-color: #48669C;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.signin-button:hover {
+    background-color: #4CAF50;
+}
+
+.text-login{
+    color: white;
+}
+
+.signin-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.forgot-password{
+    font-size: 14px;
+    text-decoration: none;
+    margin: 0 5px;
+}
+.sign-up {
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.forgot-password:hover,
+.sign-up:hover {
+    text-decoration: underline;
+}
+
+.role-select {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #E8F0FE;
+    box-sizing: border-box;
+}

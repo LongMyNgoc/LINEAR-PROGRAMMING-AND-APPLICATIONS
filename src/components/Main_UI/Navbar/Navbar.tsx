@@ -10,6 +10,8 @@ import SignInIcon from '../../../assets/Main_UI/Navbar/Sign In.png'
 import SignUpIcon from '../../../assets/Main_UI/Navbar/Sign Up.png'
 import LogoFit from '../../../assets/Main_UI/Navbar/Logo_Fit.png'
 
+import { Link } from 'react-router-dom';
+
 const Navbar = () => {
   return (
     <nav className="navbar">
@@ -22,7 +24,9 @@ const Navbar = () => {
       <div className="navbar-menu">
         <ul className="navbar-home">
           <li className="navbar-item">
-            <img src={HomeIcon} alt="Home" className="navbar-home-icon" />
+            <Link to="/">
+              <img src={HomeIcon} alt="Home" className="navbar-home-icon"/>
+            </Link>
           </li>
           </ul>
           <ul className='navbar-list'>
@@ -36,7 +40,9 @@ const Navbar = () => {
           </li>
           <li className='navbar-item'>
           <br></br><br></br>
-          <img src={SignInIcon} alt="SignIn" className="navbar-signin-icon"/>
+          <Link to="/signin">
+              <img src={SignInIcon} alt="Sign In" className="navbar-signin-icon" />
+            </Link>
           </li>
           <li className='navbar-item'>
           <br></br><br></br>
