@@ -2,18 +2,18 @@
 .footer {
     background-color: #657DA9; /* Màu nền footer */
     color: white; /* Màu chữ trắng */
-    padding: 20px 40px; /* Tăng padding để footer có chiều cao lớn hơn */
+    padding: 1.25rem 2.5rem; /* Tăng padding với rem */
     width: 100%; /* Đảm bảo footer chiếm toàn bộ chiều rộng màn hình */
     position: fixed; /* Đặt footer ở dưới cùng */
     bottom: 0; /* Cố định footer ở đáy */
     left: 0;
-    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Thêm bóng cho footer */
+    box-shadow: 0 -0.25rem 0.375rem rgba(0, 0, 0, 0.1); /* Thêm bóng cho footer */
     z-index: 1000; /* Đảm bảo footer không bị các phần tử khác chồng lên */
     display: flex; /* Dùng flexbox để căn chỉnh các phần tử */
     justify-content: space-between; /* Căn các phần tử nằm trên các cạnh trái, phải */
     align-items: center; /* Căn giữa theo chiều dọc */
-    height: 125px; /* Đặt chiều cao footer lớn hơn để hiển thị rõ các phần tử */
-    padding: 0 40px; /* Thêm khoảng cách giữa các phần tử và viền */
+    height: 7.8rem; /* Đặt chiều cao footer lớn hơn để hiển thị rõ các phần tử */
+    padding: 0 2.5rem; /* Thêm khoảng cách giữa các phần tử và viền */
 }
 
 /* Định dạng cho đoạn văn đầu tiên */
@@ -48,7 +48,59 @@
     text-align: right; /* Căn phải */
     position: absolute; /* Đặt ở vị trí tuyệt đối */
     bottom: 0; /* Đặt ở đáy */
-    right: 100px; /* Khoảng cách từ bên phải của footer */  
+    right: 6.25rem; /* Khoảng cách từ bên phải của footer */  
     color: white;
     font-size: 1.0rem;
+}
+
+/* Media Queries */
+@media (max-width: 64em) {  /* 1024px */
+    .footer {
+        height: 6.25rem; /* Điều chỉnh chiều cao footer */
+        padding: 1rem 2rem; /* Điều chỉnh padding */
+    }
+
+    .footer .left,
+    .footer .center,
+    .footer .right {
+        font-size: 1.1rem; /* Giảm kích thước chữ */
+    }
+
+    .footer .center {
+        font-size: 1.3rem; /* Giảm kích thước chữ của đoạn giữa */
+    }
+}
+
+@media (max-width: 48em) {  /* 768px */
+    .footer {
+        height: 5.5rem; /* Điều chỉnh chiều cao footer */
+        padding: 0.8rem 1.5rem; /* Điều chỉnh padding */
+    }
+
+    .footer .left,
+    .footer .center,
+    .footer .right {
+        font-size: 1rem; /* Giảm kích thước chữ */
+    }
+
+    .footer .center {
+        font-size: 1.2rem; /* Giảm kích thước chữ của đoạn giữa */
+    }
+}
+
+@media (max-width: 30em) {  /* 480px */
+    .footer {
+        height: 4.5rem; /* Điều chỉnh chiều cao footer */
+        padding: 0.5rem 1rem; /* Điều chỉnh padding */
+    }
+
+    .footer .left,
+    .footer .center,
+    .footer .right {
+        font-size: 0.9rem; /* Giảm kích thước chữ */
+    }
+
+    .footer .center {
+        font-size: 1rem; /* Giảm kích thước chữ của đoạn giữa */
+    }
 }

@@ -1,28 +1,86 @@
 /* Đặt giới hạn cho root */
 #root {
-  max-width: 1280px;
+  max-width: 100%;  /* Đảm bảo phần tử này chiếm toàn bộ chiều rộng */
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem;  /* Sử dụng rem để tạo khoảng cách linh hoạt */
   text-align: center;
 }
 
 /* Đảm bảo phần body không bị navbar che */
 body {
-  margin-top: 80px;  /* Điều chỉnh phần margin của body để nội dung không bị che bởi navbar */
+  margin-top: 5rem;  /* Thay margin-top bằng rem thay vì vw */
+  padding: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
 }
 
 /* Nội dung chính của ứng dụng */
 .content {
-  padding: 20px;  /* Thêm padding cho nội dung để tránh bị dính vào lề */
+  padding: 2rem;  /* Thay vì padding cố định bằng px, dùng rem để linh hoạt hơn */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Có thể thêm các kiểu cho các phần tử khác của ứng dụng */
+/* Kiểu chữ cho tiêu đề và đoạn văn */
 h1 {
-  font-size: 2rem;
+  font-size: 2rem;  /* Đơn vị rem giúp dễ dàng điều chỉnh font-size theo kích thước cơ bản */
   color: #333;
 }
 
 p {
   font-size: 1.2rem;
   color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 64em) {  /* 1024px */
+  #root {
+    padding: 1.5rem;  /* Điều chỉnh padding cho các màn hình nhỏ hơn */
+  }
+
+  h1 {
+    font-size: 1.8rem;  /* Điều chỉnh kích thước font cho các thiết bị có màn hình nhỏ hơn */
+  }
+
+  p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 48em) {  /* 768px */
+  #root {
+    padding: 1rem;
+  }
+
+  .content {
+    padding: 3vw;  /* Dùng vw để có độ rộng linh hoạt hơn */
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 30em) {  /* 480px */
+  #root {
+    padding: 0.5rem;
+  }
+
+  .content {
+    padding: 4vw;  /* Dùng vw cho các thiết bị nhỏ */
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
 }

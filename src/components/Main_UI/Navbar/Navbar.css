@@ -3,17 +3,17 @@
 /* Navbar Mới */
 .navbar {
     background-color: #0C4874; /* Màu xanh */
-    padding: 20px 40px;  /* Tăng padding để navbar có chiều cao lớn hơn */
+    padding: 1.25rem 2.5rem;  /* Tăng padding bằng rem để tương đối với kích thước font */
     width: 100%;  /* Đảm bảo navbar chiếm toàn bộ chiều rộng màn hình */
     position: fixed;  /* Để navbar luôn ở trên cùng */
     top: 0;
     left: 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
     z-index: 1000;  /* Đảm bảo navbar không bị các phần tử khác chồng lên */
     display: flex;  /* Dùng flexbox để căn chỉnh các phần tử */
     justify-content: flex-start;  /* Căn các phần tử về bên trái */
     align-items: center;  /* Căn giữa theo chiều dọc */
-    height: 80px;  /* Đặt chiều cao navbar lớn hơn để hiển thị rõ logo */
+    height: 5rem;  /* Đặt chiều cao navbar bằng rem */
 }
 
 /* Container chứa logo */
@@ -23,26 +23,26 @@
 }
 
 .logo {
-    width: 200px;  /* Đặt chiều rộng cho logo */
+    width: 12.5rem;  /* Đặt chiều rộng cho logo bằng rem */
     height: auto;
-    margin-right: 15px;  /* Khoảng cách giữa logo và logo chữ */
+    margin-right: 1rem;  /* Khoảng cách giữa logo và logo chữ */
 }
 
 .logo-word {
-    width: 250px;  /* Điều chỉnh kích thước logo chữ */
+    width: 15.625rem;  /* Điều chỉnh kích thước logo chữ */
     height: auto;
 }
 
-.logo-fit{
-    width: 120px;
+.logo-fit {
+    width: 7.5rem;
     height: auto;
-    margin-left: 35px;
+    margin-left: 2.1875rem;  /* Khoảng cách bên trái */
 }
 
 /* Container chứa menu navbar */
 .navbar-menu {
     display: flex;
-    margin-left: 20px;  /* Khoảng cách giữa logo chữ và các mục navbar */
+    margin-left: 1.25rem;  /* Khoảng cách giữa logo chữ và các mục navbar */
 }
 
 .navbar-home {
@@ -62,12 +62,12 @@
 .navbar-item {
     position: relative; /* Để tạo hiệu ứng gạch chân */
     color: white;
-    font-size: 20px;
-    margin: 0 15px;
+    font-size: 1.25rem;  /* Thay đổi font-size sang rem */
+    margin: 0 1rem;  /* Khoảng cách giữa các mục navbar */
     text-decoration: none;
     cursor: pointer;
-    padding: 10px 15px; /* Thêm padding để dễ nhấn hơn */
-    border-radius: 5px; /* Làm góc bo tròn nhẹ */
+    padding: 0.625rem 0.9375rem; /* Thêm padding bằng rem để dễ nhấn hơn */
+    border-radius: 0.3125rem; /* Làm góc bo tròn nhẹ */
     transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
@@ -84,9 +84,9 @@
     content: "";
     position: absolute;
     width: 100%;
-    height: 2px;
+    height: 0.125rem;  /* Chiều cao của gạch chân */
     background-color: white;
-    bottom: -3px;
+    bottom: -0.1875rem;  /* Khoảng cách từ gạch chân đến mục */
     left: 0;
     transform: scaleX(0);
     transition: transform 0.3s ease;
@@ -98,19 +98,96 @@
 
 /* Cập nhật để tránh nội dung bị che bởi navbar */
 body {
-    margin-top: 80px;  /* Điều chỉnh phần margin của body để nội dung không bị che bởi navbar */
+    margin-top: 5rem;  /* Điều chỉnh phần margin của body để nội dung không bị che bởi navbar */
 }
 
 /* Kiểu cho icon Home */
 .navbar-home-icon {
-    width: 95px;  /* Chiều rộng của ảnh Home */
+    width: 6.2rem;  /* Chiều rộng của ảnh Home */
     height: auto;  /* Giữ tỷ lệ của ảnh */
-    margin-right: 10px;  /* Khoảng cách nếu cần */
+    margin-right: 0.625rem;  /* Khoảng cách nếu cần */
     cursor: pointer;  /* Thêm con trỏ chuột khi hover vào */
 }
 
 .navbar-contact-icon, .navbar-aboutus-item, .navbar-signin-icon, .navbar-signup-icon {
-    width: 95px;  /* Chiều rộng của icon Contact */
+    width: 5.9375rem;  /* Chiều rộng của icon Contact */
     height: auto;
     cursor: pointer;  /* Thêm con trỏ chuột khi hover vào */
+}
+
+/* Media Queries */
+
+/* Thiết kế cho các màn hình nhỏ */
+@media (max-width: 64em) {  /* 1024px */
+    .navbar {
+        padding: 1.25rem 2rem;
+        height: 4.375rem;  /* Điều chỉnh chiều cao navbar */
+    }
+    .logo {
+        width: 11.25rem;
+    }
+    .logo-word {
+        width: 14.375rem;
+    }
+    .navbar-item {
+        font-size: 1.125rem;
+        margin: 0 1rem;
+    }
+    .navbar-home-icon,
+    .navbar-contact-icon,
+    .navbar-aboutus-item,
+    .navbar-signin-icon,
+    .navbar-signup-icon {
+        width: 5.625rem;
+    }
+}
+
+/* Thiết kế cho các màn hình di động */
+@media (max-width: 48em) {  /* 768px */
+    .navbar {
+        padding: 1rem 1.875rem;
+        height: 3.75rem; /* Điều chỉnh chiều cao navbar */
+    }
+    .logo {
+        width: 9.375rem;
+    }
+    .logo-word {
+        width: 12.5rem;
+    }
+    .navbar-item {
+        font-size: 1rem;
+        margin: 0 0.625rem;
+    }
+    .navbar-home-icon,
+    .navbar-contact-icon,
+    .navbar-aboutus-item,
+    .navbar-signin-icon,
+    .navbar-signup-icon {
+        width: 4.875rem;
+    }
+}
+
+/* Thiết kế cho các màn hình siêu nhỏ (điện thoại nhỏ) */
+@media (max-width: 30em) {  /* 480px */
+    .navbar {
+        padding: 0.625rem 1.25rem;
+        height: 3.125rem; /* Điều chỉnh chiều cao navbar */
+    }
+    .logo {
+        width: 7.8125rem;
+    }
+    .logo-word {
+        width: 10.625rem;
+    }
+    .navbar-item {
+        font-size: 0.875rem;
+        margin: 0 0.5rem;
+    }
+    .navbar-home-icon,
+    .navbar-contact-icon,
+    .navbar-aboutus-item,
+    .navbar-signin-icon,
+    .navbar-signup-icon {
+        width: 4.375rem;
+    }
 }
