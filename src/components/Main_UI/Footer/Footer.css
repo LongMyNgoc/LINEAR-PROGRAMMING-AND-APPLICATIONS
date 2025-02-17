@@ -1,0 +1,54 @@
+/* Định dạng chung cho footer */
+.footer {
+    background-color: #657DA9; /* Màu nền footer */
+    color: white; /* Màu chữ trắng */
+    padding: 20px 40px; /* Tăng padding để footer có chiều cao lớn hơn */
+    width: 100%; /* Đảm bảo footer chiếm toàn bộ chiều rộng màn hình */
+    position: fixed; /* Đặt footer ở dưới cùng */
+    bottom: 0; /* Cố định footer ở đáy */
+    left: 0;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Thêm bóng cho footer */
+    z-index: 1000; /* Đảm bảo footer không bị các phần tử khác chồng lên */
+    display: flex; /* Dùng flexbox để căn chỉnh các phần tử */
+    justify-content: space-between; /* Căn các phần tử nằm trên các cạnh trái, phải */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    height: 125px; /* Đặt chiều cao footer lớn hơn để hiển thị rõ các phần tử */
+    padding: 0 40px; /* Thêm khoảng cách giữa các phần tử và viền */
+}
+
+/* Định dạng cho đoạn văn đầu tiên */
+.footer .left {
+    margin: 0; /* Xóa margin mặc định */
+    font-size: 1rem; /* Cỡ chữ */
+    position: absolute; /* Đặt ở vị trí tuyệt đối */
+    top: 0; /* Đặt ở góc trên cùng */
+    left: 0; /* Đặt ở góc trái */
+    color: black;
+    font-size: 1.2rem;
+}
+
+/* Định dạng cho đoạn văn thứ hai (Căn giữa) */
+.footer .center {
+    margin: 0; /* Xóa margin mặc định */
+    font-size: 1rem; /* Cỡ chữ */
+    text-align: center; /* Căn giữa */
+    position: absolute; /* Đặt ở vị trí tuyệt đối */
+    bottom: 0; /* Đặt ở góc dưới cùng */
+    left: 50%; /* Căn giữa theo chiều ngang */
+    transform: translateX(-50%); /* Dịch chuyển sang trái để căn chính xác */
+    width: 100%; /* Đảm bảo đoạn văn này chiếm toàn bộ chiều rộng */
+    color: white;
+    font-size: 1.5rem;
+}
+
+/* Định dạng cho đoạn văn cuối cùng */
+.footer .right {
+    margin: 0; /* Xóa margin mặc định */
+    font-size: 1rem; /* Cỡ chữ */
+    text-align: right; /* Căn phải */
+    position: absolute; /* Đặt ở vị trí tuyệt đối */
+    bottom: 0; /* Đặt ở đáy */
+    right: 100px; /* Khoảng cách từ bên phải của footer */  
+    color: white;
+    font-size: 1.0rem;
+}

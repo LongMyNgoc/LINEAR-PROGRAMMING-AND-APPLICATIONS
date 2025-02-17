@@ -1,0 +1,61 @@
+/* Định dạng cho ảnh nền */
+.background {
+    width: 90%; /* Ảnh chiếm toàn bộ chiều rộng */
+    height: 70%; /* Ảnh chiếm toàn bộ chiều cao */
+    object-fit: cover; /* Đảm bảo ảnh sẽ giữ tỷ lệ và không bị biến dạng */
+    position: absolute; /* Đặt ảnh ở vị trí tuyệt đối để kiểm soát dễ dàng */
+    top: 20%; /* Căn lên đầu */
+    left: 5%; /* Căn sang trái */
+    z-index: -1; /* Đảm bảo ảnh nền nằm dưới tất cả các phần tử khác */
+    border-radius: 15px; /* Bo góc ảnh nếu cần */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Thêm bóng cho ảnh nền để làm nổi bật */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Hiệu ứng chuyển động mượt mà khi thay đổi */
+    margin-bottom: 100px; /* Đảm bảo khoảng cách giữa ảnh nền và footer */
+}
+
+
+/* Hiệu ứng hover cho ảnh nền */
+.background:hover {
+    transform: scale(1.05); /* Phóng to ảnh nền khi hover */
+    opacity: 0.8; /* Giảm độ sáng khi hover để làm nổi bật nội dung */
+}
+
+/* Định dạng cho phần overlay */
+.overlay {
+    position: absolute; /* Đặt phần overlay ở vị trí tuyệt đối */
+    top: 50%; /* Căn giữa theo chiều dọc */
+    left: 50%; /* Căn giữa theo chiều ngang */
+    transform: translate(-50%, -50%); /* Dịch chuyển về chính giữa */
+    width: 70%; /* Chiếm toàn bộ chiều rộng */
+    text-align: center; /* Căn giữa văn bản trong overlay */
+}
+
+/* Định dạng cho phần chữ trong overlay */
+.overlay-text {
+    font-size: 3rem; /* Cỡ chữ lớn cho dòng đầu */
+    color: white; /* Màu chữ trắng */
+    text-align: center; /* Căn giữa chữ */
+    font-weight: bold; /* Làm đậm chữ */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Thêm bóng cho chữ */
+    margin: 0;
+    z-index: 1; /* Đảm bảo chữ luôn nằm trên overlay */
+    padding: 20px 30px; /* Thêm khoảng đệm xung quanh chữ */
+    background-color: #657DA9; /* Màu nền của chữ */
+    border-radius: 10px; /* Bo góc nền chữ */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Thêm bóng đổ cho nền chữ */
+    max-width: 100%; /* Giới hạn chiều rộng tối đa */
+    width: auto; /* Chiều rộng tự động */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Hiệu ứng chuyển màu nền và phóng to khi hover */
+}
+
+/* Định dạng cho phần chữ nhỏ */
+.small-text {
+    font-size: 1.5rem; /* Cỡ chữ nhỏ hơn cho dòng sau */
+    line-height: 1.5; /* Điều chỉnh khoảng cách giữa các dòng */
+}
+
+/* Hiệu ứng hover cho chữ */
+.overlay-text:hover {
+    background-color: #556F8C; /* Chuyển nền chữ sang màu tối hơn khi hover */
+    transform: scale(1.05); /* Phóng to chữ khi hover */
+}

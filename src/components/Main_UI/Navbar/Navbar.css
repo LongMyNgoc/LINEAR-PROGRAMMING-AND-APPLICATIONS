@@ -1,3 +1,5 @@
+/* Navbar.css */
+
 /* Navbar Mới */
 .navbar {
     background-color: #0C4874; /* Màu xanh */
@@ -14,13 +16,6 @@
     height: 80px;  /* Đặt chiều cao navbar lớn hơn để hiển thị rõ logo */
 }
 
-img {
-    display: block;
-    width: auto;
-    max-width: 100%;
-    height: auto;
-}
-
 /* Container chứa logo */
 .logo-container {
     display: flex;
@@ -34,14 +29,25 @@ img {
 }
 
 .logo-word {
-    width: 200px;  /* Điều chỉnh kích thước logo chữ */
+    width: 250px;  /* Điều chỉnh kích thước logo chữ */
     height: auto;
+}
+
+.logo-fit{
+    width: 120px;
+    height: auto;
+    margin-left: 35px;
 }
 
 /* Container chứa menu navbar */
 .navbar-menu {
     display: flex;
     margin-left: 20px;  /* Khoảng cách giữa logo chữ và các mục navbar */
+}
+
+.navbar-home {
+    list-style-type: none;
+    padding: 0;
 }
 
 /* Mục trong navbar */
@@ -52,16 +58,42 @@ img {
     margin: 0;
 }
 
+/* Các mục của navbar */
 .navbar-item {
+    position: relative; /* Để tạo hiệu ứng gạch chân */
     color: white;
     font-size: 20px;
-    margin: 0 15px;  /* Khoảng cách giữa các mục navbar */
+    margin: 0 15px;
     text-decoration: none;
     cursor: pointer;
+    padding: 10px 15px; /* Thêm padding để dễ nhấn hơn */
+    border-radius: 5px; /* Làm góc bo tròn nhẹ */
+    transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
 .navbar-item:hover {
-    text-decoration: underline;
+    background-color: rgba(255, 255, 255, 0.2); /* Màu nền khi hover */
+}
+
+.navbar-item:active {
+    transform: scale(0.95); /* Hiệu ứng nhấn xuống */
+}
+
+/* Hiệu ứng gạch chân khi hover */
+.navbar-item::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    bottom: -3px;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.navbar-item:hover::after {
+    transform: scaleX(1);
 }
 
 /* Cập nhật để tránh nội dung bị che bởi navbar */
@@ -76,9 +108,9 @@ body {
     margin-right: 10px;  /* Khoảng cách nếu cần */
     cursor: pointer;  /* Thêm con trỏ chuột khi hover vào */
 }
-.navbar-aboutus-icon{
-    width: 90px;  /* Chiều rộng của ảnh Home */
-    height: auto;  /* Giữ tỷ lệ của ảnh */
-    margin-right: 10px;  /* Khoảng cách nếu cần */
+
+.navbar-contact-icon, .navbar-aboutus-item, .navbar-signin-icon, .navbar-signup-icon {
+    width: 95px;  /* Chiều rộng của icon Contact */
+    height: auto;
     cursor: pointer;  /* Thêm con trỏ chuột khi hover vào */
 }

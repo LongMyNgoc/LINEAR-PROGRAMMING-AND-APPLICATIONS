@@ -1,15 +1,14 @@
 import './App.css';
-import Navbar from './components/Navbar/Navbar';  // Import Navbar component
+import Navbar from './components/Main_UI/Navbar/Navbar';  // Import Navbar component
+import MainContent from './components/Main_UI/Main_Content/MainContent';
+import Footer from './components/Main_UI/Footer/Footer';
 
 function App() {
   return (
     <>
       <Navbar />  {/* Đưa component Navbar vào đây */}
-      <div className="content">
-        {/* Nội dung khác của bạn sẽ được hiển thị dưới Navbar */}
-        <h1>Welcome to our Website</h1>
-        <p>This is the home page.</p>
-      </div>
+      <MainContent />
+      <Footer />
     </>
   );
 }
