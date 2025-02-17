@@ -8,7 +8,7 @@ import AboutUsIcon from '../../../assets/Main_UI/Navbar/ABOUT US.png'
 import ContactIcon from '../../../assets/Main_UI/Navbar/CONTACT.png'
 import SignInIcon from '../../../assets/Main_UI/Navbar/Sign In.png'
 import SignUpIcon from '../../../assets/Main_UI/Navbar/Sign Up.png'
-import LogoFit from '../../../assets/Main_UI/Navbar/Logo_FIT.png'
+import LogoFit from '../../../assets/Main_UI/Navbar/Logo_Fit.png'
 
 const Navbar = () => {
   return (
