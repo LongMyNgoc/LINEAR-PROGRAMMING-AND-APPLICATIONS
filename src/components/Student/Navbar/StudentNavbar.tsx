@@ -1,6 +1,6 @@
 // StudentNavbar.tsx
 import { useState } from 'react';
-import Sidebar from './SideBar.tsx';
+import Sidebar from './Sidebar.tsx'
 import Topbar from './Topbar.tsx';
 import DropdownMenu from './DropdownMenu';
 import './StudentNavbar.css';
