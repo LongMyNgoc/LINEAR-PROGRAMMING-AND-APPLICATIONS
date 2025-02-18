@@ -95,11 +95,11 @@
     }
 
     .footer .left{
-        font-size: 0.3rem;
+        font-size: 0.5rem;
     }
     .footer .right {
-        font-size: 0.2rem; /* Giảm kích thước chữ */
-        right: 2rem;
+        font-size: 0.5rem; /* Giảm kích thước chữ */
+        right: 3rem;
     }
 
     .footer .center {
