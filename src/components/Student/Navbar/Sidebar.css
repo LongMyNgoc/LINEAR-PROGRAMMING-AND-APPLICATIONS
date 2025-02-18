@@ -1,0 +1,38 @@
+/* Sidebar.css */
+.sidebar {
+    width: 12rem;
+    background-color: #0C4874;
+    color: white;
+    padding: 1rem;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    overflow-y: auto;
+    z-index: 1100;
+}
+
+.sidebar h2 {
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 0.75rem;
+    text-align: center;
+    transition: background 0.3s;
+}
+
+.sidebar li:hover {
+    background-color: #073C5A;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}

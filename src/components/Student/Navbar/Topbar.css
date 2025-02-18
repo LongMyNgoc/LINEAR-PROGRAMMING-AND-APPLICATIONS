@@ -1,0 +1,25 @@
+/* Topbar.css */
+.topbar {
+    width: calc(100% - 12rem);
+    background-color: #0C4874;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 14rem;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hamburger-menu {
+    width: 70px;
+    height: 70px;
+    font-size: 50px;
+    cursor: pointer;
+    display: block;
+    color: white;
+    background-color: #49B6D6;
+}
