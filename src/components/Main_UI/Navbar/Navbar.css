@@ -14,6 +14,17 @@
     justify-content: flex-start;  /* Căn các phần tử về bên trái */
     align-items: center;  /* Căn giữa theo chiều dọc */
     height: 5rem;  /* Đặt chiều cao navbar bằng rem */
+    white-space: nowrap;  /* Ngăn chữ bị xuống dòng */
+    overflow-x: auto;  /* Thêm thanh cuộn ngang khi cần */
+}
+
+.navbar::-webkit-scrollbar {
+    width: 5px;
+}
+
+.navbar::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
 }
 
 /* Container chứa logo */
@@ -36,7 +47,7 @@
 .logo-fit {
     width: 7.5rem;
     height: auto;
-    margin-left: 2.1875rem;  /* Khoảng cách bên trái */
+    margin-left: 150%;
 }
 
 /* Container chứa menu navbar */

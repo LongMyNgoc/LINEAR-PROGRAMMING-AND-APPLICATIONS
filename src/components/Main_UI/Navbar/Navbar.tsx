@@ -7,7 +7,6 @@ import HomeIcon from '../../../assets/Main_UI/Navbar/Home.png';
 import AboutUsIcon from '../../../assets/Main_UI/Navbar/ABOUT US.png'
 import ContactIcon from '../../../assets/Main_UI/Navbar/CONTACT.png'
 import SignInIcon from '../../../assets/Main_UI/Navbar/Sign In.png'
-import SignUpIcon from '../../../assets/Main_UI/Navbar/Sign Up.png'
 import LogoFit from '../../../assets/Main_UI/Navbar/Logo_Fit.png'
 
 import { Link } from 'react-router-dom';
@@ -30,6 +29,12 @@ const Navbar = () => {
           </li>
           </ul>
           <ul className='navbar-list'>
+          <li className='navbar-item'>
+          <br></br><br></br>
+          <Link to="/signin">
+              <img src={SignInIcon} alt="Sign In" className="navbar-signin-icon" />
+            </Link>
+          </li>
           <li className="navbar-item">
             <br></br><br></br>
             <img src={AboutUsIcon} alt="AboutUs" className="navbar-aboutus-icon"/>
@@ -37,16 +42,6 @@ const Navbar = () => {
           <li className="navbar-item">
           <br></br><br></br>
           <img src={ContactIcon} alt="Contact" className="navbar-contact-icon"/>
-          </li>
-          <li className='navbar-item'>
-          <br></br><br></br>
-          <Link to="/signin">
-              <img src={SignInIcon} alt="Sign In" className="navbar-signin-icon" />
-            </Link>
-          </li>
-          <li className='navbar-item'>
-          <br></br><br></br>
-          <img src={SignUpIcon} alt="SignUp" className="navbar-signup-icon"/>
           </li>
         </ul>
       </div>
