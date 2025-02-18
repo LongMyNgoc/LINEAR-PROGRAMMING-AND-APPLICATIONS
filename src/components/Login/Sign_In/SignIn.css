@@ -96,11 +96,13 @@
 }
 
 /* Responsive CSS */
+
 @media (max-width: 768px) {
     .signin-content {
         width: 80%;
         max-width: 20rem;
         padding: 1rem;
+        top: 80%;
     }
 
     .signin-logo img {
@@ -112,6 +114,7 @@
     .signin-content {
         width: 90%;
         max-width: 18rem;
+        top: 60%;
     }
 
     .signin-button {

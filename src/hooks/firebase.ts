@@ -1,28 +1,26 @@
-// src/firebase.ts
-
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 
-// Firebase configuration
+// Lấy thông tin từ biến môi trường
 const firebaseConfig = {
-  apiKey: "AIzaSyCTq5suoIs2vHz6nEol172c5qPPBmcbs8I",
-  authDomain: "nckh-1d727.firebaseapp.com",
-  projectId: "nckh-1d727",
-  storageBucket: "nckh-1d727.firebasestorage.app",
-  messagingSenderId: "694561656154",
-  appId: "1:694561656154:web:eedde35d3c48eb60a9b763",
-  measurementId: "G-SFQ89CG5Z5"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
 };
 
-// Initialize Firebase
+// Khởi tạo Firebase
 const app = initializeApp(firebaseConfig);
 
-// Initialize services
+// Khởi tạo dịch vụ Firebase
 const analytics = getAnalytics(app);
-const db = getFirestore(app);  // Firestore
-const auth = getAuth(app);  // Authentication
+const db = getFirestore(app);
+const auth = getAuth(app);
 
-// Export services to use in other parts of your app
+// Xuất các dịch vụ để sử dụng trong ứng dụng
 export { app, analytics, db, auth };

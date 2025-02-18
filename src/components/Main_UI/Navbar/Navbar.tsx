@@ -28,12 +28,6 @@ const Navbar = () => {
           </li>
           </ul>
           <ul className='navbar-list'>
-          <li className='navbar-item'>
-          <br></br><br></br>
-          <Link to="/signin">
-              <img src={SignInIcon} alt="Sign In" className="navbar-signin-icon" />
-            </Link>
-          </li>
           <li className="navbar-item">
             <br></br><br></br>
             <img src={AboutUsIcon} alt="AboutUs" className="navbar-aboutus-icon"/>
@@ -41,6 +35,12 @@ const Navbar = () => {
           <li className="navbar-item">
           <br></br><br></br>
           <img src={ContactIcon} alt="Contact" className="navbar-contact-icon"/>
+          </li>
+          <li className='navbar-item'>
+          <br></br><br></br>
+          <Link to="/signin">
+              <img src={SignInIcon} alt="Sign In" className="navbar-signin-icon" />
+            </Link>
           </li>
         </ul>
       </div>
