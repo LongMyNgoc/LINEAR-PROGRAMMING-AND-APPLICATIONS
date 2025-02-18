@@ -1,5 +1,6 @@
 // Topbar.tsx
 import './Topbar.css';
+import { FaBell, FaUserCircle } from 'react-icons/fa'; // Import icon chuông và icon người dùng
 
 interface TopbarProps {
     toggleMenu: () => void;
@@ -11,7 +12,14 @@ const Topbar = ({ toggleMenu }: TopbarProps) => {
             <div className="hamburger-menu" onClick={toggleMenu}>
                 &#9776; {/* Biểu tượng hamburger */}
             </div>
-            <h2>Student Dashboard</h2>
+            <div className="topbar-icons">
+                <div className="icon">
+                    <FaBell /> {/* Icon chuông */}
+                </div>
+                <div className="icon">
+                    <FaUserCircle /> {/* Icon người dùng */}
+                </div>
+            </div>
         </header>
     );
 };

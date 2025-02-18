@@ -3,7 +3,7 @@
     width: calc(100% - 12rem);
     background-color: #0C4874;
     color: white;
-    padding: 1rem;
+    padding: 0.5rem;
     text-align: center;
     position: fixed;
     top: 0;
@@ -22,4 +22,21 @@
     display: block;
     color: white;
     background-color: #49B6D6;
+}
+
+.topbar-icons {
+    display: flex;
+    align-items: center;
+    gap: 2rem; /* Khoảng cách giữa các icon */
+    margin-right: 10rem; /* Khoảng cách từ góc phải của navbar */
+}
+
+.icon {
+    font-size: 40px; /* Kích thước của icon */
+    cursor: pointer;
+    color: white;
+}
+
+.icon:hover {
+    color: #49B6D6; /* Màu khi hover vào icon */
 }
