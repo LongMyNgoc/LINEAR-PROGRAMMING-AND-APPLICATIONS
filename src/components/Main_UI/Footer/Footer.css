@@ -47,7 +47,7 @@
     font-size: 1rem; /* Cỡ chữ */
     text-align: right; /* Căn phải */
     position: absolute; /* Đặt ở vị trí tuyệt đối */
-    bottom: 0; /* Đặt ở đáy */
+    top: 0; 
     right: 6.25rem; /* Khoảng cách từ bên phải của footer */  
     color: white;
     font-size: 1.0rem;
@@ -99,6 +99,7 @@
     }
     .footer .right {
         font-size: 0.2rem; /* Giảm kích thước chữ */
+        right: 2rem;
     }
 
     .footer .center {
