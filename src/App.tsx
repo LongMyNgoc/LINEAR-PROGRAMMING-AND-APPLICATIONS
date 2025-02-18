@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Im
 import Navbar from './components/Main_UI/Navbar/Navbar';  // Import Navbar component
 import MainContent from './components/Main_UI/Main_Content/MainContent'; // Import MainContent component
 import Footer from './components/Main_UI/Footer/Footer'; // Import Footer component
-import SignIn from './components/Login/Sign_In/SignIn';
+import SignIn from './components/Login/Sign_In/SignIn.tsx';
 
 function App() {
   return (
