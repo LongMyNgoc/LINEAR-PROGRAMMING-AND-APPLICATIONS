@@ -44,12 +44,6 @@
     height: auto;
 }
 
-.logo-fit {
-    width: 7.5rem;
-    height: auto;
-    margin-left: 150%;
-}
-
 /* Container chứa menu navbar */
 .navbar-menu {
     display: flex;

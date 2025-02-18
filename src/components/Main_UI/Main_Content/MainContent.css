@@ -62,7 +62,7 @@
 /* Responsive Design */
 @media (max-width: 64em) {  /* 1024px */
     .background {
-        top: 15%;  /* Điều chỉnh vị trí ảnh nền khi màn hình nhỏ */
+        top: 20%;  /* Điều chỉnh vị trí ảnh nền khi màn hình nhỏ */
         left: 3%;  /* Căn trái thêm chút khi màn hình nhỏ */
         width: 85%;  /* Giảm bớt chiều rộng ảnh */
         height: 60vh;  /* Giảm chiều cao ảnh nền */
@@ -80,7 +80,7 @@
 
 @media (max-width: 48em) {  /* 768px */
     .background {
-        top: 10%;  /* Di chuyển ảnh nền lên một chút */
+        top: 20%;  /* Di chuyển ảnh nền lên một chút */
         left: 0;  /* Căn trái hoàn toàn */
         width: 90%;  /* Mở rộng chiều rộng ảnh */
         height: 55vh;  /* Giảm chiều cao ảnh nền */
@@ -98,7 +98,7 @@
 
 @media (max-width: 30em) {  /* 480px */
     .background {
-        top: 5%;  /* Di chuyển ảnh nền lên gần đỉnh */
+        top: 20%;  /* Di chuyển ảnh nền lên gần đỉnh */
         left: 0;  /* Căn trái */
         width: 100%;  /* Chiếm toàn bộ chiều rộng màn hình */
         height: 50vh;  /* Điều chỉnh chiều cao ảnh nền */

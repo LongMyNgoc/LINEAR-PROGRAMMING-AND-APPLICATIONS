@@ -60,14 +60,15 @@
         padding: 1rem 2rem; /* Điều chỉnh padding */
     }
 
-    .footer .left,
-    .footer .center,
+    .footer .left{
+        font-size: 1.0rem;
+    }
     .footer .right {
-        font-size: 1.1rem; /* Giảm kích thước chữ */
+        font-size: 0.8rem; /* Giảm kích thước chữ */
     }
 
     .footer .center {
-        font-size: 1.3rem; /* Giảm kích thước chữ của đoạn giữa */
+        font-size: 1.2rem; /* Giảm kích thước chữ của đoạn giữa */
     }
 }
 
@@ -78,13 +79,12 @@
     }
 
     .footer .left,
-    .footer .center,
     .footer .right {
-        font-size: 1rem; /* Giảm kích thước chữ */
+        font-size: 0.5rem; /* Giảm kích thước chữ */
     }
 
     .footer .center {
-        font-size: 1.2rem; /* Giảm kích thước chữ của đoạn giữa */
+        font-size: 1.0rem; /* Giảm kích thước chữ của đoạn giữa */
     }
 }
 
@@ -94,13 +94,14 @@
         padding: 0.5rem 1rem; /* Điều chỉnh padding */
     }
 
-    .footer .left,
-    .footer .center,
+    .footer .left{
+        font-size: 0.3rem;
+    }
     .footer .right {
-        font-size: 0.9rem; /* Giảm kích thước chữ */
+        font-size: 0.2rem; /* Giảm kích thước chữ */
     }
 
     .footer .center {
-        font-size: 1rem; /* Giảm kích thước chữ của đoạn giữa */
+        font-size: 0.5rem; /* Giảm kích thước chữ của đoạn giữa */
     }
 }

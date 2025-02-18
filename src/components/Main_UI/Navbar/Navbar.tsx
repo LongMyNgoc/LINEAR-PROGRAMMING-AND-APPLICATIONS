@@ -7,7 +7,6 @@ import HomeIcon from '../../../assets/Main_UI/Navbar/Home.png';
 import AboutUsIcon from '../../../assets/Main_UI/Navbar/ABOUT US.png'
 import ContactIcon from '../../../assets/Main_UI/Navbar/CONTACT.png'
 import SignInIcon from '../../../assets/Main_UI/Navbar/Sign In.png'
-import LogoFit from '../../../assets/Main_UI/Navbar/Logo_Fit.png'
 
 import { Link } from 'react-router-dom';
 
@@ -45,9 +44,6 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-      <div className="logo-fit-container">
-    <img src={LogoFit} alt="LogoFit" className="logo-fit" />
-     </div>
     </nav>
   );
 };
