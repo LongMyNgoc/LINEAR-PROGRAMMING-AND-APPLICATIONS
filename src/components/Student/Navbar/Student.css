@@ -6,7 +6,7 @@
 }
 
 .main {
-    margin-left: 12rem;
+    margin-left: 12rem; /* Giữ nguyên khoảng cách */
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -17,7 +17,38 @@
 .content {
     flex-grow: 1;
     overflow-y: auto;
-    padding: 2rem;
-    margin-top: 4rem;
-    height: calc(100vh - 4rem);
+    padding: 2rem; /* Giữ nguyên khoảng cách */
+    margin-top: 4rem; /* Giữ nguyên khoảng cách */
+    height: calc(100vh - 4rem); /* Giữ nguyên chiều cao */
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    .main {
+        margin-left: 8rem; /* Điều chỉnh cho thiết bị nhỏ hơn */
+    }
+}
+
+@media (max-width: 992px) {
+    .main {
+        margin-left: 6rem; /* Điều chỉnh cho thiết bị nhỏ hơn */
+    }
+}
+
+@media (max-width: 768px) {
+    .main {
+        margin-left: 0; /* Đẩy toàn bộ nội dung sang trái */
+        width: 100%; /* Chiếm toàn bộ chiều rộng */
+    }
+
+    .content {
+        padding: 1rem; /* Giảm padding cho màn hình nhỏ */
+    }
+}
+
+@media (max-width: 576px) {
+    .content {
+        margin-top: 2rem; /* Giảm khoảng cách trên cho màn hình nhỏ */
+        padding: 0.5rem; /* Giảm padding cho màn hình rất nhỏ */
+    }
 }

@@ -12,14 +12,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    white-space: nowrap;  /* Ngăn chữ bị xuống dòng */
-    overflow-x: auto;  /* Thêm thanh cuộn ngang khi cần */
+    white-space: nowrap; /* Ngăn chữ bị xuống dòng */
+    overflow-x: auto; /* Thêm thanh cuộn ngang khi cần */
 }
 
 .hamburger-menu {
-    width: 50px;
+    width: 3rem; /* Thay đổi từ 50px sang 3rem */
     height: auto;
-    font-size: 30px;
+    font-size: 1.875rem; /* Thay đổi từ 30px sang 1.875rem */
     cursor: pointer;
     display: block;
     color: white;
@@ -29,7 +29,7 @@
 .topbar-icons {
     display: flex;
     align-items: center;
-    gap: 2rem; /* Khoảng cách giữa các icon */
+    gap: 2rem; /* Thay đổi khoảng cách giữa các icon */
 }
 
 /* Căn chỉnh user-info và icon người dùng */
@@ -38,18 +38,18 @@
     align-items: center; /* Căn giữa theo chiều dọc */
     margin-left: auto; /* Đẩy sang bên phải */
     margin-right: 2rem;
-    gap: 2rem;
+    gap: 2rem; /* Thay đổi khoảng cách */
 }
 
 .user-info {
     font-weight: bold; /* In đậm chữ */
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 10px rgba(255, 255, 255, 0.5); /* Hiệu ứng sáng */
+    text-shadow: 0 0 0.3125rem rgba(255, 255, 255, 0.7), 0 0 0.625rem rgba(255, 255, 255, 0.5); /* Thay đổi từ pixel sang rem */
     color: white; /* Đặt màu chữ trắng để nổi bật trên nền tối */
     margin-right: 0.5rem; /* Khoảng cách giữa user-info và icon */
 }
 
 .icon {
-    font-size: 30px; /* Kích thước của icon */
+    font-size: 1.875rem; /* Thay đổi từ 30px sang 1.875rem */
     cursor: pointer;
     color: white;
 }
@@ -65,34 +65,89 @@
 
 .dropdown-menu {
     position: absolute;
-    top: 50px;
+    top: 3rem; /* Thay đổi từ 50px sang 3rem */
     right: 0;
     background-color: white;
     color: black;
-    border-radius: 5px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 0.3125rem; /* Thay đổi từ pixel sang rem */
+    box-shadow: 0px 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
     padding: 0.5rem;
-    min-width: 100px;
+    min-width: 6.25rem; /* Thay đổi từ 100px sang 6.25rem */
     text-align: center;
-    z-index: 1100;
+    z-index: 1100; /* Đặt z-index cao hơn để menu tràn ra ngoài */
 }
 
 .dropdown-menu button {
     width: 100%;
     background: orange;
-    border: 2px solid #49B6D6; /* Viền xung quanh */
+    border: 0.125rem solid #49B6D6; /* Thay đổi từ pixel sang rem */
     padding: 0.5rem;
-    font-size: 15px;
+    font-size: 0.9375rem; /* Thay đổi từ 15px sang 0.9375rem */
     font-weight: bold; /* In đậm chữ */
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 10px rgba(255, 255, 255, 0.5); /* Hiệu ứng sáng */
+    text-shadow: 0 0 0.3125rem rgba(255, 255, 255, 0.7), 0 0 0.625rem rgba(255, 255, 255, 0.5); /* Thay đổi từ pixel sang rem */
     cursor: pointer;
     color: #0C4874;
-    border-radius: 5px; /* Bo tròn viền */
+    border-radius: 0.3125rem; /* Thay đổi từ pixel sang rem */
     transition: all 0.3s ease-in-out; /* Hiệu ứng mượt */
 }
 
 .dropdown-menu button:hover {
     background-color: red;
     color: white;
-    border: 2px solid #0C4874; /* Thay đổi viền khi hover */
+    border: 0.125rem solid #0C4874; /* Thay đổi từ pixel sang rem */
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    .topbar {
+        left: 8rem; /* Điều chỉnh cho thiết bị nhỏ hơn */
+    }
+}
+
+@media (max-width: 992px) {
+    .topbar {
+        left: 6rem; /* Điều chỉnh cho thiết bị nhỏ hơn */
+    }
+}
+
+@media (max-width: 768px) {
+    .topbar {
+        left: 0; /* Đẩy toàn bộ thanh điều hướng sang trái */
+        width: 100%; /* Chiếm toàn bộ chiều rộng */
+    }
+
+    .hamburger-menu {
+        width: 2.5rem; /* Giảm kích thước cho menu */
+        font-size: 1.5rem; /* Giảm kích thước font cho menu */
+    }
+
+    .topbar-icons {
+        gap: 0.5rem; /* Giảm khoảng cách */
+    }
+
+    .icon {
+        font-size: 1.5rem; /* Giảm kích thước icon */
+    }
+
+    .user-info {
+        font-size: 0.875rem; /* Giảm kích thước chữ */
+    }
+}
+
+@media (max-width: 576px) {
+    .topbar {
+        flex-direction: column; /* Đổi chiều flex để hiển thị tốt hơn trên màn hình nhỏ */
+    }
+
+    .user-info-container {
+        margin-right: 1rem; /* Điều chỉnh khoảng cách cho màn hình nhỏ */
+    }
+
+    .dropdown-menu {
+        min-width: 5rem; /* Giảm kích thước dropdown cho thiết bị nhỏ hơn */
+    }
+
+    .dropdown-menu button {
+        font-size: 0.875rem; /* Giảm kích thước font cho nút trong dropdown */
+    }
 }

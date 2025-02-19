@@ -1,6 +1,6 @@
 /* Sidebar */
 .sidebar {
-    width: 10rem;
+    width: 10rem; /* Có thể thay đổi thành 10vw để linh hoạt hơn */
     background-color: #0C4874;
     color: white;
     padding: 1rem;
@@ -33,7 +33,7 @@
 .sidebar li {
     display: flex;
     align-items: center;
-    padding: 0.75rem;
+    padding: 0.75rem; /* Có thể thay đổi thành 1rem cho kích thước dễ đọc hơn */
     transition: background-color 0.3s;
 }
 
@@ -44,24 +44,85 @@
 .sidebar a {
     color: white;
     text-decoration: none;
-    margin-left: 1rem;
+    margin-left: 1rem; /* Có thể thay đổi thành 1em để linh hoạt hơn */
     display: inline-block;
 }
 
 /* Định dạng cho các icon */
-.dashboard-icon{
-    width: 150px;
+.dashboard-icon,
+.profile-icon,
+.courses-icon,
+.exams-icon {
+    width: 9rem; /* Thay đổi thành 10vw để linh hoạt hơn */
     height: auto;
 }
-.profile-icon{
-    width: 150px;
-    height: auto;
+
+/* Media queries */
+@media (max-width: 1200px) {
+    .sidebar {
+        width: 8rem; /* Thay đổi chiều rộng cho màn hình nhỏ hơn */
+    }
+
+    .sidebar li {
+        padding: 0.5rem; /* Giảm padding cho kích thước nhỏ hơn */
+    }
+
+    .sidebar a {
+        margin-left: 0.5rem; /* Giảm khoảng cách cho kích thước nhỏ hơn */
+    }
 }
-.courses-icon{
-    width: 150px;
-    height: auto;
+
+@media (max-width: 992px) {
+    .sidebar {
+        width: 6rem; /* Thay đổi chiều rộng cho màn hình nhỏ hơn */
+    }
+
+    .sidebar-logo img {
+        width: 80%; /* Thay đổi kích thước logo cho màn hình nhỏ hơn */
+    }
+
+    .sidebar li {
+        padding: 0.5rem; /* Giảm padding cho kích thước nhỏ hơn */
+    }
+
+    .sidebar a {
+        margin-left: 0.5rem; /* Giảm khoảng cách cho kích thước nhỏ hơn */
+    }
 }
-.exams-icon{
-    width: 150px;
-    height: auto;
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 5rem; /* Thay đổi chiều rộng cho màn hình di động */
+    }
+
+    .sidebar-logo img {
+        width: 70%; /* Thay đổi kích thước logo cho màn hình di động */
+    }
+
+    .sidebar li {
+        padding: 0.4rem; /* Giảm padding cho kích thước nhỏ hơn */
+    }
+
+    .sidebar a {
+        margin-left: 0.5rem; /* Giảm khoảng cách cho kích thước nhỏ hơn */
+    }
+}
+
+@media (max-width: 576px) {
+    .sidebar {
+        width: 4rem; /* Thay đổi chiều rộng cho màn hình rất nhỏ */
+        padding: 0.5rem; /* Giảm padding cho kích thước nhỏ hơn */
+    }
+
+    .sidebar-logo img {
+        width: 60%; /* Thay đổi kích thước logo cho màn hình rất nhỏ */
+    }
+
+    .sidebar li {
+        padding: 0.3rem; /* Giảm padding cho kích thước nhỏ hơn */
+    }
+
+    .sidebar a {
+        margin-left: 0.3rem; /* Giảm khoảng cách cho kích thước nhỏ hơn */
+    }
 }
