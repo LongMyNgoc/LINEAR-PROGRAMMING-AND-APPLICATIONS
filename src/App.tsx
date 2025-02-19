@@ -5,6 +5,8 @@ import Footer from './components/Main_UI/Footer/Footer.tsx';
 import SignIn from './components/Login/Sign_In/SignIn.tsx';
 import Student from './components/Student/Navbar/Student.tsx';
 import MainContent from './components/Main_UI/Main_Content/MainContent.tsx';
+import Teacher from './components/Teacher/Navbar/Teacher.tsx';
+import Admin from './components/Admin/Navbar/Admin.tsx';
 
 function App() {
   return (
@@ -43,6 +45,18 @@ function App() {
             </>
           }
         />
+        <Route path='/teacher' element={
+            <>
+               <Teacher />
+            </>
+          } 
+        />
+        <Route path='/admin' element={
+          <>
+          <Admin />
+          </>
+        }
+         />
       </Routes>
     </Router>
   );

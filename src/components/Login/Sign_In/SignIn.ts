@@ -1,35 +1,67 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';  // Import useNavigate
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import { db } from '../../../hooks/firebase';
 import { doc, getDoc } from 'firebase/firestore';
 import { toast } from 'react-toastify';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'; // Import Firebase Auth
 
 const useSignIn = () => {
-    const [username, setUsername] = useState('');
+    const [username, setUsername] = useState(''); // Đây là email
     const [password, setPassword] = useState('');
-    const [role, setRole] = useState('student');
+    const [role, setRole] = useState('student'); // Mặc định là 'student'
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
-    const navigate = useNavigate();  // Khởi tạo useNavigate để điều hướng
+    const navigate = useNavigate(); // Khởi tạo useNavigate để điều hướng
 
     const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
         setLoading(true);
         setError('');
 
+        const auth = getAuth(); // Khởi tạo Firebase Authentication
+
+        // Kiểm tra vai trò
         try {
-            const userDocRef = doc(db, "Students", username);
+            if (role === 'admin') {
+                // Đăng nhập với Firebase Authentication cho admin
+                await signInWithEmailAndPassword(auth, username, password);
+                
+                // Lưu thông tin admin vào localStorage (nếu cần)
+                localStorage.setItem('user', JSON.stringify({ username, role }));
+                
+                toast.success('Đăng nhập thành công!');
+
+                // Điều hướng đến trang admin
+                setTimeout(() => {
+                    navigate('/admin');
+                }, 1000);
+                return; // Kết thúc hàm sau khi đăng nhập thành công
+            }
+
+            let userDocRef;
+            if (role === 'student') {
+                userDocRef = doc(db, "Students", username);
+            } else if (role === 'teacher') {
+                userDocRef = doc(db, "Teachers", username);
+            } else {
+                setError('Vai trò không hợp lệ.');
+                toast.error('Vai trò không hợp lệ.');
+                setLoading(false);
+                return;
+            }
+
             const userDocSnap = await getDoc(userDocRef);
 
             if (!userDocSnap.exists()) {
-                setError('MSSV không tồn tại trong hệ thống.');
-                toast.error('MSSV không tồn tại trong hệ thống.');
+                setError('Tài khoản không tồn tại trong hệ thống.');
+                toast.error('Tài khoản không tồn tại trong hệ thống.');
                 setLoading(false);
                 return;
             }
 
             const userDoc = userDocSnap.data();
 
+            // Kiểm tra mật khẩu
             if (userDoc.password !== password) {
                 setError('Mật khẩu không đúng.');
                 toast.error('Mật khẩu không đúng.');
@@ -46,9 +78,13 @@ const useSignIn = () => {
             
             toast.success('Đăng nhập thành công!');
 
-            // Điều hướng đến trang /student sau khi đăng nhập thành công
+            // Điều hướng đến trang tương ứng sau khi đăng nhập thành công
             setTimeout(() => {
-                navigate('/student');
+                if (role === 'student') {
+                    navigate('/student');
+                } else if (role === 'teacher') {
+                    navigate('/teacher'); // Thay đổi đường dẫn nếu cần
+                }
             }, 1000); // Chờ 1 giây để hiển thị thông báo
 
         } catch (error) {
