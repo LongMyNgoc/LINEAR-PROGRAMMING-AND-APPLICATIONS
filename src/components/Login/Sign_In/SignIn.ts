@@ -1,25 +1,24 @@
-// src/components/Login/SignIn.ts
 import { useState } from 'react';
-import { db } from '../../../hooks/firebase';  // Import Firebase từ file firebase.ts
+import { useNavigate } from 'react-router-dom';  // Import useNavigate
+import { db } from '../../../hooks/firebase';
 import { doc, getDoc } from 'firebase/firestore';
-import { toast } from 'react-toastify';  // Import toast
+import { toast } from 'react-toastify';
 
 const useSignIn = () => {
-    const [username, setUsername] = useState(''); // MSSV hoặc ID sinh viên
+    const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [role, setRole] = useState('student'); // Vai trò
-    const [error, setError] = useState(''); // Thông báo lỗi
-    const [loading, setLoading] = useState(false); // Trạng thái loading
+    const [role, setRole] = useState('student');
+    const [error, setError] = useState('');
+    const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();  // Khởi tạo useNavigate để điều hướng
 
-    // Xử lý đăng nhập
     const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
-        setLoading(true); // Bắt đầu loading khi đăng nhập
-        setError(''); // Reset lỗi trước khi thử đăng nhập lại
+        setLoading(true);
+        setError('');
 
         try {
-            // Kiểm tra thông tin người dùng trong Firestore
-            const userDocRef = doc(db, "Students", username); // Truy vấn theo ID sinh viên (username)
+            const userDocRef = doc(db, "Students", username);
             const userDocSnap = await getDoc(userDocRef);
 
             if (!userDocSnap.exists()) {
@@ -29,33 +28,35 @@ const useSignIn = () => {
                 return;
             }
 
-            // Lấy thông tin người dùng từ Firestore
             const userDoc = userDocSnap.data();
 
-            // Kiểm tra mật khẩu trong Firestore
             if (userDoc.password !== password) {
                 setError('Mật khẩu không đúng.');
                 toast.error('Mật khẩu không đúng.');
                 setLoading(false);
                 return;
             }
-            // Tạo đối tượng mới chứa cả username và userDoc
+
             const userWithUsername = {
-                username: username,  // Lưu username
-                ...userDoc  // Lấy tất cả các trường trong userDoc
+                username: username,
+                ...userDoc
             };
-          
-            // Lưu đối tượng mới vào localStorage
+
             localStorage.setItem('user', JSON.stringify(userWithUsername));
             
-            console.log("Đăng nhập thành công!");
             toast.success('Đăng nhập thành công!');
+
+            // Điều hướng đến trang /student sau khi đăng nhập thành công
+            setTimeout(() => {
+                navigate('/student');
+            }, 1000); // Chờ 1 giây để hiển thị thông báo
+
         } catch (error) {
             console.error("Đăng nhập thất bại: ", error);
             setError('Lỗi đăng nhập, vui lòng thử lại sau.');
             toast.error('Lỗi đăng nhập, vui lòng thử lại sau.');
         } finally {
-            setLoading(false); // Kết thúc loading
+            setLoading(false);
         }
     };
 

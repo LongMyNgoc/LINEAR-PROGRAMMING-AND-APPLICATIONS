@@ -7,17 +7,19 @@
     text-align: center;
     position: fixed;
     top: 0;
-    left: 14rem;
+    left: 12rem;
     z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    white-space: nowrap;  /* Ngăn chữ bị xuống dòng */
+    overflow-x: auto;  /* Thêm thanh cuộn ngang khi cần */
 }
 
 .hamburger-menu {
-    width: 70px;
-    height: 70px;
-    font-size: 50px;
+    width: 50px;
+    height: auto;
+    font-size: 30px;
     cursor: pointer;
     display: block;
     color: white;
@@ -28,15 +30,69 @@
     display: flex;
     align-items: center;
     gap: 2rem; /* Khoảng cách giữa các icon */
-    margin-right: 10rem; /* Khoảng cách từ góc phải của navbar */
+}
+
+/* Căn chỉnh user-info và icon người dùng */
+.user-info-container {
+    display: flex;
+    align-items: center; /* Căn giữa theo chiều dọc */
+    margin-left: auto; /* Đẩy sang bên phải */
+    margin-right: 2rem;
+    gap: 2rem;
+}
+
+.user-info {
+    font-weight: bold; /* In đậm chữ */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 10px rgba(255, 255, 255, 0.5); /* Hiệu ứng sáng */
+    color: white; /* Đặt màu chữ trắng để nổi bật trên nền tối */
+    margin-right: 0.5rem; /* Khoảng cách giữa user-info và icon */
 }
 
 .icon {
-    font-size: 40px; /* Kích thước của icon */
+    font-size: 30px; /* Kích thước của icon */
     cursor: pointer;
     color: white;
 }
 
 .icon:hover {
     color: #49B6D6; /* Màu khi hover vào icon */
+}
+
+/* Dropdown menu cho icon user */
+.user-icon {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 0.5rem;
+    min-width: 100px;
+    text-align: center;
+    z-index: 1100;
+}
+
+.dropdown-menu button {
+    width: 100%;
+    background: orange;
+    border: 2px solid #49B6D6; /* Viền xung quanh */
+    padding: 0.5rem;
+    font-size: 15px;
+    font-weight: bold; /* In đậm chữ */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 10px rgba(255, 255, 255, 0.5); /* Hiệu ứng sáng */
+    cursor: pointer;
+    color: #0C4874;
+    border-radius: 5px; /* Bo tròn viền */
+    transition: all 0.3s ease-in-out; /* Hiệu ứng mượt */
+}
+
+.dropdown-menu button:hover {
+    background-color: red;
+    color: white;
+    border: 2px solid #0C4874; /* Thay đổi viền khi hover */
 }

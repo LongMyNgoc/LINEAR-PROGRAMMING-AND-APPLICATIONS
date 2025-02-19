@@ -1,6 +1,6 @@
 /* Sidebar */
 .sidebar {
-    width: 12rem;
+    width: 10rem;
     background-color: #0C4874;
     color: white;
     padding: 1rem;
@@ -50,18 +50,18 @@
 
 /* Định dạng cho các icon */
 .dashboard-icon{
-    width: 180px;
+    width: 150px;
     height: auto;
 }
 .profile-icon{
-    width: 180px;
+    width: 150px;
     height: auto;
 }
 .courses-icon{
-    width: 180px;
+    width: 150px;
     height: auto;
 }
 .exams-icon{
-    width: 180px;
+    width: 150px;
     height: auto;
 }

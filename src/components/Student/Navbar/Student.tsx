@@ -1,16 +1,9 @@
 // StudentNavbar.tsx
-import { useState } from 'react';
 import Sidebar from './Sidebar.tsx'
 import Topbar from './Topbar.tsx';
-import DropdownMenu from './DropdownMenu';
-import './StudentNavbar.css';
+import './Student.css';
 
-const StudentNavbar = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false); // Trạng thái menu xổ xuống
-
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen); // Đảo trạng thái menu
-    };
+const Student = () => {
 
     return (
         <div className="layout">
@@ -19,10 +12,7 @@ const StudentNavbar = () => {
 
             <div className="main">
                 {/* Thanh Navbar Ngang */}
-                <Topbar toggleMenu={toggleMenu} />
-
-                {/* Menu xổ xuống */}
-                {isMenuOpen && <DropdownMenu />}
+                <Topbar />
 
                 {/* Nội dung chính */}
                 <div className="content">
@@ -33,4 +23,4 @@ const StudentNavbar = () => {
     );
 };
 
-export default StudentNavbar;
+export default Student;

@@ -1,23 +1,34 @@
-// Topbar.tsx
 import './Topbar.css';
-import { FaBell, FaUserCircle } from 'react-icons/fa'; // Import icon chuông và icon người dùng
+import { FaBell, FaUserCircle } from 'react-icons/fa';
+import { useTopbarLogic } from './Topbar'; // Import logic từ Topbar.ts
 
-interface TopbarProps {
-    toggleMenu: () => void;
-}
+const Topbar = () => {
+    const { menuOpen, toggleMenu, handleLogout, user } = useTopbarLogic(); // Sử dụng logic
 
-const Topbar = ({ toggleMenu }: TopbarProps) => {
     return (
         <header className="topbar">
-            <div className="hamburger-menu" onClick={toggleMenu}>
-                &#9776; {/* Biểu tượng hamburger */}
+            <div className="hamburger-menu">
+                &#9776;
             </div>
             <div className="topbar-icons">
                 <div className="icon">
-                    <FaBell /> {/* Icon chuông */}
+                    <FaBell />
                 </div>
-                <div className="icon">
-                    <FaUserCircle /> {/* Icon người dùng */}
+                <div className="user-info-container">
+                    <div className="icon user-icon" onClick={toggleMenu}>
+                        <FaUserCircle />
+                        {menuOpen && (
+                            <div className="dropdown-menu">
+                                <button onClick={handleLogout}>Đăng Xuất</button>
+                            </div>
+                        )}
+                    </div>
+                    {user && (
+                        <div className="user-info" style={{ marginLeft: '0.5rem' }}>
+                            <div>{user.username}</div>
+                            <div>{user.name}</div>
+                        </div>
+                    )}
                 </div>
             </div>
         </header>
