@@ -22,12 +22,28 @@ const useSignIn = () => {
 
         // Kiểm tra vai trò
         try {
+            let userDocRef;
             if (role === 'admin') {
                 // Đăng nhập với Firebase Authentication cho admin
                 await signInWithEmailAndPassword(auth, username, password);
                 
-                // Lưu thông tin admin vào localStorage (nếu cần)
-                localStorage.setItem('user', JSON.stringify({ username, role }));
+                userDocRef = doc(db, "Admins", username);
+                const userDocSnap = await getDoc(userDocRef);
+
+            if (!userDocSnap.exists()) {
+                setError('Tài khoản không tồn tại trong hệ thống.');
+                toast.error('Tài khoản không tồn tại trong hệ thống.');
+                setLoading(false);
+                return;
+            }
+                const userDoc = userDocSnap.data();
+
+                const userWithUsername = {
+                username: username,
+                ...userDoc
+            };
+
+            localStorage.setItem('user', JSON.stringify(userWithUsername));
                 
                 toast.success('Đăng nhập thành công!');
 
@@ -38,7 +54,6 @@ const useSignIn = () => {
                 return; // Kết thúc hàm sau khi đăng nhập thành công
             }
 
-            let userDocRef;
             if (role === 'student') {
                 userDocRef = doc(db, "Students", username);
             } else if (role === 'teacher') {

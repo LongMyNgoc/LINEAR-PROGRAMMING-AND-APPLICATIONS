@@ -15,7 +15,7 @@ const Teacher = () => {
 
                 {/* Nội dung chính */}
                 <div className="content">
-                    <p>Chào mừng đến với trang quản lý sinh viên!</p>
+                    <p>Chào mừng đến với trang quản lý admin!</p>
                 </div>
             </div>
         </div>
