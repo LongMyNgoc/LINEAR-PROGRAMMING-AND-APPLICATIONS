@@ -1,6 +1,7 @@
 // StudentNavbar.tsx
 import Sidebar from './Sidebar.tsx'
 import Topbar from './Topbar.tsx';
+import StudentMUI from '../Main_UI/StudentMUI.tsx';
 import './Student.css';
 
 const Student = () => {
@@ -13,12 +14,9 @@ const Student = () => {
             <div className="main">
                 {/* Thanh Navbar Ngang */}
                 <Topbar />
-
-                {/* Nội dung chính */}
-                <div className="content">
-                    <p>Chào mừng đến với trang quản lý sinh viên!</p>
+    
+                <StudentMUI />
                 </div>
-            </div>
         </div>
     );
 };

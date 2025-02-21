@@ -1,0 +1,11 @@
+.course {
+    flex: 1 1 calc(33% - 20px); /* Mỗi khóa học chiếm tối thiểu 33% chiều rộng trừ đi khoảng cách */
+    margin: 10px; /* Khoảng cách bên ngoài cho mỗi khóa học */
+    margin-top: 0px; /* Khoảng cách từ phần đầu đến khóa học */
+    padding: 20px; /* Khoảng cách bên trong cho mỗi khóa học */
+    border: 1px solid #ccc; /* Đường viền xung quanh mỗi khóa học */
+    border-radius: 8px; /* Bo tròn các góc */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng cho mỗi khóa học */
+    background-color: #fff; /* Màu nền cho mỗi khóa học */
+    transition: transform 0.2s; /* Hiệu ứng chuyển động khi hover */
+}
