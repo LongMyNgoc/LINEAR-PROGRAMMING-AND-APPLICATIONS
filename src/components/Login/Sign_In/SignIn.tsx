@@ -28,7 +28,7 @@ const SignIn = () => {
                                     type="text"
                                     id="username"
                                     name="username"
-                                    placeholder={role === 'student' ? "48.01.104.082" : "Email"}
+                                    placeholder="Email"
                                     className="username-input"
                                     value={username}
                                     onChange={(e) => setUsername(e.target.value)}

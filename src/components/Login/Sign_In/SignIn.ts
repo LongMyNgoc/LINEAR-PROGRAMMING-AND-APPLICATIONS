@@ -23,39 +23,13 @@ const useSignIn = () => {
         // Kiểm tra vai trò
         try {
             let userDocRef;
-            if (role === 'admin') {
                 // Đăng nhập với Firebase Authentication cho admin
                 await signInWithEmailAndPassword(auth, username, password);
-                
-                userDocRef = doc(db, "Admins", username);
-                const userDocSnap = await getDoc(userDocRef);
-
-            if (!userDocSnap.exists()) {
-                setError('Tài khoản không tồn tại trong hệ thống.');
-                toast.error('Tài khoản không tồn tại trong hệ thống.');
-                setLoading(false);
-                return;
-            }
-                const userDoc = userDocSnap.data();
-
-                const userWithUsername = {
-                username: username,
-                ...userDoc
-            };
-
-            localStorage.setItem('user', JSON.stringify(userWithUsername));
-                
-                toast.success('Đăng nhập thành công!');
-
-                // Điều hướng đến trang admin
-                setTimeout(() => {
-                    navigate('/admin');
-                }, 1000);
-                return; // Kết thúc hàm sau khi đăng nhập thành công
-            }
 
             if (role === 'student') {
                 userDocRef = doc(db, "Students", username);
+            } else if (role === 'admin'){
+                userDocRef = doc(db, "Admins", username)
             } else if (role === 'teacher') {
                 userDocRef = doc(db, "Teachers", username);
             } else {
@@ -76,14 +50,6 @@ const useSignIn = () => {
 
             const userDoc = userDocSnap.data();
 
-            // Kiểm tra mật khẩu
-            if (userDoc.password !== password) {
-                setError('Mật khẩu không đúng.');
-                toast.error('Mật khẩu không đúng.');
-                setLoading(false);
-                return;
-            }
-
             const userWithUsername = {
                 username: username,
                 ...userDoc
@@ -99,6 +65,8 @@ const useSignIn = () => {
                     navigate('/student');
                 } else if (role === 'teacher') {
                     navigate('/teacher'); // Thay đổi đường dẫn nếu cần
+                } else if (role === 'admin'){
+                    navigate('/admin');
                 }
             }, 1000); // Chờ 1 giây để hiển thị thông báo
 
