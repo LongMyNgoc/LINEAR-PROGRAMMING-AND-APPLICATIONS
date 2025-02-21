@@ -51,7 +51,7 @@
 /* Định dạng cho các icon */
 .dashboard-icon,
 .profile-icon,
-.courses-icon,
+.classes-icon,
 .exams-icon {
     width: 9rem; /* Thay đổi thành 10vw để linh hoạt hơn */
     height: auto;

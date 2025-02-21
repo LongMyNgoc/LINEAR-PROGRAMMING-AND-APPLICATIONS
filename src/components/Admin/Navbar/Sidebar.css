@@ -50,9 +50,12 @@
 
 /* Định dạng cho các icon */
 .dashboard-icon,
-.profile-icon,
-.courses-icon,
-.exams-icon {
+.classes-icon,
+.newsevent-icon {
     width: 9rem; /* Thay đổi thành 10vw để linh hoạt hơn */
+    height: auto;
+}
+.account-icon{
+    width: 10.4rem;
     height: auto;
 }

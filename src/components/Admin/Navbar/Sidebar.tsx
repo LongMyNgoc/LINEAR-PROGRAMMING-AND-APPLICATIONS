@@ -1,9 +1,9 @@
 import './Sidebar.css';
 import Logo from '../../../assets/Student/Logo.png';
-import DashBoard from '../../../assets/Student/DashBoard.png';
-import Profile from '../../../assets/Student/Profile.png';
-import Courses from '../../../assets/Student/Courses.png';
-import Exams from '../../../assets/Student/Exams.png';
+import DashBoard from '../../../assets/Admin/DashBoard.png';
+import Account from '../../../assets/Admin/Account.png';
+import Classes from '../../../assets/Teacher/Classes.png';
+import NewsEvent from '../../../assets/Admin/NewsEvent.png';
 
 const Sidebar = () => {
     return (
@@ -18,13 +18,13 @@ const Sidebar = () => {
                     <img src={DashBoard} alt="Dashboard" className="dashboard-icon" />
                 </li>
                 <li>
-                    <img src={Profile} alt="Profile" className="profile-icon" />
+                    <img src={Account} alt="Profile" className="account-icon" />
                 </li>
                 <li>
-                    <img src={Courses} alt="Courses" className="courses-icon" />
+                    <img src={Classes} alt="Courses" className="classes-icon" />
                 </li>
                 <li>
-                    <img src={Exams} alt="Exams" className="exams-icon" />
+                    <img src={NewsEvent} alt="Exams" className="newsevent-icon" />
                 </li>
             </ul>
         </nav>

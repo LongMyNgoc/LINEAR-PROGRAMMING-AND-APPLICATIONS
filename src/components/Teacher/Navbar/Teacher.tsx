@@ -1,6 +1,6 @@
 // StudentNavbar.tsx
 import Sidebar from './Sidebar.tsx'
-//import Topbar from './Topbar.tsx';
+import Topbar from './Topbar.tsx';
 import './Teacher.css';
 
 const Teacher = () => {
@@ -11,7 +11,7 @@ const Teacher = () => {
             <Sidebar />
 
             <div className="main">
-                
+                <Topbar />
 
                 {/* Nội dung chính */}
                 <div className="content">

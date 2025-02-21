@@ -2,7 +2,7 @@ import './Sidebar.css';
 import Logo from '../../../assets/Student/Logo.png';
 import DashBoard from '../../../assets/Student/DashBoard.png';
 import Profile from '../../../assets/Student/Profile.png';
-import Courses from '../../../assets/Student/Courses.png';
+import Classes from '../../../assets/Teacher/Classes.png';
 import Exams from '../../../assets/Student/Exams.png';
 
 const Sidebar = () => {
@@ -21,7 +21,7 @@ const Sidebar = () => {
                     <img src={Profile} alt="Profile" className="profile-icon" />
                 </li>
                 <li>
-                    <img src={Courses} alt="Courses" className="courses-icon" />
+                    <img src={Classes} alt="Classes" className="classes-icon" />
                 </li>
                 <li>
                     <img src={Exams} alt="Exams" className="exams-icon" />
