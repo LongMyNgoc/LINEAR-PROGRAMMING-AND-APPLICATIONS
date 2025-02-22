@@ -25,8 +25,8 @@ const Topbar = () => {
                     </div>
                     {user && (
                         <div className="user-info" style={{ marginLeft: '0.5rem' }}>
-                            <div>{user.username}</div>
                             <div>{user.name}</div>
+                            Sinh Viên
                         </div>
                     )}
                 </div>

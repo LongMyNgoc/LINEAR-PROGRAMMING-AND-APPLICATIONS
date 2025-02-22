@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import QuyHoachTuyenTinhCourse from '../../Courses/QuyHoachTuyenTinh/QuyHoachTuyenTinh';
 import PhapLuatDaiCuongCourse from '../../Courses/PhapLuatDaiCuong/PhapLuatDaiCuong';
 import SinhHoatCongDanCourse from '../../Courses/SinhHoatCongDan/SinhHoatCongDan';
-import QuyHoachTuyenTinhContent from '../../Courses/QuyHoachTuyenTinh/QuyHoachTuyenTinhContent';
+import QuyHoachTuyenTinhContent from '../../Courses/QuyHoachTuyenTinh/QuyHoachTuyenTinhContent.tsx';
 
 const StudentMUI = ({ activeTab, setActiveTab }: { activeTab: string | null, setActiveTab: (tab: string | null) => void }) => {
     const [selectedCourse, setSelectedCourse] = useState<string | null>(null);
