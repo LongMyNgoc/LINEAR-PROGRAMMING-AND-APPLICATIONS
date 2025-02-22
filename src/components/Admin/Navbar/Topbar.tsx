@@ -1,6 +1,6 @@
 import './Topbar.css';
 import { FaBell, FaUserCircle } from 'react-icons/fa';
-import { useTopbarLogic } from './Topbar'; // Import logic từ Topbar.ts
+import { useTopbarLogic } from './Topbar';
 
 const Topbar = () => {
     const { menuOpen, toggleMenu, handleLogout, user } = useTopbarLogic(); // Sử dụng logic
