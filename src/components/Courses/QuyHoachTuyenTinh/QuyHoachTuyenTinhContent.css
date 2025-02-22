@@ -4,9 +4,6 @@
     height: auto;
     margin: 40px 0 40px 5%;
     font-family: 'Poppins', Arial, sans-serif;
-    background: linear-gradient(135deg, #ffffff, #f8f8f8); /* Gradient nhẹ */
-    border-radius: 15px; /* Bo tròn viền */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Đổ bóng mạnh hơn */
     padding: 25px;
     text-align: left;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -18,14 +15,8 @@
     text-transform: uppercase; /* Chữ in hoa */
     letter-spacing: 1px; /* Khoảng cách giữa các chữ cái */
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ cho chữ */
-    margin-left: 1%;
-    margin-top: 1%;
-}
-
-/* Hiệu ứng khi hover vào container */
-.quy-hoach-tuyen-tinh:hover {
-    transform: scale(1.02); /* Phóng to nhẹ */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Đổ bóng đậm hơn */
+    margin-left: 0%;
+    margin-top: 0%;
 }
 
 /* Bỏ dấu đầu dòng mặc định */
@@ -91,4 +82,43 @@ li:hover {
 /* Thêm hiệu ứng mượt hơn khi hover */
 * {
     transition: all 0.3s ease-in-out;
+}
+
+.quy-hoach-tuyen-tinh-sidebar {
+    width: 35%; /* Độ rộng của container bên phải */
+    height: auto;
+    padding: 20px; /* Khoảng cách bên trong */
+    border-radius: 4px; /* Bo góc */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Bóng đổ */
+    flex: 1; /* Phần chính chiếm hết không gian còn lại */
+    margin-right: 20px; /* Khoảng cách giữa phần chính và sidebar */
+    display: flex; /* Sử dụng Flexbox để bố trí */
+    justify-content: space-between; /* Giữa các phần tử */  
+    margin-top: 1.9%;
+    position: relative; /* Để logo có thể đặt tuyệt đối */
+}
+.logo {
+    position: absolute; /* Đặt vị trí tuyệt đối */
+    top: 2%; /* Khoảng cách từ trên cùng */
+    left: 2.5%; /* Khoảng cách từ bên trái */
+    width: 95%;
+    height: auto; /* Đảm bảo tỉ lệ chiều cao và chiều rộng đúng */
+}
+.quy-hoach-tuyen-tinh-title {
+    margin-top: 60%; /* Khoảng cách từ logo tới tiêu đề */
+    font-size: 16px; /* Kích thước chữ, có thể thay đổi theo ý muốn */
+    color: #333; /* Màu chữ, có thể thay đổi theo ý muốn */
+    text-align: center; /* Căn giữa */
+}
+.summary-title {
+    margin: 0; /* Loại bỏ margin mặc định */
+    font-size: 18px; /* Kích thước chữ cho tiêu đề */
+    color: white; /* Màu chữ tiêu đề */
+    background-color: #31708F;
+}
+
+.summary-text {
+    text-align: left;
+    font-size: 16px; /* Kích thước chữ cho đoạn văn */
+    color: #555; /* Màu chữ đoạn văn */
 }
