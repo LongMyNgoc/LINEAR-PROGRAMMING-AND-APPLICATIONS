@@ -5,7 +5,7 @@ import PhapLuatDaiCuongCourse from '../../Courses/PhapLuatDaiCuong/PhapLuatDaiCu
 import SinhHoatCongDanCourse from '../../Courses/SinhHoatCongDan/SinhHoatCongDan';
 import QuyHoachTuyenTinhContent from '../../Courses/QuyHoachTuyenTinh/QuyHoachTuyenTinhContent.tsx';
 
-const StudentMUI = ({ activeTab, setActiveTab }: { activeTab: string | null, setActiveTab: (tab: string | null) => void }) => {
+const StudentMUI = ({ activeTab, setActiveTab }: { activeTab: string | null; setActiveTab: (tab: string | null) => void }) => {
     const [selectedCourse, setSelectedCourse] = useState<string | null>(null);
 
     useEffect(() => {
@@ -18,7 +18,7 @@ const StudentMUI = ({ activeTab, setActiveTab }: { activeTab: string | null, set
 
     const handleCourseSelection = (course: string) => {
         setSelectedCourse(course);
-        setActiveTab(null); 
+        setActiveTab(course === "QuyHoachTuyenTinh" ? "quy-hoach-tuyen-tinh" : null); // Cập nhật activeTab dựa trên khóa học
     };
 
     return (
@@ -43,7 +43,7 @@ const StudentMUI = ({ activeTab, setActiveTab }: { activeTab: string | null, set
                 </>
             ) : selectedCourse === "QuyHoachTuyenTinh" ? (
                 <>
-                <QuyHoachTuyenTinhContent />
+                    <QuyHoachTuyenTinhContent />
                 </>
             ) : null}
         </>

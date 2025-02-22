@@ -49,7 +49,7 @@ const QuyHoachTuyenTinhContent = () => {
         </div>
         <div className="quy-hoach-tuyen-tinh-sidebar">
         {/* Nội dung cho container bên phải */}
-        <img src={QuyHoachTuyenTinhPicture} alt="Logo" className='logo'></img>
+        <img src={QuyHoachTuyenTinhPicture} alt="Logo" className='logo-qhtt'></img>
         <div className="quy-hoach-tuyen-tinh-title">
         <h2>QUY HOẠCH TUYẾN TÍNH VÀ ỨNG DỤNG</h2>
         <h3 className="summary-title">Summary</h3>

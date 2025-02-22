@@ -5,14 +5,14 @@ import './Student.css';
 import { useState } from 'react';
 
 const Student = () => {
-    const [activeTab, setActiveTab] = useState<string>('dashboard');
+    const [activeTab, setActiveTab] = useState<string | null>('dashboard'); // Cho phép null
 
     return (
         <>
             <Sidebar setActiveTab={setActiveTab} />
             <Topbar />
             <div className="student-container">
-                <StudentMUI activeTab={activeTab} />
+                <StudentMUI activeTab={activeTab} setActiveTab={setActiveTab} />
             </div>
         </>
     );

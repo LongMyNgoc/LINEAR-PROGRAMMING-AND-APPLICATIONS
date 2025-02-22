@@ -1,7 +1,7 @@
 import './Navbar.css';  // Đảm bảo bạn đã tạo một file CSS riêng cho navbar
 
 // Import ảnh và đặt tên cho ảnh
-import Logo from '../../../assets/Main_UI/Navbar/Logo_DHSP.png';
+import Logo_DHSP from '../../../assets/Main_UI/Navbar/Logo_DHSP.png';
 import Logo_Word from '../../../assets/Main_UI/Navbar/Logo_DHSP_Word.png';
 import HomeIcon from '../../../assets/Main_UI/Navbar/Home.png';
 import AboutUsIcon from '../../../assets/Main_UI/Navbar/ABOUT US.png'
@@ -14,7 +14,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="logo-container">
-        <img src={Logo} alt="Logo" className="logo" />
+        <img src={Logo_DHSP} alt="Logo" className="logo-dhsp" />
         <img src={Logo_Word} alt="Logo Word" className="logo-word" />
       </div>
 

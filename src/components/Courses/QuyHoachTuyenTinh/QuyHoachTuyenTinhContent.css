@@ -97,7 +97,7 @@ li:hover {
     margin-top: 1.9%;
     position: relative; /* Để logo có thể đặt tuyệt đối */
 }
-.logo {
+.logo-qhtt {
     position: absolute; /* Đặt vị trí tuyệt đối */
     top: 2%; /* Khoảng cách từ trên cùng */
     left: 2.5%; /* Khoảng cách từ bên trái */

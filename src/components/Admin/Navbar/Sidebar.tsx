@@ -15,16 +15,16 @@ const Sidebar = () => {
 
             <ul>
                 <li>
+                    <img src={Account} alt="Account" className="account-icon" />
+                </li>
+                <li>
                     <img src={DashBoard} alt="Dashboard" className="dashboard-icon" />
                 </li>
                 <li>
-                    <img src={Account} alt="Profile" className="account-icon" />
+                    <img src={Classes} alt="Classes" className="classes-icon" />
                 </li>
                 <li>
-                    <img src={Classes} alt="Courses" className="classes-icon" />
-                </li>
-                <li>
-                    <img src={NewsEvent} alt="Exams" className="newsevent-icon" />
+                    <img src={NewsEvent} alt="NewsEvent" className="newsevent-icon" />
                 </li>
             </ul>
         </nav>
