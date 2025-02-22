@@ -1,24 +1,21 @@
-// StudentNavbar.tsx
-import Sidebar from './Sidebar.tsx'
-import Topbar from './Topbar.tsx';
-import StudentMUI from '../Main_UI/StudentMUI.tsx';
-import './Student.css';
+    // StudentNavbar.tsx
+    import Sidebar from './Sidebar.tsx'
+    import Topbar from './Topbar.tsx';
+    import StudentMUI from '../Main_UI/StudentMUI.tsx';
+    import './Student.css';
 
-const Student = () => {
+    const Student = () => {
 
-    return (
-        <div className="layout">
-            {/* Thanh Navbar Dọc */}
+        return (
+            <>
+                
             <Sidebar />
-
-            <div className="main">
-                {/* Thanh Navbar Ngang */}
-                <Topbar />
-    
-                <StudentMUI />
-                </div>
+            <Topbar />
+            <div className="student-container">
+            <StudentMUI />
         </div>
-    );
-};
+         </>
+        );
+    };
 
-export default Student;
+    export default Student;
