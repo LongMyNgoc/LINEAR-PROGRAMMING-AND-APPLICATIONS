@@ -1,21 +1,21 @@
-    // StudentNavbar.tsx
-    import Sidebar from './Sidebar.tsx'
-    import Topbar from './Topbar.tsx';
-    import StudentMUI from '../Main_UI/StudentMUI.tsx';
-    import './Student.css';
+import Sidebar from './Sidebar.tsx';
+import Topbar from './Topbar.tsx';
+import StudentMUI from '../Main_UI/StudentMUI.tsx';
+import './Student.css';
+import { useState } from 'react';
 
-    const Student = () => {
+const Student = () => {
+    const [activeTab, setActiveTab] = useState<string>('dashboard');
 
-        return (
-            <>
-                
-            <Sidebar />
+    return (
+        <>
+            <Sidebar setActiveTab={setActiveTab} />
             <Topbar />
             <div className="student-container">
-            <StudentMUI />
-        </div>
-         </>
-        );
-    };
+                <StudentMUI activeTab={activeTab} />
+            </div>
+        </>
+    );
+};
 
-    export default Student;
+export default Student;
