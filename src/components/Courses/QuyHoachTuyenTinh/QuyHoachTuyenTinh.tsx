@@ -2,7 +2,7 @@ import './QuyHoachTuyenTinh.css';
 import QuyHoachTuyenTinh from '../../../assets/Courses/QuyHoachTuyenTinh.png';
 
 const QuyHoachTuyenTinhCourse = ({ onView }: { onView: () => void }) => {
-    const progress = 65;
+    const progress = 0;
 
     return (
         <div className="course-container">

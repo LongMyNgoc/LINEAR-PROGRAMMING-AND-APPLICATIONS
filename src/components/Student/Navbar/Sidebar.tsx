@@ -16,12 +16,13 @@ const Sidebar = ({ setActiveTab }: { setActiveTab: (tab: string | null) => void 
                 <li onClick={() => setActiveTab('dashboard')}>
                     <img src={DashBoard} alt="Dashboard" className="dashboard-icon" />
                 </li>
-                <li onClick={() => setActiveTab('profile')}>
+                <li onClick={() => {
+                    setActiveTab('profile');
+                }}>
                     <img src={Profile} alt="Profile" className="profile-icon" />
                 </li>
                 <li onClick={() => {
                     setActiveTab('courses');
-                    
                 }}>
                     <img src={Courses} alt="Courses" className="courses-icon" />
                 </li>
