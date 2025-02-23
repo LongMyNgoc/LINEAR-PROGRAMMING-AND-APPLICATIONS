@@ -1,0 +1,13 @@
+/* VideoModal.css */
+.video-container {
+    position: relative;
+    z-index: 9999 !important; /* Đặt z-index cho lớp che phủ modal */
+}
+
+.ant-modal {
+    z-index: 9998 !important; /* Đặt z-index cho lớp che phủ modal */
+}
+
+.ant-modal-mask {
+    z-index: 9997 !important; /* Đặt z-index cho lớp che phủ modal */
+}

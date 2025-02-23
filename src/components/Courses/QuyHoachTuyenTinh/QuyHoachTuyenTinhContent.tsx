@@ -4,15 +4,30 @@ import { useState } from 'react';
 import './QuyHoachTuyenTinhContent.css';
 import { chapters } from './QuyHoachTuyenTinhContent';
 import QuyHoachTuyenTinhSidebar from './QuyHoachTuyenTinhSidebar';
+import VideoModal from '../../VideoModal/VideoModal';
 
 const { Panel } = Collapse;
 
 const QuyHoachTuyenTinhContent = () => {
     const [playedVideos, setPlayedVideos] = useState<{ [key: string]: boolean }>({});
+    const [isModalVisible, setIsModalVisible] = useState(false);
+    const [currentVideo, setCurrentVideo] = useState('');
 
     const handlePlayVideo = (key: string, videoUrl: string) => {
-        setPlayedVideos((prev) => ({ ...prev, [key]: true }));
-        window.open(videoUrl, "_blank");
+        // Kiểm tra xem link có phải là video không
+        if (videoUrl.includes("youtube")) {
+            setPlayedVideos((prev) => ({ ...prev, [key]: true }));
+            setCurrentVideo(videoUrl);
+            setIsModalVisible(true);
+        } else {
+            // Nếu không phải video, mở link trong tab mới
+            window.open(videoUrl, '_blank');
+        }
+    };
+
+    const handleCancel = () => {
+        setIsModalVisible(false);
+        setCurrentVideo(''); // Reset video URL when modal is closed
     };
 
     return (
@@ -38,7 +53,7 @@ const QuyHoachTuyenTinhContent = () => {
                                     {content.title}
                                     <PlayCircleOutlined
                                         className="video-icon"
-                                        onClick={() => handlePlayVideo(content.title, content.video)}
+                                        onClick={() => handlePlayVideo(content.title, content.link)}
                                     />
                                 </li>
                             ))}
@@ -47,8 +62,16 @@ const QuyHoachTuyenTinhContent = () => {
                 ))}
             </Collapse>
         </div>
+        
         <QuyHoachTuyenTinhSidebar />
-    </>
+
+        <VideoModal 
+            visible={isModalVisible} 
+            videoUrl={currentVideo} 
+            onClose={handleCancel} 
+            getContainer={false} 
+        />
+        </>
     );
 };
 
