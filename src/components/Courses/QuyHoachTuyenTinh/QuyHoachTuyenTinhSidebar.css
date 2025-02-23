@@ -1,0 +1,132 @@
+.quy-hoach-tuyen-tinh-sidebar {
+    width: 35%; /* Độ rộng của container bên phải */
+    height: auto; /* Tự động điều chỉnh chiều cao */
+    padding: 2%; /* Khoảng cách bên trong */
+    border-radius: 0.4rem; /* Bo góc */
+    box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.1); /* Bóng đổ */
+    flex: 1; /* Phần chính chiếm hết không gian còn lại */
+    margin-right: 2rem; /* Khoảng cách giữa phần chính và sidebar */
+    display: flex; /* Sử dụng Flexbox */
+    justify-content: space-between; /* Giữa các phần tử */
+    margin-top: 1.9%; /* Khoảng cách từ trên cùng */
+    position: relative; /* Để logo có thể đặt tuyệt đối */
+}
+
+.logo-qhtt {
+    position: absolute; /* Đặt vị trí tuyệt đối */
+    top: 1%; /* Khoảng cách từ trên cùng */
+    left: 2.5%; /* Khoảng cách từ bên trái */
+    width: 95%; /* Độ rộng của logo */
+    height: auto; /* Đảm bảo tỉ lệ chiều cao và chiều rộng đúng */
+}
+
+.quy-hoach-tuyen-tinh-title {
+    margin-top: 60%; /* Khoảng cách từ logo tới tiêu đề */
+    font-size: 1rem; /* Kích thước chữ cho tiêu đề */
+    color: #333; /* Màu chữ cho tiêu đề */
+    text-align: center; /* Căn giữa */
+}
+
+.summary-title {
+    margin: 0; /* Loại bỏ margin mặc định */
+    font-size: 1.125rem; /* Kích thước chữ cho tiêu đề */
+    color: white; /* Màu chữ tiêu đề */
+    background-color: #31708F; /* Màu nền tiêu đề */
+}
+
+.summary-text {
+    text-align: left; /* Căn trái cho đoạn văn */
+    font-size: 1rem; /* Kích thước chữ cho đoạn văn */
+    color: #555; /* Màu chữ đoạn văn */
+}
+
+/* Media Queries cho các thiết bị khác nhau */
+
+/* Thiết bị di động (max-width: 600px) */
+@media (max-width: 600px) {
+    .quy-hoach-tuyen-tinh {
+        width: 90%; /* Chiếm 90% chiều rộng trên di động */
+        margin: 5% auto; /* Căn giữa */
+        font-size: 1.5rem; /* Giảm kích thước chữ */
+    }
+
+    .quy-hoach-tuyen-tinh-sidebar {
+        width: 100%; /* Chiếm 100% chiều rộng trên di động */
+        margin-right: 0; /* Bỏ khoảng cách bên phải */
+    }
+
+    .logo-qhtt {
+        width: 80%; /* Giảm kích thước logo */
+        left: 10%; /* Căn giữa logo */
+    }
+
+    .quy-hoach-tuyen-tinh-title {
+        margin-top: 40%; /* Giảm khoảng cách từ logo tới tiêu đề */
+    }
+
+    .summary-title {
+        font-size: 1rem; /* Giảm kích thước chữ tiêu đề */
+    }
+
+    .summary-text {
+        font-size: 0.9rem; /* Giảm kích thước chữ đoạn văn */
+    }
+}
+
+/* Thiết bị máy tính bảng (min-width: 601px và max-width: 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .quy-hoach-tuyen-tinh {
+        width: 80%; /* Chiếm 80% chiều rộng trên máy tính bảng */
+        font-size: 1.6rem; /* Giảm kích thước chữ */
+    }
+
+    .quy-hoach-tuyen-tinh-sidebar {
+        width: 40%; /* Độ rộng của sidebar */
+        margin-right: 1rem; /* Giảm khoảng cách bên phải */
+    }
+
+    .logo-qhtt {
+        width: 90%; /* Giảm kích thước logo */
+        left: 5%; /* Căn giữa logo */
+    }
+
+    .quy-hoach-tuyen-tinh-title {
+        margin-top: 50%; /* Giảm khoảng cách từ logo tới tiêu đề */
+    }
+
+    .summary-title {
+        font-size: 1.1rem; /* Giảm kích thước chữ tiêu đề */
+    }
+
+    .summary-text {
+        font-size: 0.95rem; /* Giảm kích thước chữ đoạn văn */
+    }
+}
+
+/* Thiết bị máy tính để bàn (min-width: 1025px) */
+@media (min-width: 1025px) {
+    .quy-hoach-tuyen-tinh {
+        width: 60%; /* Giữ nguyên 60% chiều rộng */
+        font-size: 1.75rem; /* Kích thước chữ lớn */
+    }
+
+    .quy-hoach-tuyen-tinh-sidebar {
+        width: 35%; /* Độ rộng của sidebar */
+    }
+
+    .logo-qhtt {
+        width: 95%; /* Độ rộng của logo */
+    }
+
+    .quy-hoach-tuyen-tinh-title {
+        margin-top: 60%; /* Khoảng cách từ logo tới tiêu đề */
+    }
+
+    .summary-title {
+        font-size: 1.125rem; /* Kích thước chữ cho tiêu đề */
+    }
+
+    .summary-text {
+        font-size: 1rem; /* Kích thước chữ cho đoạn văn */
+    }
+}

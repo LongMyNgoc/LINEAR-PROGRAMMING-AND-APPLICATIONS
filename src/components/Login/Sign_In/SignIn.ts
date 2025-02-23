@@ -34,7 +34,6 @@ const useSignIn = () => {
                 userDocRef = doc(db, "Teachers", username);
             } else {
                 setError('Vai trò không hợp lệ.');
-                toast.error('Vai trò không hợp lệ.');
                 setLoading(false);
                 return;
             }
@@ -43,7 +42,6 @@ const useSignIn = () => {
 
             if (!userDocSnap.exists()) {
                 setError('Tài khoản không tồn tại trong hệ thống.');
-                toast.error('Tài khoản không tồn tại trong hệ thống.');
                 setLoading(false);
                 return;
             }
@@ -72,8 +70,7 @@ const useSignIn = () => {
 
         } catch (error) {
             console.error("Đăng nhập thất bại: ", error);
-            setError('Lỗi đăng nhập, vui lòng thử lại sau.');
-            toast.error('Lỗi đăng nhập, vui lòng thử lại sau.');
+            setError('Tài khoản hoặc mật khẩu không đúng');
         } finally {
             setLoading(false);
         }

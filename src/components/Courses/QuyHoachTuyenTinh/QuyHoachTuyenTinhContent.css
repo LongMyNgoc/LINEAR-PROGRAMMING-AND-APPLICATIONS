@@ -83,44 +83,41 @@ li:hover {
     transition: all 0.3s ease-in-out; /* Hiệu ứng chuyển động cho tất cả phần tử */
 }
 
-.quy-hoach-tuyen-tinh-sidebar {
-    width: 35%; /* Độ rộng của container bên phải */
-    height: auto; /* Tự động điều chỉnh chiều cao */
-    padding: 2%; /* Khoảng cách bên trong */
-    border-radius: 0.4rem; /* Bo góc */
-    box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.1); /* Bóng đổ */
-    flex: 1; /* Phần chính chiếm hết không gian còn lại */
-    margin-right: 2rem; /* Khoảng cách giữa phần chính và sidebar */
-    display: flex; /* Sử dụng Flexbox */
-    justify-content: space-between; /* Giữa các phần tử */
-    margin-top: 1.9%; /* Khoảng cách từ trên cùng */
-    position: relative; /* Để logo có thể đặt tuyệt đối */
+/* Media queries cho các thiết bị khác nhau */
+@media (max-width: 1200px) {
+    .quy-hoach-tuyen-tinh {
+        width: 80%; /* Chiếm 80% chiều rộng trên màn hình lớn hơn tablet */
+        font-size: 1.5rem; /* Giảm kích thước chữ */
+    }
+
+    li {
+        font-size: 0.9rem; /* Giảm kích thước chữ cho mục danh sách */
+    }
 }
 
-.logo-qhtt {
-    position: absolute; /* Đặt vị trí tuyệt đối */
-    top: 1%; /* Khoảng cách từ trên cùng */
-    left: 2.5%; /* Khoảng cách từ bên trái */
-    width: 95%; /* Độ rộng của logo */
-    height: auto; /* Đảm bảo tỉ lệ chiều cao và chiều rộng đúng */
+@media (max-width: 768px) {
+    .quy-hoach-tuyen-tinh {
+        width: 90%; /* Chiếm 90% chiều rộng trên màn hình tablet */
+        font-size: 1.2rem; /* Giảm kích thước chữ */
+    }
+
+    li {
+        padding: 1rem; /* Giảm padding cho mục danh sách */
+    }
 }
 
-.quy-hoach-tuyen-tinh-title {
-    margin-top: 60%; /* Khoảng cách từ logo tới tiêu đề */
-    font-size: 1rem; /* Kích thước chữ cho tiêu đề */
-    color: #333; /* Màu chữ cho tiêu đề */
-    text-align: center; /* Căn giữa */
-}
+@media (max-width: 480px) {
+    .quy-hoach-tuyen-tinh {
+        width: 100%; /* Chiếm toàn bộ chiều rộng trên màn hình di động */
+        font-size: 1rem; /* Giảm kích thước chữ */
+    }
 
-.summary-title {
-    margin: 0; /* Loại bỏ margin mặc định */
-    font-size: 1.125rem; /* Kích thước chữ cho tiêu đề */
-    color: white; /* Màu chữ tiêu đề */
-    background-color: #31708F; /* Màu nền tiêu đề */
-}
+    li {
+        font-size: 0.8rem; /* Giảm kích thước chữ cho mục danh sách */
+        padding: 0.8rem; /* Giảm padding cho mục danh sách */
+    }
 
-.summary-text {
-    text-align: left; /* Căn trái cho đoạn văn */
-    font-size: 1rem; /* Kích thước chữ cho đoạn văn */
-    color: #555; /* Màu chữ đoạn văn */
+    .video-icon {
+        font-size: 1.2rem; /* Giảm kích thước nút phát video */
+    }
 }

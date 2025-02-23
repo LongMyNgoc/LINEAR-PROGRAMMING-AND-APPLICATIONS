@@ -26,15 +26,6 @@ const StudentMUI = ({ activeTab, setActiveTab }: { activeTab: string | null; set
                     <div className='course'>
                         <QuyHoachTuyenTinhCourse onView={() => handleCourseSelection("QuyHoachTuyenTinh")} />
                     </div>
-                    <div className='course'>
-                        <QuyHoachTuyenTinhCourse onView={() => handleCourseSelection("QuyHoachTuyenTinh")} />
-                    </div>
-                    <div className='course'>
-                        <QuyHoachTuyenTinhCourse onView={() => handleCourseSelection("QuyHoachTuyenTinh")} />
-                    </div>
-                    <div className='course'>
-                        <QuyHoachTuyenTinhCourse onView={() => handleCourseSelection("QuyHoachTuyenTinh")} />
-                    </div>
                 </>
             ) : selectedCourse === "QuyHoachTuyenTinh" ? (
                 <>
