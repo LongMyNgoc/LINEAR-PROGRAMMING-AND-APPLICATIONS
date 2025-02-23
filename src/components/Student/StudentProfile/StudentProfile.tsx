@@ -2,17 +2,18 @@ import { useState, useEffect } from 'react';
 import './StudentProfile.css';
 import Logo from '../../../assets/Student/Logo.png';
 import Avatar from '../../../assets/Student/avatar.png';
-import { FaCog, FaPhone, FaEnvelope } from 'react-icons/fa'; // Import icon bánh răng, điện thoại, email
+import { FaCog, FaPhone, FaEnvelope } from 'react-icons/fa'; 
 import StudentInformation from './StudentInformation';
+import ChangePasswordModal from '../../ChangePasswordModal/ChangePasswordModal'; // Import modal
 
 const StudentProfile = () => {
     const [user, setUser] = useState<{ username: string; name: string; phone: string; sex: string; mssv: string; class: string } | null>(null);
+    const [isModalOpen, setIsModalOpen] = useState(false); // State để kiểm soát modal
 
     useEffect(() => {
-        // Lấy dữ liệu từ localStorage
         const storedUser = localStorage.getItem('user');
         if (storedUser) {
-            setUser(JSON.parse(storedUser)); // Giả sử user object có name, phone, email
+            setUser(JSON.parse(storedUser)); 
         }
     }, []);
 
@@ -38,7 +39,7 @@ const StudentProfile = () => {
                 </div>
 
                 <div className="button-container">
-                    <button className="change-password">
+                    <button className="change-password" onClick={() => setIsModalOpen(true)}>
                         <FaCog className="icon" /> Đổi mật khẩu
                     </button>
                 </div>
@@ -52,6 +53,7 @@ const StudentProfile = () => {
                     email={user.username} // Giả sử username là email
                 />
             )}
+            <ChangePasswordModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         </>
     );
 };

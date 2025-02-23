@@ -1,16 +1,18 @@
-// src/components/Login/SignIn.tsx
-import './SignIn.css';
-import Logo from '../../../assets/Login/Logo.png';  // Logo của bạn
-import useSignIn from './SignIn';  // Import hook xử lý đăng nhập
-import { ToastContainer, toast } from 'react-toastify'; // Import Toastify
-import 'react-toastify/dist/ReactToastify.css';  // Import CSS của Toastify
+import { useState } from "react";
+import "./SignIn.css";
+import Logo from "../../../assets/Login/Logo.png";
+import useSignIn from "./SignIn";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import ForgotPasswordModal from "../../ChangePasswordModal/ForgotPasswordModal/ForgotPasswordModal"; // Import modal
 
 const SignIn = () => {
     const { username, setUsername, password, setPassword, role, setRole, error, loading, handleLogin } = useSignIn();
+    const [isForgotPasswordOpen, setIsForgotPasswordOpen] = useState(false); // State để mở modal
 
     // Hiển thị thông báo lỗi
     if (error) {
-        toast.error(error);  // Hiển thị thông báo lỗi
+        toast.error(error);
     }
 
     return (
@@ -60,11 +62,11 @@ const SignIn = () => {
                             </div>
 
                             <button type="submit" className="signin-button" disabled={loading}>
-                                {loading ? 'Đang đăng nhập...' : 'Sign In'}
+                                {loading ? "Đang đăng nhập..." : "Sign In"}
                             </button>
 
                             <div className="signin-links">
-                                <a href="#forgot-password" className="forgot-password">
+                                <a href="#" onClick={() => setIsForgotPasswordOpen(true)} className="forgot-password">
                                     Forgot password?
                                 </a>
                                 <a href="#sign-up" className="sign-up">
@@ -76,7 +78,9 @@ const SignIn = () => {
                 </div>
             </div>
 
-            {/* Thêm ToastContainer vào cuối trang */}
+            {/* Modal Quên Mật Khẩu */}
+            <ForgotPasswordModal isOpen={isForgotPasswordOpen} onClose={() => setIsForgotPasswordOpen(false)} />
+
             <ToastContainer />
         </>
     );

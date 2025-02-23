@@ -75,10 +75,9 @@ input:focus {
     width: 100%; /* Đảm bảo chiếm toàn bộ chiều rộng */
 }
 
-.button-container {
+.info-item-button-container {
     display: flex;
     justify-content: flex-end; /* Căn giữa các item trong container về phía bên phải */
-    margin-top: 15%; /* Tạo khoảng cách phía trên cho nút */
 }
 
 .update-button {

@@ -51,6 +51,7 @@ const StudentInformation: React.FC<StudentInformationProps> = ({ mssv, name, sex
                             name='mssv'
                             value={formData.mssv}
                             onChange={handleChange}
+                            readOnly
                         />
                     </div>
                 </div>
@@ -66,6 +67,7 @@ const StudentInformation: React.FC<StudentInformationProps> = ({ mssv, name, sex
                             name='name'
                             value={formData.name}
                             onChange={handleChange}
+                            readOnly
                         />
                     </div>
                 </div>
@@ -81,6 +83,7 @@ const StudentInformation: React.FC<StudentInformationProps> = ({ mssv, name, sex
                             name='sex'
                             value={formData.sex}
                             onChange={handleChange}
+                            readOnly
                         />
                     </div>
                 </div>
@@ -96,6 +99,7 @@ const StudentInformation: React.FC<StudentInformationProps> = ({ mssv, name, sex
                             name='className'
                             value={formData.className}
                             onChange={handleChange}
+                            readOnly
                         />
                     </div>
                 </div>
@@ -111,13 +115,14 @@ const StudentInformation: React.FC<StudentInformationProps> = ({ mssv, name, sex
                             name='email'
                             value={formData.email}
                             onChange={handleChange}
+                            readOnly
                         />
                     </div>
                 </div>
                 <div className='separator'></div>
 
                 {/* Nút Cập Nhật Thông Tin */}
-                <div className='info-item button-container'>
+                <div className='info-item-button-container'>
                     <button onClick={handleUpdate} className='update-button'>
                         Cập Nhật Thông Tin
                     </button>
