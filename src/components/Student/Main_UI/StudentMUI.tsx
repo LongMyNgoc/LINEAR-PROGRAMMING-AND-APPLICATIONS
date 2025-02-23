@@ -1,8 +1,6 @@
 import './StudentMUI.css';
 import { useState, useEffect } from 'react';
 import QuyHoachTuyenTinhCourse from '../../Courses/QuyHoachTuyenTinh/QuyHoachTuyenTinh';
-import PhapLuatDaiCuongCourse from '../../Courses/PhapLuatDaiCuong/PhapLuatDaiCuong';
-import SinhHoatCongDanCourse from '../../Courses/SinhHoatCongDan/SinhHoatCongDan';
 import QuyHoachTuyenTinhContent from '../../Courses/QuyHoachTuyenTinh/QuyHoachTuyenTinhContent.tsx';
 
 const StudentMUI = ({ activeTab, setActiveTab }: { activeTab: string | null; setActiveTab: (tab: string | null) => void }) => {
@@ -29,13 +27,10 @@ const StudentMUI = ({ activeTab, setActiveTab }: { activeTab: string | null; set
                         <QuyHoachTuyenTinhCourse onView={() => handleCourseSelection("QuyHoachTuyenTinh")} />
                     </div>
                     <div className='course'>
-                        <PhapLuatDaiCuongCourse />
-                    </div>
-                    <div className='course'>
                         <QuyHoachTuyenTinhCourse onView={() => handleCourseSelection("QuyHoachTuyenTinh")} />
                     </div>
                     <div className='course'>
-                        <SinhHoatCongDanCourse />
+                        <QuyHoachTuyenTinhCourse onView={() => handleCourseSelection("QuyHoachTuyenTinh")} />
                     </div>
                     <div className='course'>
                         <QuyHoachTuyenTinhCourse onView={() => handleCourseSelection("QuyHoachTuyenTinh")} />
