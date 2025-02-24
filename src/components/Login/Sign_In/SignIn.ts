@@ -50,6 +50,7 @@ const useSignIn = () => {
 
             const userWithUsername = {
                 username: username,
+                password: password,
                 ...userDoc
             };
 
