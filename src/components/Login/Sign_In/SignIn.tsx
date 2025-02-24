@@ -1,19 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./SignIn.css";
 import Logo from "../../../assets/Login/Logo.png";
 import useSignIn from "./SignIn";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import ForgotPasswordModal from "../../ChangePasswordModal/ForgotPasswordModal/ForgotPasswordModal"; // Import modal
+import ForgotPasswordModal from "../../Password/ForgotPasswordModal/ForgotPasswordModal"; // Import modal
 
 const SignIn = () => {
     const { username, setUsername, password, setPassword, role, setRole, error, loading, handleLogin } = useSignIn();
     const [isForgotPasswordOpen, setIsForgotPasswordOpen] = useState(false); // State để mở modal
 
-    // Hiển thị thông báo lỗi
-    if (error) {
-        toast.error(error);
-    }
+    useEffect(() => {
+        if (error) {
+            toast.error(error);
+        }
+    }, [error]);
 
     return (
         <>

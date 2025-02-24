@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './ChangePasswordModal.css'; 
-import Logo from '../../assets/Login/Logo.png';
+import Logo from '../../../assets/Login/Logo.png';
 
 interface ChangePasswordModalProps {
     isOpen: boolean;
