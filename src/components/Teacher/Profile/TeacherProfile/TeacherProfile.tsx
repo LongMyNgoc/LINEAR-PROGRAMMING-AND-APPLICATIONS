@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import './TeacherProfile.css';
-import Logo from '../../../assets/Student/Logo.png';
-import Avatar from '../../../assets/Student/avatar.png';
+import Logo from '../../../../assets/Student/Logo.png';
+import Avatar from '../../../../assets/Student/avatar.png';
 import { FaCog, FaPhone, FaEnvelope } from 'react-icons/fa'; 
-import TeacherInformation from './TeacherInformation.tsx';
-import ChangePasswordModal from '../../Password/ChangePasswordModal/ChangePasswordModal.tsx'; // Import modal
+import TeacherInformation from '../TeacherInformation/TeacherInformation.tsx';
+import ChangePasswordModal from '../../../Password/ChangePasswordModal/ChangePasswordModal.tsx'; // Import modal
 
 const TeacherProfile = () => {
     const [user, setUser] = useState<{ username: string; name: string; phone: string; sex: string; } | null>(null);

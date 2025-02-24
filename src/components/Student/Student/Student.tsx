@@ -1,5 +1,5 @@
-import Sidebar from './Sidebar.tsx';
-import Topbar from './Topbar.tsx';
+import Sidebar from '../Navbar/Sidebar/Sidebar.tsx';
+import Topbar from '../Navbar/Topbar/Topbar.tsx';
 import StudentMUI from '../Main_UI/StudentMUI.tsx';
 import './Student.css';
 import { useState } from 'react';

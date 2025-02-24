@@ -1,9 +1,9 @@
 import './Sidebar.css';
-import Logo from '../../../assets/Student/Logo.png';
-import DashBoard from '../../../assets/Admin/DashBoard.png';
-import Account from '../../../assets/Admin/Account.png';
-import Classes from '../../../assets/Teacher/Classes.png';
-import NewsEvent from '../../../assets/Admin/NewsEvent.png';
+import Logo from '../../../../assets/Student/Logo.png';
+import DashBoard from '../../../../assets/Admin/DashBoard.png';
+import Account from '../../../../assets/Admin/Account.png';
+import Classes from '../../../../assets/Teacher/Classes.png';
+import NewsEvent from '../../../../assets/Admin/NewsEvent.png';
 
 const Sidebar = () => {
     return (

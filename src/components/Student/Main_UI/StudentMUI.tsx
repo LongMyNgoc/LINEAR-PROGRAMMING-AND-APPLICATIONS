@@ -1,8 +1,8 @@
 import './StudentMUI.css';
 import { useState, useEffect } from 'react';
-import QuyHoachTuyenTinhCourse from '../../Courses/QuyHoachTuyenTinh/QuyHoachTuyenTinh';
-import QuyHoachTuyenTinhContent from '../../Courses/QuyHoachTuyenTinh/QuyHoachTuyenTinhContent.tsx';
-import StudentProfile from '../StudentProfile/StudentProfile.tsx';
+import QuyHoachTuyenTinhCourse from '../../Courses/QuyHoachTuyenTinh/QuyHoachTuyenTinhCourse/QuyHoachTuyenTinhCourse.tsx';
+import QuyHoachTuyenTinhContent from '../../Courses/QuyHoachTuyenTinh/QuyHoachTuyenTinhContent/QuyHoachTuyenTinhContent.tsx';
+import StudentProfile from '../Profile/StudentProfile/StudentProfile.tsx';
 
 const StudentMUI = ({ activeTab, setActiveTab }: { activeTab: string | null; setActiveTab: (tab: string | null) => void }) => {
     const [selectedCourse, setSelectedCourse] = useState<string | null>(null);

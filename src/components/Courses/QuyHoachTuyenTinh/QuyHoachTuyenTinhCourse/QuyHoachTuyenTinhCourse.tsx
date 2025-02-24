@@ -1,5 +1,5 @@
-import './QuyHoachTuyenTinh.css';
-import QuyHoachTuyenTinh from '../../../assets/Courses/QuyHoachTuyenTinh.png';
+import './QuyHoachTuyenTinhCourse.css';
+import QuyHoachTuyenTinh from '../../../../assets/Courses/QuyHoachTuyenTinh.png';
 
 const QuyHoachTuyenTinhCourse = ({ onView }: { onView: () => void }) => {
     const progress = 0;

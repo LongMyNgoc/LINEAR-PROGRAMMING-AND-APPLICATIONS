@@ -1,4 +1,4 @@
-import QuyHoachTuyenTinhPicture from '../../../assets/Courses/QuyHoachTuyenTinh.png';
+import QuyHoachTuyenTinhPicture from '../../../../assets/Courses/QuyHoachTuyenTinh.png';
 import './QuyHoachTuyenTinhSidebar.css'; // Nếu bạn có CSS riêng cho Sidebar
 
 const QuyHoachTuyenTinhSidebar = () => {

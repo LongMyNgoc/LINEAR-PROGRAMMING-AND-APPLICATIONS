@@ -3,8 +3,8 @@ import { PlusOutlined, PlayCircleOutlined, MinusSquareOutlined, CheckSquareOutli
 import { useState } from 'react';
 import './QuyHoachTuyenTinhContent.css';
 import { chapters } from './QuyHoachTuyenTinhContent';
-import QuyHoachTuyenTinhSidebar from './QuyHoachTuyenTinhSidebar';
-import VideoModal from '../../VideoModal/VideoModal';
+import QuyHoachTuyenTinhSidebar from '../QuyHoachTuyenTinhSidebar/QuyHoachTuyenTinhSidebar.tsx';
+import VideoModal from '../../../VideoModal/VideoModal';
 
 const { Panel } = Collapse;
 

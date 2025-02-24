@@ -1,6 +1,6 @@
 // StudentNavbar.tsx
-import Sidebar from './Sidebar.tsx'
-import Topbar from './Topbar.tsx';
+import Sidebar from '../Navbar/Sidebar/Sidebar.tsx'
+import Topbar from '../Navbar/Topbar/Topbar.tsx';
 import './Admin.css';
 
 const Teacher = () => {

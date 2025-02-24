@@ -1,5 +1,5 @@
 import './TeacherMUI.css'
-import TeacherProfile from '../TeacherProfile/TeacherProfile';
+import TeacherProfile from '../Profile/TeacherProfile/TeacherProfile';
 
 const TeacherMUI = ({ activeTab }: { activeTab: string | null; } ) => {
     return(

@@ -1,9 +1,9 @@
 import './Sidebar.css';
-import Logo from '../../../assets/Student/Logo.png';
-import DashBoard from '../../../assets/Student/DashBoard.png';
-import Profile from '../../../assets/Student/Profile.png';
-import Courses from '../../../assets/Student/Courses.png';
-import Exams from '../../../assets/Student/Exams.png';
+import Logo from '../../../../assets/Student/Logo.png';
+import DashBoard from '../../../../assets/Student/DashBoard.png';
+import Profile from '../../../../assets/Student/Profile.png';
+import Classes from '../../../../assets/Teacher/Classes.png';
+import Exams from '../../../../assets/Student/Exams.png';
 
 const Sidebar = ({ setActiveTab }: { setActiveTab: (tab: string | null) => void }) => {
     return (
@@ -22,9 +22,9 @@ const Sidebar = ({ setActiveTab }: { setActiveTab: (tab: string | null) => void 
                     <img src={Profile} alt="Profile" className="profile-icon" />
                 </li>
                 <li onClick={() => {
-                    setActiveTab('courses');
+                    setActiveTab('classes');
                 }}>
-                    <img src={Courses} alt="Courses" className="courses-icon" />
+                    <img src={Classes} alt="Classes" className="classes-icon" />
                 </li>
                 <li onClick={() => setActiveTab('exams')}>
                     <img src={Exams} alt="Exams" className="exams-icon" />
