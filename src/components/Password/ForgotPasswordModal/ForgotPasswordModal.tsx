@@ -1,8 +1,10 @@
+// ForgotPasswordModal.tsx
 import React, { useState } from "react";
 import "./ForgotPasswordModal.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Logo from '../../../assets/Login/Logo.png'
+import Logo from '../../../assets/Login/Logo.png';
+import useForgotPassword from './ForgotPasswordModal'; // Import hook
 
 interface ForgotPasswordModalProps {
     isOpen: boolean;
@@ -11,18 +13,18 @@ interface ForgotPasswordModalProps {
 
 const ForgotPasswordModal: React.FC<ForgotPasswordModalProps> = ({ isOpen, onClose }) => {
     const [email, setEmail] = useState("");
+    const { resetPassword } = useForgotPassword(); // Sử dụng hook
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        
+
         if (!email) {
             toast.error("Vui lòng nhập email!");
             return;
         }
 
-        toast.success("Yêu cầu đặt lại mật khẩu đã được gửi!");
+        await resetPassword(email); // Gọi hàm gửi email
         setEmail(""); 
-        onClose();
     };
 
     if (!isOpen) return null;
