@@ -4,7 +4,7 @@ import Logo from "../../../assets/Login/Logo.png";
 import useSignIn from "./SignIn";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import ForgotPasswordModal from "../../Password/ForgotPasswordModal/ForgotPasswordModal"; // Import modal
+import ForgotPasswordModal from "../../Password/ForgotPasswordModal/ForgotPasswordModal.tsx"; // Import modal
 
 const SignIn = () => {
     const { username, setUsername, password, setPassword, role, setRole, error, loading, handleLogin } = useSignIn();

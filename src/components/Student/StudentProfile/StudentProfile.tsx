@@ -4,7 +4,7 @@ import Logo from '../../../assets/Student/Logo.png';
 import Avatar from '../../../assets/Student/avatar.png';
 import { FaCog, FaPhone, FaEnvelope } from 'react-icons/fa'; 
 import StudentInformation from './StudentInformation';
-import ChangePasswordModal from '../../Password/ChangePasswordModal/ChangePasswordModal'; // Import modal
+import ChangePasswordModal from '../../Password/ChangePasswordModal/ChangePasswordModal.tsx'; // Import modal
 
 const StudentProfile = () => {
     const [user, setUser] = useState<{ username: string; name: string; phone: string; sex: string; mssv: string; class: string } | null>(null);
