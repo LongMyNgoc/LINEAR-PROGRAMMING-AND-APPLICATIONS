@@ -1,20 +1,18 @@
-import './StudentInformation.css';
+import './TeacherInformation.css';
 import { useState } from 'react';
 
-interface StudentInformationProps {
-    mssv: string;
+interface TeacherInformationProps {
     name: string;
     sex: string;
-    className: string;
+    phone: string;
     email: string;
 }
 
-const StudentInformation: React.FC<StudentInformationProps> = ({ mssv, name, sex, className, email }) => {
+const TeacherInformation: React.FC<TeacherInformationProps> = ({ name, sex, phone, email }) => {
     const [formData, setFormData] = useState({
-        mssv,
         name,
         sex,
-        className,
+        phone,
         email,
     });
 
@@ -33,23 +31,24 @@ const StudentInformation: React.FC<StudentInformationProps> = ({ mssv, name, sex
     };
 
     return (
-        <div className='outer-information-container'>
-            <div className='inner-information-container'>
-                Thông Tin Sinh Viên
+        <div className='outer-info-container'>
+            <div className='inner-info-container'>
+                Thông Tin Giáo Viên
             </div>
-            <div className='information-container'>
+            <div className='info-container'>
                 <div className='separator'></div>
                 {/* Các trường thông tin */}
+                <div className='separator'></div>
                 <div className='info-item'>
                     <div className='label-container'>
-                        <label htmlFor='mssv'>MSSV:</label>
+                        <label htmlFor='name'>Họ tên:</label>
                     </div>
                     <div className='input-container'>
                         <input
                             type='text'
-                            id='mssv'
-                            name='mssv'
-                            value={formData.mssv}
+                            id='name'
+                            name='name'
+                            value={formData.name}
                             onChange={handleChange}
                             readOnly
                         />
@@ -74,14 +73,14 @@ const StudentInformation: React.FC<StudentInformationProps> = ({ mssv, name, sex
                 <div className='separator'></div>
                 <div className='info-item'>
                     <div className='label-container'>
-                        <label htmlFor='className'>Lớp:</label>
+                        <label htmlFor='className'>Số Điện Thoại:</label>
                     </div>
                     <div className='input-container'>
                         <input
                             type='text'
                             id='className'
                             name='className'
-                            value={formData.className}
+                            value={formData.phone}
                             onChange={handleChange}
                             readOnly
                         />
@@ -100,4 +99,4 @@ const StudentInformation: React.FC<StudentInformationProps> = ({ mssv, name, sex
     );
 };
 
-export default StudentInformation;
+export default TeacherInformation;

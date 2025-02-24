@@ -1,6 +1,6 @@
-.outer-information-container {
+.outer-info-container {
     width: 95%;
-    height: 26rem; /* 450px = 28.125rem */
+    height: 28.125rem; /* 450px = 28.125rem */
     display: flex;
     background-color: whitesmoke; /* Màu nền cho outer container */
     margin-left: 2%;
@@ -9,7 +9,7 @@
     margin-top: 1.25rem; /* 20px = 1.25rem */
 }
 
-.inner-information-container {
+.inner-info-container {
     background-color: #0C4874; /* Màu nền cho inner container */
     border: 1px solid #ddd; /* Đường viền cho inner container */
     padding: 1.25rem; /* 20px = 1.25rem */
@@ -26,10 +26,10 @@
     font-weight: bold;
 }
 
-.information-container {
+.info-container {
     display: flex;
     flex-direction: column;
-    margin-top: 4.1rem; /* 55px = 3.4375rem */
+    margin-top: 2.5rem; /* 55px = 3.4375rem */
     width: 100%;
 }
 
@@ -98,33 +98,33 @@ input:focus {
 
 /* Mobile */
 @media (max-width: 768px) {
-    .outer-information-container {
+    .outer-info-container {
         height: auto; /* Tự động chiều cao cho thiết bị di động */
         flex-direction: column; /* Xếp chồng cho các phần tử */
     }
 
-    .inner-information-container {
+    .inner-info-container {
         height: 3rem; /* Đổi chiều cao cho thiết bị di động */
         font-size: 1.5rem; /* Giảm kích thước chữ cho thiết bị di động */
     }
 
-    .information-container {
+    .info-container {
         margin-top: 2rem; /* Giảm khoảng cách cho thiết bị di động */
     }
 }
 
 /* Tablet */
 @media (min-width: 769px) and (max-width: 1024px) {
-    .outer-information-container {
+    .outer-info-container {
         height: auto; /* Tự động chiều cao cho tablet */
     }
 
-    .inner-information-container {
+    .inner-info-container {
         height: 3rem; /* Đổi chiều cao cho tablet */
         font-size: 1.6rem; /* Giảm kích thước chữ cho tablet */
     }
 
-    .information-container {
+    .info-container {
         margin-top: 3rem; /* Điều chỉnh khoảng cách trên cho tablet */
     }
 }

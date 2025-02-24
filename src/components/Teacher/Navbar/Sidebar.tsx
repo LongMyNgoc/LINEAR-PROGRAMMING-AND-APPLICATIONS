@@ -5,25 +5,28 @@ import Profile from '../../../assets/Student/Profile.png';
 import Classes from '../../../assets/Teacher/Classes.png';
 import Exams from '../../../assets/Student/Exams.png';
 
-const Sidebar = () => {
+const Sidebar = ({ setActiveTab }: { setActiveTab: (tab: string | null) => void }) => {
     return (
         <nav className="sidebar">
-            {/* Thêm logo vào đầu sidebar */}
             <div className="sidebar-logo">
                 <img src={Logo} alt="Logo" />
             </div>
 
             <ul>
-                <li>
+                <li onClick={() => setActiveTab('dashboard')}>
                     <img src={DashBoard} alt="Dashboard" className="dashboard-icon" />
                 </li>
-                <li>
+                <li onClick={() => {
+                    setActiveTab('profile');
+                }}>
                     <img src={Profile} alt="Profile" className="profile-icon" />
                 </li>
-                <li>
+                <li onClick={() => {
+                    setActiveTab('classes');
+                }}>
                     <img src={Classes} alt="Classes" className="classes-icon" />
                 </li>
-                <li>
+                <li onClick={() => setActiveTab('exams')}>
                     <img src={Exams} alt="Exams" className="exams-icon" />
                 </li>
             </ul>
