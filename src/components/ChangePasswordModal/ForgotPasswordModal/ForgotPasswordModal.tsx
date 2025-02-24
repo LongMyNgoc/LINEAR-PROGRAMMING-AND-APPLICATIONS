@@ -20,29 +20,31 @@ const ForgotPasswordModal: React.FC<ForgotPasswordModalProps> = ({ isOpen, onClo
             return;
         }
 
-        // Giả lập gửi yêu cầu đặt lại mật khẩu
         toast.success("Yêu cầu đặt lại mật khẩu đã được gửi!");
-        setEmail(""); // Xóa email sau khi gửi
-        onClose(); // Đóng modal
+        setEmail(""); 
+        onClose();
     };
 
-    if (!isOpen) return null; // Nếu modal không mở, không render gì cả
+    if (!isOpen) return null;
 
     return (
-        <div className="modal-forgot-overlay">
-            <div className="modal-fogot-content">
-            <img src={Logo} alt="Logo" className='logo-forgotpassword' />
-                <h1>Quên Mật Khẩu</h1>
-                <form onSubmit={handleSubmit}>
+        <div className="forgot-password-overlay">
+            <div className="forgot-password-modal">
+                <img src={Logo} alt="Logo" className="forgot-password-logo" />
+                <h2 className="forgot-password-title">Quên Mật Khẩu</h2>
+                <form onSubmit={handleSubmit} className="forgot-password-form">
                     <input
                         type="email"
                         placeholder="Nhập email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
+                        className="forgot-password-input"
                     />
-                    <button type="submit">Gửi Yêu Cầu</button>
-                    <button type="button" onClick={onClose} className="cancel-button">Hủy</button>
+                    <div className="forgot-password-buttons">
+                        <button type="submit" className="forgot-password-submit">Gửi Yêu Cầu</button>
+                        <button type="button" onClick={onClose} className="forgot-password-cancel">Hủy</button>
+                    </div>
                 </form>
             </div>
             <ToastContainer />

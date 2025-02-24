@@ -1,10 +1,7 @@
 .course {
     margin: 1%; /* Khoảng cách bên ngoài cho mỗi khóa học */
     padding: 1.5em; /* Khoảng cách bên trong cho mỗi khóa học */
-    border: 0.1em solid #ccc; /* Đường viền xung quanh mỗi khóa học */
-    border-radius: 0.5em;
-    box-shadow: 0 0.2em 0.5em rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng cho mỗi khóa học */
-    background-color: whitesmoke; /* Màu nền cho mỗi khóa học */
+    background: transparent;
     transition: transform 0.2s; /* Hiệu ứng chuyển động khi hover */
     max-width: 600px; /* Đảm bảo không quá to trên màn hình lớn */
 }
