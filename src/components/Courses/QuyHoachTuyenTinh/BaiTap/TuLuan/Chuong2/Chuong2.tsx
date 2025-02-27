@@ -1,13 +1,13 @@
 import { useState } from "react";
 import FileModal from "../../../../../FileModal/FileViewer.tsx";
-import "./Chuong1.css";
+import "./Chuong2.css";
 
-const Chuong1 = () => {
+const Chuong2 = () => {
     const [file, setFile] = useState<File | null>(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     // File mẫu trên SharePoint / Google Drive
-    const fileUrl = "/documents/Baitap/Baitaptuan1.pdf"; // Thay bằng file thật
+    const fileUrl = "/documents/Baitap/Baitaptuan2.pdf"; // Thay bằng file thật
     const fileType = "pdf"; // Định dạng file
 
     // Xử lý khi người dùng chọn file để nộp bài
@@ -37,4 +37,4 @@ const Chuong1 = () => {
     );
 };
 
-export default Chuong1;
+export default Chuong2;
