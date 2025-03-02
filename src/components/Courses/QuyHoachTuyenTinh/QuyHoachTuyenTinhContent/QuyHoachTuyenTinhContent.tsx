@@ -21,7 +21,7 @@ const QuyHoachTuyenTinhContent = () => {
         <>
             <div className="quy-hoach-tuyen-tinh">
                 {selectedItem === "1.5" ? (
-                    <Chuong1 />
+                    <Chuong1 setSelectedItem={setSelectedItem} />
                 ) : selectedItem === "2.7" ? (
                     <Chuong2 />
                 ) : selectedItem === "3.3" ? (

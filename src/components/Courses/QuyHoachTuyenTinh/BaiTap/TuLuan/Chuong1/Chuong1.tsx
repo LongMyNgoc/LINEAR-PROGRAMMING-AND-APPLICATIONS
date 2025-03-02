@@ -1,28 +1,60 @@
 import { useState } from "react";
+import { ArrowLeftOutlined, FilePdfOutlined } from "@ant-design/icons"; // Import icon PDF
 import FileModal from "../../../../../FileModal/FileViewer.tsx";
 import "./Chuong1.css";
+import axios from "axios";
 
-const Chuong1 = () => {
+const Chuong1 = ({ setSelectedItem }: { setSelectedItem: (value: string | null) => void }) => {
     const [file, setFile] = useState<File | null>(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    // File mẫu trên SharePoint / Google Drive
-    const fileUrl = "/documents/Baitap/Baitaptuan1.pdf"; // Thay bằng file thật
+    const fileUrl = "/documents/Baitap/Baitaptuan1.pdf"; // File mẫu
     const fileType = "pdf"; // Định dạng file
+    const fileName = "Baitaptuan1.pdf"; // Tên file hiển thị
 
-    // Xử lý khi người dùng chọn file để nộp bài
     const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         if (event.target.files && event.target.files[0]) {
             setFile(event.target.files[0]);
         }
     };
 
+    const handleSubmit = async () => {
+        if (!file) {
+            alert("Vui lòng chọn file trước khi nộp!");
+            return;
+        }
+    
+        const formData = new FormData();
+        formData.append("file", file);
+    
+        try {
+            await axios.post("http://localhost:5000/api/upload", formData, {
+                headers: { "Content-Type": "multipart/form-data" }
+            });
+            alert(`Bài tập đã được nộp thành công!`);
+            setFile(null);
+        } catch (error) {
+            alert("Lỗi khi nộp bài tập");
+        }
+    };
+
     return (
         <div className="chuong1-container">
+            {/* Mũi tên quay lại */}
+            <ArrowLeftOutlined className="back-icon" onClick={() => setSelectedItem(null)} />
+
+            {/* Nút Turn in */}
+            <button className="turn-in-button" onClick={handleSubmit}>
+                Turn in
+            </button>
+
             <h2>Bài tập Chương 1</h2>
 
-            {/* Nút mở modal */}
-            <button onClick={() => setIsModalOpen(true)}>Xem Đề Bài</button>
+            {/* Icon PDF mở modal + Hiển thị tên file */}
+            <div className="pdf-container" onClick={() => setIsModalOpen(true)}>
+                <FilePdfOutlined className="pdf-icon" />
+                <span className="pdf-filename">{fileName}</span>
+            </div>
 
             {/* Modal hiển thị file */}
             <FileModal visible={isModalOpen} fileUrl={fileUrl} fileType={fileType} onClose={() => setIsModalOpen(false)} />
@@ -30,8 +62,19 @@ const Chuong1 = () => {
             {/* Nộp bài tập */}
             <div className="submit-section">
                 <h3>Nộp bài tập</h3>
-                <input type="file" accept=".doc,.docx,.pdf,.ppt" onChange={handleFileChange} />
-                {file && <p>Đã chọn: {file.name}</p>}
+                <p className="file-requirements">Nộp file <b>.pdf</b> và đặt tên là <b>BTC1_MSSV_HọTên</b> (VD: BTC1_4801104082_NguyenPhiLong.pdf)</p>
+
+                {/* Khu vực chọn file */}
+                <div className="input-file-container">
+                    <FilePdfOutlined className="file-icon" />
+                    <p>Click to select file</p>
+                    <label htmlFor="file-upload" className="custom-file-upload">
+                        Chọn file
+                    </label>
+                    <input id="file-upload" type="file" accept=".pdf" onChange={handleFileChange} />
+
+                    {file && <p className="selected-file">Đã chọn: {file.name}</p>}
+                </div>
             </div>
         </div>
     );
