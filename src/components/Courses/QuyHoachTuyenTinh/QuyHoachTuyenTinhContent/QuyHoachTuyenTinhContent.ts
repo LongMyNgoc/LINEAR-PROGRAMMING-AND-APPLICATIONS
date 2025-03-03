@@ -4,7 +4,7 @@ export const chapters = [
         title: "Giới thiệu chung về môn học quy hoạch tuyến tính và ứng dụng",
         key: "1",
         contents: [
-            { title: "Đề cương chi tiết môn học", link: "https://studenthcmupedu-my.sharepoint.com/:w:/g/personal/4801104082_student_hcmue_edu_vn/EQtZEtmjNRdHh7TblhUcBW4B-7uTTACDHi8VwLmL5x0V2w?e=9OKt3f" },
+            { title: "Đề cương chi tiết môn học", link: "/documents/Gioithieu/Decuong_COMP1502.pdf" },
             { title: "Video giới thiệu", link: "https://www.youtube.com/watch?v=example2" },
         ]
     },
