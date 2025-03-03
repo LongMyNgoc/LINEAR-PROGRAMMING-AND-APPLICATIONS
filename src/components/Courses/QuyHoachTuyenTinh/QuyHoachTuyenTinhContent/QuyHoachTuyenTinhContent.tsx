@@ -10,6 +10,7 @@ import Chuong3 from "../BaiTap/TuLuan/Chuong3/Chuong3.tsx";
 import Chuong4 from "../BaiTap/TuLuan/Chuong4/Chuong4.tsx";
 import Chuong5 from "../BaiTap/TuLuan/Chuong5/Chuong5.tsx";
 import { useState } from "react";
+import TN1 from "../BaiTap/TracNghiem/Chuong1/TN1.tsx";
 
 const { Panel } = Collapse;
 
@@ -30,6 +31,8 @@ const QuyHoachTuyenTinhContent = () => {
                     <Chuong4 />
                 ) : selectedItem === "5.3" ? (
                     <Chuong5 />
+                ) : selectedItem === "1.6" ? (
+                    <TN1 setSelectedItem={setSelectedItem}/>
                 )
                 : (
                     <>
@@ -62,6 +65,16 @@ const QuyHoachTuyenTinhContent = () => {
                                                         setSelectedItem("4.3")
                                                     } else if (content.title.startsWith("5.3")){
                                                         setSelectedItem("5.3")
+                                                    } else if(content.title.startsWith("1.6")){
+                                                        setSelectedItem("1.6");
+                                                    } else if(content.title.startsWith("2.8")){
+                                                        setSelectedItem("2.8");
+                                                    } else if(content.title.startsWith("3.4")){
+                                                        setSelectedItem("3.4");
+                                                    } else if(content.title.startsWith("4.4")){
+                                                        setSelectedItem("4.4");
+                                                    } else if(content.title.startsWith("5.4")){
+                                                        setSelectedItem("5.4");
                                                     } else
                                                     {
                                                         handlePlayVideo(content.title, content.link);

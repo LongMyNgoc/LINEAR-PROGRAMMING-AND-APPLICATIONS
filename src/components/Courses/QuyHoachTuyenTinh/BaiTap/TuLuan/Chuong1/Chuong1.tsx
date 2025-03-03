@@ -25,18 +25,24 @@ const Chuong1 = ({ setSelectedItem }: { setSelectedItem: (value: string | null) 
         }
     
         const formData = new FormData();
-        formData.append("file", file);
+        formData.append("file", file); // Gửi file với tên key là 'file'
     
         try {
-            await axios.post("http://localhost:5000/api/upload", formData, {
-                headers: { "Content-Type": "multipart/form-data" }
+            const response = await axios.post("http://localhost:5000/api/upload", formData, {
+                headers: {
+                    "Content-Type": "multipart/form-data"
+                }
             });
-            alert(`Bài tập đã được nộp thành công!`);
+    
+            console.log("Response từ server: ", response);  // Log response từ server
+            alert("Bài tập đã được nộp thành công!");
+            console.log("URL của file: ", response.data.url); // URL của file được upload lên S3
             setFile(null);
         } catch (error) {
+            console.error("Lỗi khi nộp bài: ", error);  // Log lỗi chi tiết
             alert("Lỗi khi nộp bài tập");
         }
-    };
+    };    
 
     return (
         <div className="chuong1-container">
@@ -44,7 +50,7 @@ const Chuong1 = ({ setSelectedItem }: { setSelectedItem: (value: string | null) 
             <ArrowLeftOutlined className="back-icon" onClick={() => setSelectedItem(null)} />
 
             {/* Nút Turn in */}
-            <button className="turn-in-button" onClick={handleSubmit}>
+            <button className="turn-in-file-button" onClick={handleSubmit}>
                 Turn in
             </button>
 
