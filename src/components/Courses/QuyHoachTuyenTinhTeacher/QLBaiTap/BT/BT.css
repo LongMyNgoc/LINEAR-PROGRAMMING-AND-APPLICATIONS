@@ -1,0 +1,61 @@
+/* src/components/AssignmentsTable.css */
+.table-container {
+    margin-top: 20px;
+    padding: 20px;
+    overflow-x: auto;
+    width: 100%;
+  }
+  
+  .assignments-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .assignments-table th,
+  .assignments-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+  }
+  
+  .assignments-table th {
+    background-color: #FFEC00; /* Màu nền cho dòng tiêu đề */
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .assignments-table td {
+    background-color: #f9f9f9; /* Màu nền cho các ô dữ liệu */
+  }
+  
+  .assignments-table tr:nth-child(even) td {
+    background-color: #f1f1f1; /* Đổi màu cho các dòng chẵn */
+  }
+  
+  .assignments-table tr:hover td {
+    background-color: #f4f4f4; /* Màu khi hover */
+  }
+  
+  .assignments-table td:first-child {
+    font-weight: bold; /* Làm đậm cột "Danh sách bài tập" */
+  }
+  
+  .assignments-table th, .assignments-table td {
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  /* Responsive Design: Khi kích thước màn hình nhỏ, bảng cuộn ngang */
+  @media (max-width: 768px) {
+    .assignments-table {
+      font-size: 12px;
+    }
+  
+    .assignments-table th, .assignments-table td {
+      padding: 8px;
+    }
+  }
+  

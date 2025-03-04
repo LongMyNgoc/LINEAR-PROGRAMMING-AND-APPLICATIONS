@@ -1,0 +1,45 @@
+.course {
+    margin: 1%; /* Khoảng cách bên ngoài cho mỗi khóa học */
+    padding: 1.5em; /* Khoảng cách bên trong cho mỗi khóa học */
+    background: transparent;
+    transition: transform 0.2s; /* Hiệu ứng chuyển động khi hover */
+    max-width: 600px; /* Đảm bảo không quá to trên màn hình lớn */
+}
+/* Media Queries */
+@media (max-width: 1200px) {
+    .course {
+        width: 80%;
+    }
+}
+
+@media (max-width: 992px) {
+    .course {
+        width: 85%;
+        padding: 1.2em;
+    }
+}
+
+@media (max-width: 768px) {
+    .course {
+        width: 90%;
+        padding: 1em;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 576px) {
+    .course {
+        width: 95%;
+        padding: 0.8em;
+        font-size: 0.85em;
+    }
+}
+
+/* Màn hình siêu nhỏ (điện thoại nhỏ) */
+@media (max-width: 400px) {
+    .course {
+        width: 98%;
+        font-size: 0.8em;
+        padding: 0.6em;
+    }
+}

@@ -13,7 +13,7 @@ const [activeTab, setActiveTab] = useState<string | null>('dashboard'); // Cho p
             <Sidebar setActiveTab={setActiveTab}/>
             <Topbar />
             <div className="teacher-container">
-                <TeacherMUI activeTab={activeTab}/>
+                <TeacherMUI activeTab={activeTab} setActiveTab={setActiveTab}/>
             </div>
         </>
     );
