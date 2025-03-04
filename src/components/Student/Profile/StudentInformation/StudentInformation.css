@@ -88,6 +88,7 @@ input:focus {
     border-radius: 0.3125rem; /* 5px = 0.3125rem */
     cursor: pointer; /* Đổi con trỏ khi hover */
     transition: background-color 0.3s; /* Hiệu ứng chuyển tiếp */
+    width: 16%;
 }
 
 .update-button:hover {

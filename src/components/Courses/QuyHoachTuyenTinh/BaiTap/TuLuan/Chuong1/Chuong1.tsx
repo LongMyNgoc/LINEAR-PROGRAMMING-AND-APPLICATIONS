@@ -1,7 +1,11 @@
-import { ArrowLeftOutlined, FilePdfOutlined } from "@ant-design/icons"; // Import icon PDF
+// Chuong1.tsx
+import { ArrowLeftOutlined, FilePdfOutlined } from "@ant-design/icons";
 import FileModal from "../../../../../FileModal/FileViewer.tsx";
+import AssignmentFile from "./AssignmentFile";
 import "./Chuong1.css";
-import { useChuong1Logic } from "./Chuong1Logic"; // Import hook xử lý logic
+import { useChuong1Logic } from "./Chuong1Logic";
+import { useState, useEffect } from "react";
+import { ToastContainer } from "react-toastify";
 
 const Chuong1 = ({ setSelectedItem }: { setSelectedItem: (value: string | null) => void }) => {
     const {
@@ -9,39 +13,53 @@ const Chuong1 = ({ setSelectedItem }: { setSelectedItem: (value: string | null) 
         isModalOpen,
         fileUrl,
         fileType,
-        fileName,
+        fileData,
         setIsModalOpen,
         handleFileChange,
-        handleSubmit
-    } = useChuong1Logic(); // Sử dụng hook logic
+        handleSubmit,
+        fetchFileData
+    } = useChuong1Logic();
+
+    const [user, setUser] = useState<{ username: string; name: string; phone: string; sex: string; mssv: string; class: string } | null>(null);
+
+    useEffect(() => {
+        const storedUser = localStorage.getItem('user');
+        if (storedUser) {
+            setUser(JSON.parse(storedUser));
+        }
+    }, []);
+
+    useEffect(() => {
+        if (user && user.mssv) {
+            fetchFileData(user.mssv); // Lấy thông tin file của user từ server
+        }
+    }, [user, fetchFileData]);
 
     return (
         <div className="chuong1-container">
-            {/* Mũi tên quay lại */}
             <ArrowLeftOutlined className="back-icon" onClick={() => setSelectedItem(null)} />
 
-            {/* Nút Turn in */}
             <button className="turn-in-file-button" onClick={handleSubmit}>
                 Turn in
             </button>
 
             <h2>Bài tập Chương 1</h2>
 
-            {/* Icon PDF mở modal + Hiển thị tên file */}
-            <div className="pdf-container" onClick={() => setIsModalOpen(true)}>
-                <FilePdfOutlined className="pdf-icon" />
-                <span className="pdf-filename">{fileName}</span>
-            </div>
+            {/* Hiển thị thông tin về file đề bài */}
+            <AssignmentFile />
 
             {/* Modal hiển thị file */}
-            <FileModal visible={isModalOpen} fileUrl={fileUrl} fileType={fileType} onClose={() => setIsModalOpen(false)} />
+            <FileModal 
+                visible={isModalOpen} 
+                fileUrl={fileData?.fileUrl || fileUrl} 
+                fileType={fileType} 
+                onClose={() => setIsModalOpen(false)} 
+            />
 
-            {/* Nộp bài tập */}
             <div className="submit-section">
                 <h3>Nộp bài tập</h3>
-                <p className="file-requirements">Nộp file <b>.pdf</b> và đặt tên là <b>BTC1_MSSV_HọTên</b> (VD: BTC1_4801104082_NguyenPhiLong.pdf)</p>
+                <p className="file-requirements">Nộp file <b>.pdf</b> và đặt tên là <b>MSSV</b> (VD: 48.01.104.082.pdf)</p>
 
-                {/* Khu vực chọn file */}
                 <div className="input-file-container">
                     <FilePdfOutlined className="file-icon" />
                     <p>Click to select file</p>
@@ -53,6 +71,19 @@ const Chuong1 = ({ setSelectedItem }: { setSelectedItem: (value: string | null) 
                     {file && <p className="selected-file">Đã chọn: {file.name}</p>}
                 </div>
             </div>
+            {/* Hiển thị thông tin về file bài nộp */}
+            {fileData ? (
+                <div className="file-info-container">
+                    <div className="pdf-container" onClick={() => setIsModalOpen(true)}>
+                        <FilePdfOutlined className="pdf-icon" />
+                        <span className="pdf-filename">{fileData.fileName}</span>
+                    </div>
+                    <p><strong>Ngày nộp:</strong> {new Date(fileData.submissionDate).toLocaleDateString()}</p>
+                </div>
+            ) : (
+                <p>Chưa nộp bài.</p>
+            )}
+            <ToastContainer position="top-right" autoClose={3000} />
         </div>
     );
 };
