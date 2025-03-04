@@ -17,10 +17,10 @@ interface BaiTapRendererProps {
 const BaiTapRenderer = ({ selectedItem, setSelectedItem }: BaiTapRendererProps) => {
     switch (selectedItem) {
         case "1.5": return <Chuong1 setSelectedItem={setSelectedItem} />;
-        case "2.7": return <Chuong2 />;
-        case "3.3": return <Chuong3 />;
-        case "4.3": return <Chuong4 />;
-        case "5.3": return <Chuong5 />;
+        case "2.7": return <Chuong2 setSelectedItem={setSelectedItem}/>;
+        case "3.3": return <Chuong3 setSelectedItem={setSelectedItem}/>;
+        case "4.3": return <Chuong4 setSelectedItem={setSelectedItem}/>;
+        case "5.3": return <Chuong5 setSelectedItem={setSelectedItem}/>;
         case "1.6": return <TN1 setSelectedItem={setSelectedItem} />;
         case "2.8": return <TN2 setSelectedItem={setSelectedItem} />;
         case "3.4": return <TN3 setSelectedItem={setSelectedItem} />;

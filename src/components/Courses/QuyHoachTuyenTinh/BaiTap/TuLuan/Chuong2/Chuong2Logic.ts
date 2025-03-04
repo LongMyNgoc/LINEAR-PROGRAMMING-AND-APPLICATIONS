@@ -3,18 +3,18 @@ import { getFileData, submitFile } from "../Hooks/fileService"; // Import các h
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"; // Import style của react-toastify
 
-export const useChuong1Logic = () => {
+export const useChuong2Logic = () => {
     const [file, setFile] = useState<File | null>(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [fileData, setFileData] = useState<{ fileUrl: string; fileName: string; submissionDate: string } | null>(null);
 
-    const fileUrl = "/documents/Baitap/Baitaptuan1.pdf";
+    const fileUrl = "/documents/Baitap/Baitaptuan2.pdf";
     const fileType = "pdf";
-    const fileName = "Baitaptuan1.pdf";
+    const fileName = "Baitaptuan2.pdf";
 
     const fetchFileData = async (mssv: string) => {
         try {
-            const data = await getFileData(mssv, "TuLuanChuong1");
+            const data = await getFileData(mssv, "TuLuanChuong2");
             setFileData(data);
         } catch (error) {
             console.error("Lỗi khi lấy file dữ liệu: ", error);
@@ -34,7 +34,7 @@ export const useChuong1Logic = () => {
         }
 
         try {
-            await submitFile(file, "TuLuanChuong1");
+            await submitFile(file, "TuLuanChuong2");
             toast.success("Bài tập đã được nộp thành công!");
             setFile(null);
         } catch (error) {

@@ -1,38 +1,92 @@
-import { useState } from "react";
+// Chuong1.tsx
+import { ArrowLeftOutlined, FilePdfOutlined } from "@ant-design/icons";
 import FileModal from "../../../../../FileModal/FileViewer.tsx";
+import AssignmentFile from "../AssigmentFile/AssignmentFile.tsx";
 import "./Chuong4.css";
+import { useChuong4Logic } from "./Chuong4Logic";
+import { useState, useEffect } from "react";
+import { ToastContainer } from "react-toastify";
 
-const Chuong4 = () => {
-    const [file, setFile] = useState<File | null>(null);
-    const [isModalOpen, setIsModalOpen] = useState(false);
+const Chuong4 = ({ setSelectedItem }: { setSelectedItem: (value: string | null) => void }) => {
+    const {
+        file,
+        isModalOpen,
+        fileUrl,
+        fileType,
+        fileData,
+        setIsModalOpen,
+        handleFileChange,
+        handleSubmit,
+        fetchFileData
+    } = useChuong4Logic();
 
-    // File mẫu trên SharePoint / Google Drive
-    const fileUrl = "/documents/Baitap/Baitaptuan4.pdf"; // Thay bằng file thật
-    const fileType = "pdf"; // Định dạng file
+    const [user, setUser] = useState<{ username: string; name: string; phone: string; sex: string; mssv: string; class: string } | null>(null);
 
-    // Xử lý khi người dùng chọn file để nộp bài
-    const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        if (event.target.files && event.target.files[0]) {
-            setFile(event.target.files[0]);
+    useEffect(() => {
+        const storedUser = localStorage.getItem('user');
+        if (storedUser) {
+            setUser(JSON.parse(storedUser));
         }
-    };
+    }, []);
+
+    useEffect(() => {
+        if (user && user.mssv) {
+            fetchFileData(user.mssv); // Lấy thông tin file của user từ server
+        }
+    }, [user, fetchFileData]);
 
     return (
         <div className="chuong1-container">
+            <ArrowLeftOutlined className="back-icon" onClick={() => setSelectedItem(null)} />
+
+            <button className="turn-in-file-button" onClick={handleSubmit}>
+                Turn in
+            </button>
+
             <h2>Bài tập Chương 4</h2>
 
-            {/* Nút mở modal */}
-            <button onClick={() => setIsModalOpen(true)}>Xem Đề Bài</button>
+            {/* Hiển thị thông tin về file đề bài */}
+            <AssignmentFile 
+    fileName={"Baitaptuan4.pdf"} 
+    fileUrl={"/documents/Baitap/Baitaptuan4.pdf"} 
+/>
 
             {/* Modal hiển thị file */}
-            <FileModal visible={isModalOpen} fileUrl={fileUrl} fileType={fileType} onClose={() => setIsModalOpen(false)} />
+            <FileModal 
+                visible={isModalOpen} 
+                fileUrl={fileData?.fileUrl || fileUrl} 
+                fileType={fileType} 
+                onClose={() => setIsModalOpen(false)} 
+            />
 
-            {/* Nộp bài tập */}
             <div className="submit-section">
                 <h3>Nộp bài tập</h3>
-                <input type="file" accept=".doc,.docx,.pdf,.ppt" onChange={handleFileChange} />
-                {file && <p>Đã chọn: {file.name}</p>}
+                <p className="file-requirements">Nộp file <b>.pdf</b> và đặt tên là <b>MSSV</b> (VD: 48.01.104.082.pdf)</p>
+
+                <div className="input-file-container">
+                    <FilePdfOutlined className="file-icon" />
+                    <p>Click to select file</p>
+                    <label htmlFor="file-upload" className="custom-file-upload">
+                        Chọn file
+                    </label>
+                    <input id="file-upload" type="file" accept=".pdf" onChange={handleFileChange} />
+
+                    {file && <p className="selected-file">Đã chọn: {file.name}</p>}
+                </div>
             </div>
+            {/* Hiển thị thông tin về file bài nộp */}
+            {fileData ? (
+                <div className="file-info-container">
+                    <div className="pdf-container" onClick={() => setIsModalOpen(true)}>
+                        <FilePdfOutlined className="pdf-icon" />
+                        <span className="pdf-filename">{fileData.fileName}</span>
+                    </div>
+                    <p><strong>Ngày nộp:</strong> {new Date(fileData.submissionDate).toLocaleDateString()}</p>
+                </div>
+            ) : (
+                <p>Chưa nộp bài.</p>
+            )}
+            <ToastContainer position="top-right" autoClose={3000} />
         </div>
     );
 };

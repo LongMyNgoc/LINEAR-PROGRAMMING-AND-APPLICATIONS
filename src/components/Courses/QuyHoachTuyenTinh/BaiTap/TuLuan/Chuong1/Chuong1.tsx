@@ -1,7 +1,7 @@
 // Chuong1.tsx
 import { ArrowLeftOutlined, FilePdfOutlined } from "@ant-design/icons";
 import FileModal from "../../../../../FileModal/FileViewer.tsx";
-import AssignmentFile from "./AssignmentFile";
+import AssignmentFile from "../AssigmentFile/AssignmentFile.tsx";
 import "./Chuong1.css";
 import { useChuong1Logic } from "./Chuong1Logic";
 import { useState, useEffect } from "react";
@@ -46,7 +46,10 @@ const Chuong1 = ({ setSelectedItem }: { setSelectedItem: (value: string | null) 
             <h2>Bài tập Chương 1</h2>
 
             {/* Hiển thị thông tin về file đề bài */}
-            <AssignmentFile />
+            <AssignmentFile 
+    fileName={"Baitaptuan1.pdf"} 
+    fileUrl={"/documents/Baitap/Baitaptuan1.pdf"} 
+/>
 
             {/* Modal hiển thị file */}
             <FileModal 
