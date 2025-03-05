@@ -47,7 +47,41 @@
     text-align: center;
     vertical-align: middle;
   }
-  
+
+  /* Biến các ô td (trừ cột đầu tiên) thành button hình tròn */
+.assignments-table td:not(:first-child) {
+  padding: 0;
+}
+
+.assignments-table td:not(:first-child) button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Mỗi cột có một màu khác nhau */
+.assignments-table td:nth-child(2) button { background-color: #FF5733; } /* Số lượng - Đỏ cam */
+.assignments-table td:nth-child(3) button { background-color: #33C4FF; } /* Đã nhận - Xanh dương */
+.assignments-table td:nth-child(4) button { background-color: #28A745; } /* Đã chấm - Xanh lá */
+.assignments-table td:nth-child(5) button { background-color: #FFC107; } /* Chưa chấm - Vàng */
+.assignments-table td:nth-child(6) button { background-color: #DC3545; } /* Chưa nộp - Đỏ */
+
+/* Hover đổi màu */
+.assignments-table td:nth-child(2) button:hover { background-color: #E04E2F; }
+.assignments-table td:nth-child(3) button:hover { background-color: #2BA6DD; }
+.assignments-table td:nth-child(4) button:hover { background-color: #23963F; }
+.assignments-table td:nth-child(5) button:hover { background-color: #E0A800; }
+.assignments-table td:nth-child(6) button:hover { background-color: #B52A3A; }
+
+.back-button{
+  width: 10%;
+}
+
   /* Responsive Design: Khi kích thước màn hình nhỏ, bảng cuộn ngang */
   @media (max-width: 768px) {
     .assignments-table {

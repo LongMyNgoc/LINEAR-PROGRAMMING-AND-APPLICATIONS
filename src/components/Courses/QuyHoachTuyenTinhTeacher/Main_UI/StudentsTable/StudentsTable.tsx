@@ -6,6 +6,8 @@ interface Student {
   mssv: string;
   name: string;
   class: string;
+  sex: string;
+  email: string;
 }
 
 interface StudentsTableProps {
@@ -22,6 +24,8 @@ const StudentsTable: React.FC<StudentsTableProps> = ({ students }) => {
             <th>MSSV</th>
             <th>Tên</th>
             <th>Lớp</th>
+            <th>Giới Tính</th>
+            <th>Email</th>
           </tr>
         </thead>
         <tbody>
@@ -31,6 +35,8 @@ const StudentsTable: React.FC<StudentsTableProps> = ({ students }) => {
               <td>{student.mssv}</td>
               <td>{student.name}</td>
               <td>{student.class}</td>
+              <td>{student.sex}</td>
+              <td>{student.email}</td>
             </tr>
           ))}
         </tbody>

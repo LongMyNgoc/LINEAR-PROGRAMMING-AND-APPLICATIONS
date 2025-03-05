@@ -1,42 +1,11 @@
-// src/components/BTMainUI.tsx
-import { useState, useEffect } from "react";
-import { db } from "../../../../../hooks/firebase"; // Import db từ firebase.ts
-import { collection, getDocs } from "firebase/firestore";
+// src/components/BTMainUI/BTMainUI.tsx
+import useBTMainUI from "./BTMainUI"; // Import logic từ hook useBTMainUI
 import AssignmentsTable from "../../QLBaiTap/BT/BT";
-import StudentsTable from "../StudentsTable/StudentsTable.tsx"; // Import component StudentsTable
+import StudentsTable from "../StudentsTable/StudentsTable.tsx";
 import "./BTMainUI.css";
 
 const BTMainUI = () => {
-  const [selectedTab, setSelectedTab] = useState("hoc-vien"); // Mặc định chọn "Học viên"
-  const [students, setStudents] = useState<any[]>([]); // Dữ liệu sinh viên từ Firestore
-  const [assignments, setAssignments] = useState<any[]>([
-    { chapter: "Chương 1", quantity: 10, received: 8, graded: 6, ungraded: 2, notSubmitted: 2 },
-    { chapter: "Chương 2", quantity: 15, received: 14, graded: 12, ungraded: 2, notSubmitted: 1 },
-    { chapter: "Chương 3", quantity: 12, received: 10, graded: 9, ungraded: 1, notSubmitted: 2 },
-    { chapter: "Chương 4", quantity: 8, received: 6, graded: 5, ungraded: 1, notSubmitted: 2 },
-    { chapter: "Chương 5", quantity: 20, received: 18, graded: 16, ungraded: 2, notSubmitted: 2 }
-  ]);
-
-  useEffect(() => {
-    const fetchStudents = async () => {
-      const studentsCollection = collection(db, "Students");
-      const studentSnapshot = await getDocs(studentsCollection);
-      const studentList = studentSnapshot.docs.map(doc => doc.data());
-      setStudents(studentList);
-    };
-
-    fetchStudents();
-  }, []); // Chỉ lấy dữ liệu khi component load lần đầu
-
-  const handleStudentTabClick = () => {
-    setSelectedTab("hoc-vien");
-    // Cập nhật lại số lượng bài tập tùy theo số sinh viên
-    const updatedAssignments = assignments.map((assignment) => ({
-      ...assignment,
-      quantity: students.length // Cập nhật số lượng bài tập
-    }));
-    setAssignments(updatedAssignments);
-  };
+  const { selectedTab, setSelectedTab, students, assignments, handleStudentTabClick } = useBTMainUI();
 
   return (
     <div className="main-container">
@@ -49,7 +18,7 @@ const BTMainUI = () => {
       <div className="nav-bar">
         <div
           className={`nav-item ${selectedTab === "hoc-vien" ? "active" : ""}`}
-          onClick={handleStudentTabClick} // Khi chọn "Học viên"
+          onClick={handleStudentTabClick}
         >
           Học viên
         </div>
@@ -61,10 +30,10 @@ const BTMainUI = () => {
         </div>
       </div>
 
-      {/* Hiển thị bảng khi chọn "Học viên" */}
+      {/* Hiển thị bảng học viên */}
       {selectedTab === "hoc-vien" && <StudentsTable students={students} />}
 
-      {/* Hiển thị bảng khi chọn "Bài tập" */}
+      {/* Hiển thị bảng bài tập */}
       {selectedTab === "bai-tap" && <AssignmentsTable assignments={assignments} />}
     </div>
   );
