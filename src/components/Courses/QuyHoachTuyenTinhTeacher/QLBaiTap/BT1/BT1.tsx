@@ -1,10 +1,21 @@
-// src/components/BT1.tsx
-import useStudents from "../../../../../hooks/useStudents.ts"; // Đảm bảo đường dẫn chính xác
-
+import { useState } from "react";
+import useFileData from "./useBT1Logic.ts";
+import FileModal from "../../../../FileModal/FileViewer.tsx";
+import useStudents from "../../../../../hooks/useStudents.ts";
+import Filter from "./Filter"; // Import Filter component
 import "./BT1.css";
 
 const BT1 = () => {
-  const { students, loading, error } = useStudents();
+  const { students, loading, error } = useStudents(); // Giữ nguyên việc gọi students
+  const fileData = useFileData(students); // Sử dụng hook để lấy dữ liệu file
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentFileUrl, setCurrentFileUrl] = useState<string | null>(null);
+  const [filter, setFilter] = useState<string>("all");
+
+  const openModal = (fileUrl: string) => {
+    setCurrentFileUrl(fileUrl);
+    setIsModalOpen(true);
+  };
 
   if (loading) {
     return <div>Loading...</div>;
@@ -16,26 +27,24 @@ const BT1 = () => {
 
   return (
     <div className="bt1-container">
-      <table className="bt1-table">
-        <thead>
-          <tr>
-            <th>STT</th>
-            <th>MSSV</th>
-            <th>Tên</th>
-            <th>Lớp</th>
-          </tr>
-        </thead>
-        <tbody>
-          {students.map((student, index) => (
-            <tr key={index}>
-              <td>{index + 1}</td>
-              <td>{student.mssv}</td>
-              <td>{student.name}</td>
-              <td>{student.class}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      {/* Nhúng component Filter và truyền dữ liệu */}
+      <Filter 
+        students={students} 
+        fileData={fileData} 
+        filter={filter} 
+        onChange={setFilter} 
+        openModal={openModal} // Truyền hàm openModal xuống Filter
+      />
+
+      {/* Modal hiển thị file PDF */}
+      {currentFileUrl && (
+        <FileModal
+          visible={isModalOpen}
+          fileUrl={currentFileUrl}
+          fileType="pdf"
+          onClose={() => setIsModalOpen(false)}
+        />
+      )}
     </div>
   );
 };
