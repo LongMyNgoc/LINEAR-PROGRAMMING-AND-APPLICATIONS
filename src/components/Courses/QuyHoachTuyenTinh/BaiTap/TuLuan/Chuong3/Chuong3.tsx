@@ -2,7 +2,8 @@
 import { ArrowLeftOutlined, FilePdfOutlined } from "@ant-design/icons";
 import FileModal from "../../../../../FileModal/FileViewer.tsx";
 import AssignmentFile from "../AssigmentFile/AssignmentFile.tsx";
-import "./Chuong3.css";
+import '../../../../../../styles/TuLuan/TuLuan1.1.css';
+import '../../../../../../styles/TuLuan/TuLuan1.2.css';
 import { useChuong3Logic } from "./Chuong3Logic";
 import { useState, useEffect } from "react";
 import { ToastContainer } from "react-toastify";

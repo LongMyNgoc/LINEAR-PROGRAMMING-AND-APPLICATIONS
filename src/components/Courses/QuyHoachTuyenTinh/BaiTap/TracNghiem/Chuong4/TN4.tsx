@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ArrowLeftOutlined } from "@ant-design/icons"; // Import icon PDF
-import "./TN4.css";
+import "../../../../../../styles/TN.css";
 
 interface Question {
     id: number;

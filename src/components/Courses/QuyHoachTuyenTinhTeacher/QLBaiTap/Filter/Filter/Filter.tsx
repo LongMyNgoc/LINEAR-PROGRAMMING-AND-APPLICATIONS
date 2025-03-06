@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import SearchBar from "../componentFilter/SearchBar/SearchBar"; // Import component tìm kiếm
 import StatusFilter from "../componentFilter/StatusFilter/StatusFilter"; // Import component lọc theo tình trạng
 import StudentTable from "../componentFilter/StudentTable/StudentTable"; // Import component bảng dữ liệu sinh viên
-import useGradeAssignment from "../grading/grading"; // Import hàm chấm điểm
+import useGradeAssignment from "../Hooks/grading"; // Import hàm chấm điểm
 import './Filter.css'
 
 interface FilterProps {
@@ -11,14 +11,15 @@ interface FilterProps {
   filter: string;
   onChange: (newFilter: string) => void;
   openModal: (fileUrl: string) => void;
+  assignmentKey: string;
 }
 
-const Filter: React.FC<FilterProps> = ({ students, fileData, filter, onChange, openModal }) => {
+const Filter: React.FC<FilterProps> = ({ students, fileData, filter, onChange, openModal, assignmentKey }) => {
   const [studentList, setStudentList] = useState(students);
   const [searchTerm, setSearchTerm] = useState("");
   const { gradeAssignment } = useGradeAssignment();
 
-  const handleGradeAssignment = async (email: string, assignmentKey: "BT1") => {
+  const handleGradeAssignment = async (email: string) => {
     const newGrade = prompt(`Nhập điểm cho sinh viên (0-10):`);
     if (newGrade !== null) {
       const gradeNumber = Number(newGrade);
@@ -69,6 +70,7 @@ const Filter: React.FC<FilterProps> = ({ students, fileData, filter, onChange, o
         fileData={fileData}
         openModal={openModal}
         handleGradeAssignment={handleGradeAssignment}
+        assignmentKey={assignmentKey}
       />
     </div>
   );

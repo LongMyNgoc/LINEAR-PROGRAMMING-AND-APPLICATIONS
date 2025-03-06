@@ -1,5 +1,5 @@
 // StudentMUI.tsx
-import './TeacherMUI.css';
+import '../../../styles/course.css';
 import QuyHoachTuyenTinhCourse from '../../Courses/QuyHoachTuyenTinhTeacher/QuyHoachTuyenTinhCourse/QuyHoachTuyenTinhCourse.tsx';
 import TeacherProfile from '../Profile/TeacherProfile/TeacherProfile.tsx';
 import { useTeacherMUI } from './TeacherMUI.ts';

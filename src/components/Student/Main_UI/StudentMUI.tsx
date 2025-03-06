@@ -1,5 +1,5 @@
 // StudentMUI.tsx
-import './StudentMUI.css';
+import '../../../styles/course.css';
 import QuyHoachTuyenTinhCourse from '../../Courses/QuyHoachTuyenTinh/QuyHoachTuyenTinhCourse/QuyHoachTuyenTinhCourse.tsx';
 import QuyHoachTuyenTinhContent from '../../Courses/QuyHoachTuyenTinh/QuyHoachTuyenTinhContent/QuyHoachTuyenTinhContent.tsx';
 import StudentProfile from '../Profile/StudentProfile/StudentProfile.tsx';

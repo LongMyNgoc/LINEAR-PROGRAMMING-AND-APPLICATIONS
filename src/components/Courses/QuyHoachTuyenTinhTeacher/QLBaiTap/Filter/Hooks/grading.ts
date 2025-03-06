@@ -1,10 +1,10 @@
 import { doc, updateDoc } from "firebase/firestore";
-import { db } from "../../../../../../../hooks/firebase"; // Đảm bảo đường dẫn đúng với dự án của bạn
+import { db } from "../../../../../../hooks/firebase"; // Đảm bảo đường dẫn đúng với dự án của bạn
 
 const useGradeAssignment = () => {
   const gradeAssignment = async (
     studentEmail: string, // Sử dụng email thay vì mssv
-    assignmentKey: "BT1" | "BT2" | "BT3" | "BT4" | "BT5",
+    assignmentKey: string,
     grade: number
   ) => {
     try {
