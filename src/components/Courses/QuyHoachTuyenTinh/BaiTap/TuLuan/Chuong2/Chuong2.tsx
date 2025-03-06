@@ -21,7 +21,7 @@ const Chuong2 = ({ setSelectedItem }: { setSelectedItem: (value: string | null) 
         fetchFileData
     } = useChuong2Logic();
 
-    const [user, setUser] = useState<{ username: string; name: string; phone: string; sex: string; mssv: string; class: string } | null>(null);
+    const [user, setUser] = useState<{ username: string; name: string; phone: string; sex: string; mssv: string; class: string; BT2: number } | null>(null);
 
     useEffect(() => {
         const storedUser = localStorage.getItem('user');
@@ -87,6 +87,12 @@ const Chuong2 = ({ setSelectedItem }: { setSelectedItem: (value: string | null) 
             ) : (
                 <p>Chưa nộp bài.</p>
             )}
+            {fileData && user && (
+    <div className="grade-info">
+        <h3>Điểm bài tập</h3>
+        <p><strong>Điểm:</strong> {user.BT2 === -1 ? "Chưa chấm" : user.BT2}</p>
+    </div>
+) }
             <ToastContainer position="top-right" autoClose={3000} />
         </div>
     );

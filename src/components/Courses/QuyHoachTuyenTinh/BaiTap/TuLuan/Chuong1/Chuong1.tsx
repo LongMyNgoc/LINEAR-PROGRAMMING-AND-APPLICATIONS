@@ -21,7 +21,7 @@ const Chuong1 = ({ setSelectedItem }: { setSelectedItem: (value: string | null) 
         fetchFileData
     } = useChuong1Logic();
 
-    const [user, setUser] = useState<{ username: string; name: string; phone: string; sex: string; mssv: string; class: string } | null>(null);
+    const [user, setUser] = useState<{ username: string; name: string; phone: string; sex: string; mssv: string; class: string; BT1: number } | null>(null);
 
     useEffect(() => {
         const storedUser = localStorage.getItem('user');
@@ -87,6 +87,13 @@ const Chuong1 = ({ setSelectedItem }: { setSelectedItem: (value: string | null) 
             ) : (
                 <p>Chưa nộp bài.</p>
             )}
+            {/* Hiển thị điểm số nếu đã chấm */}
+{fileData && user && (
+    <div className="grade-info">
+        <h3>Điểm bài tập</h3>
+        <p><strong>Điểm:</strong> {user.BT1 === -1 ? "Chưa chấm" : user.BT1}</p>
+    </div>
+) }
             <ToastContainer position="top-right" autoClose={3000} />
         </div>
     );

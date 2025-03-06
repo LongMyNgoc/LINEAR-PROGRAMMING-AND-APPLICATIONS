@@ -70,3 +70,17 @@ button:hover {
     background-color: #5b2cb3;
     transform: scale(1.05); /* Tăng kích thước khi hover */
 }
+
+.grade-info {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.grade-info h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
