@@ -9,6 +9,12 @@ interface Student {
   class: string;
   sex: string; 
   email: string;
+  phone: string;
+  BT1: number;
+  BT2: number;
+  BT3: number;
+  BT4: number;
+  BT5: number;
 }
 
 const useStudents = () => {

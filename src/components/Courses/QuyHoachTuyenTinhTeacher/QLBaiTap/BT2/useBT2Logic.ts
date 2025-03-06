@@ -1,6 +1,6 @@
 // src/hooks/useFileData.ts
 import { useState, useEffect } from "react";
-import { getFileData } from "../../../../../hooks/fileService"; // Đảm bảo đường dẫn đúng
+import { getFileData } from "../../../../../hooks/fileService.ts"; // Đảm bảo đường dẫn đúng
 
 // Định nghĩa kiểu dữ liệu cho fileData
 interface FileData {
@@ -18,7 +18,7 @@ const useFileData = (students: Array<{ mssv: string }>) => {
     // Hàm lấy dữ liệu file từ S3 cho từng sinh viên
     const fetchFileData = async (mssv: string) => {
       try {
-        const data = await getFileData(mssv, "TuLuanChuong1"); // Thư mục tương ứng
+        const data = await getFileData(mssv, "TuLuanChuong2"); // Thư mục tương ứng
         // Dữ liệu trả về có thể bao gồm URL, tên file và thời gian nộp
         const formattedData = {
           url: data.fileUrl, // URL từ S3

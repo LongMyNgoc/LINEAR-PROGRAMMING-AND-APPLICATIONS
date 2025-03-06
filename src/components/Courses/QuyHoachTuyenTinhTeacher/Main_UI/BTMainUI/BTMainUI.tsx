@@ -1,20 +1,18 @@
 // src/components/BTMainUI/BTMainUI.tsx
-import useBTMainUI from "./BTMainUI"; // Import logic từ hook useBTMainUI
-import AssignmentsTable from "../../QLBaiTap/BT/BT";
+import useBTMainUI from "./BTMainUI";
+import AssignmentsTable from "../../QLBaiTap/BT/BT.tsx";
 import StudentsTable from "../StudentsTable/StudentsTable.tsx";
 import "./BTMainUI.css";
 
 const BTMainUI = () => {
-  const { selectedTab, setSelectedTab, students, assignments, handleStudentTabClick } = useBTMainUI();
+  const { selectedTab, setSelectedTab, students, handleStudentTabClick } = useBTMainUI();
 
   return (
     <div className="main-container">
-      {/* Tiêu đề */}
       <div className="title-container">
         <h1 className="title">Khóa học Quy hoạch tuyến tính và ứng dụng</h1>
       </div>
 
-      {/* Thanh điều hướng */}
       <div className="nav-bar">
         <div
           className={`nav-item ${selectedTab === "hoc-vien" ? "active" : ""}`}
@@ -30,13 +28,10 @@ const BTMainUI = () => {
         </div>
       </div>
 
-      {/* Hiển thị bảng học viên */}
       {selectedTab === "hoc-vien" && <StudentsTable students={students} />}
-
-      {/* Hiển thị bảng bài tập */}
-      {selectedTab === "bai-tap" && <AssignmentsTable assignments={assignments} />}
+      {selectedTab === "bai-tap" && <AssignmentsTable />}
     </div>
   );
-};
+};  
 
 export default BTMainUI;

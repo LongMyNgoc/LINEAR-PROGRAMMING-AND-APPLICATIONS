@@ -2,8 +2,8 @@ import { useState } from "react";
 import useFileData from "./useBT1Logic.ts";
 import FileModal from "../../../../FileModal/FileViewer.tsx";
 import useStudents from "../../../../../hooks/useStudents.ts";
-import Filter from "./Filter/Filter.tsx"; // Import Filter component
-import "./BT1.css";
+import Filter from "../Filter/Filter/Filter.tsx"; // Import Filter component
+import "../../../../../styles/BT.css";
 
 const BT1 = () => {
   const { students, loading, error } = useStudents(); // Giữ nguyên việc gọi students

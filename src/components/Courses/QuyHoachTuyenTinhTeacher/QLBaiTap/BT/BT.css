@@ -80,6 +80,7 @@
 
 .back-button{
   width: 10%;
+  background-color: red;
 }
 
   /* Responsive Design: Khi kích thước màn hình nhỏ, bảng cuộn ngang */
