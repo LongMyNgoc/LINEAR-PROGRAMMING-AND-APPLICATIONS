@@ -4,7 +4,7 @@ import axios from "axios";
 // Hàm lấy thông tin file từ server
 export const getFileData = async (mssv: string, folderName: string) => {
     try {
-        const response = await axios.get(`http://localhost:5000/api/file/${mssv}?folderName=${folderName}`);
+        const response = await axios.get(`https://nckh-qhtt-be.onrender.com/api/file/${mssv}?folderName=${folderName}`);
         return response.data;
     } catch (error) {
         console.error("Lỗi khi lấy file từ server: ", error);
@@ -19,7 +19,7 @@ export const submitFile = async (file: File, folderName: string) => {
     formData.append("folderName", folderName); // Gửi tên thư mục lên server
 
     try {
-        const response = await axios.post("http://localhost:5000/api/upload", formData, {
+        const response = await axios.post("https://nckh-qhtt-be.onrender.com/api/upload", formData, {
             headers: {
                 "Content-Type": "multipart/form-data"
             }
