@@ -5,7 +5,7 @@ import './Student.css';
 import { useState } from 'react';
 
 const Student = () => {
-    const [activeTab, setActiveTab] = useState<string | null>('dashboard'); // Cho phép null
+    const [activeTab, setActiveTab] = useState<string | null>('profile'); // Cho phép null
 
     return (
         <>

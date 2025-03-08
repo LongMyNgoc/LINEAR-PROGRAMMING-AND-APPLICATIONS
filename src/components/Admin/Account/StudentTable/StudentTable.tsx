@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { FaEdit, FaTrash, FaSearch } from 'react-icons/fa'; // Import thêm icon tìm kiếm
+import EditModal from '../Edit/EditStudent/EditModal.tsx'; // Import EditModal
+import DeleteModal from '../Delete/DeleteStudent/DeleteModal.tsx'; // Import DeleteModal
 import './StudentTable.css';
 
 interface Student {
@@ -17,8 +19,10 @@ interface StudentTableProps {
 
 const StudentTable: React.FC<StudentTableProps> = ({ students }) => {
     const [searchTerm, setSearchTerm] = useState('');
+    const [selectedStudent, setSelectedStudent] = useState<Student | null>(null);
+    const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+    const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
 
-    // Lọc danh sách sinh viên theo search term
     const filteredStudents = students.filter((student) =>
         student.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
         student.mssv.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -27,6 +31,27 @@ const StudentTable: React.FC<StudentTableProps> = ({ students }) => {
         student.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
         student.phone.toLowerCase().includes(searchTerm.toLowerCase())
     );
+
+    const handleEdit = (student: Student) => {
+        setSelectedStudent(student);
+        setIsEditModalOpen(true);
+    };
+
+    const handleDelete = (student: Student) => {
+        setSelectedStudent(student);
+        setIsDeleteModalOpen(true);
+    };
+
+    const handleSave = (updatedStudent: Student) => {
+        // Cập nhật dữ liệu của student ở đây (ví dụ: gọi API hoặc Firestore)
+        console.log('Saved student:', updatedStudent);
+    };
+
+    const handleDeleteConfirm = () => {
+        // Xóa student ở đây (ví dụ: gọi API hoặc Firestore)
+        console.log('Deleted student:', selectedStudent);
+        setIsDeleteModalOpen(false);
+    };
 
     return (
         <div>
@@ -65,10 +90,10 @@ const StudentTable: React.FC<StudentTableProps> = ({ students }) => {
                             <td>{student.email}</td>
                             <td>{student.phone}</td>
                             <td>
-                                <button className="edit-button">
+                                <button className="edit-button" onClick={() => handleEdit(student)}>
                                     <FaEdit />
                                 </button>
-                                <button className="delete-button">
+                                <button className="delete-button" onClick={() => handleDelete(student)}>
                                     <FaTrash />
                                 </button>
                             </td>
@@ -76,6 +101,24 @@ const StudentTable: React.FC<StudentTableProps> = ({ students }) => {
                     ))}
                 </tbody>
             </table>
+
+            {/* Modals */}
+            {selectedStudent && (
+                <>
+                    <EditModal
+                        isOpen={isEditModalOpen}
+                        onClose={() => setIsEditModalOpen(false)}
+                        student={selectedStudent}
+                        onSave={handleSave}
+                    />
+                    <DeleteModal
+                        isOpen={isDeleteModalOpen}
+                        onClose={() => setIsDeleteModalOpen(false)}
+                        onDelete={handleDeleteConfirm}
+                        studentName={selectedStudent.name}
+                    />
+                </>
+            )}
         </div>
     );
 };

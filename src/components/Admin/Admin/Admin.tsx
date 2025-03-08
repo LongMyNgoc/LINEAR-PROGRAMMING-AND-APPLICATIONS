@@ -6,7 +6,7 @@ import AdminMUI from '../Main_UI/AdminMUI.tsx';
 import './Admin.css';
 
 const Teacher = () => {
-const [activeTab, setActiveTab] = useState<string | null>('dashboard');
+const [activeTab, setActiveTab] = useState<string | null>('account');
 
     return (
         <div>

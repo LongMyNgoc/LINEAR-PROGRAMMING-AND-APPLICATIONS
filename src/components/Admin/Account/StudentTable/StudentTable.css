@@ -46,7 +46,6 @@
 /* Hiệu ứng hover cho nút edit */
 .edit-button {
     color: #007bff;
-    border: 1px solid #007bff; /* Thêm viền cho nút edit */
 }
 
 .edit-button:hover {
@@ -57,7 +56,6 @@
 /* Hiệu ứng hover cho nút delete */
 .delete-button {
     color: #e53935;
-    border: 1px solid #e53935; /* Thêm viền cho nút delete */
 }
 
 .delete-button:hover {

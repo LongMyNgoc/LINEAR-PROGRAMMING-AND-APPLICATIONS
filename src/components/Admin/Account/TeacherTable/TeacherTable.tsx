@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import '../StudentTable/StudentTable.css';
 import { FaEdit, FaTrash, FaSearch } from 'react-icons/fa'; // Import icon edit và delete
+import EditModal from '../Edit/EditTeacher/EditModal.tsx'; // Import EditModal cho Teacher
+import DeleteModal from '../Delete/DeleteTeacher/DeleteModal.tsx'; // Import DeleteModal cho Teacher
 
 interface Teacher {
     name: string;
@@ -15,6 +17,9 @@ interface TeacherTableProps {
 
 const TeacherTable: React.FC<TeacherTableProps> = ({ teachers }) => {
     const [searchTerm, setSearchTerm] = useState('');
+    const [selectedTeacher, setSelectedTeacher] = useState<Teacher | null>(null);
+    const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+    const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
 
     // Lọc danh sách giáo viên theo search term
     const filteredTeachers = teachers.filter((teacher) =>
@@ -23,6 +28,28 @@ const TeacherTable: React.FC<TeacherTableProps> = ({ teachers }) => {
         teacher.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
         teacher.phone.toLowerCase().includes(searchTerm.toLowerCase())
     );
+
+    const handleEdit = (teacher: Teacher) => {
+        setSelectedTeacher(teacher);
+        setIsEditModalOpen(true);
+    };
+
+    const handleDelete = (teacher: Teacher) => {
+        setSelectedTeacher(teacher);
+        setIsDeleteModalOpen(true);
+    };
+
+    const handleSave = (updatedTeacher: Teacher) => {
+        // Cập nhật dữ liệu của giáo viên ở đây (ví dụ: gọi API hoặc Firestore)
+        console.log('Saved teacher:', updatedTeacher);
+        setIsEditModalOpen(false);
+    };
+
+    const handleDeleteConfirm = () => {
+        // Xóa giáo viên ở đây (ví dụ: gọi API hoặc Firestore)
+        console.log('Deleted teacher:', selectedTeacher);
+        setIsDeleteModalOpen(false);
+    };
 
     return (
         <>
@@ -58,10 +85,10 @@ const TeacherTable: React.FC<TeacherTableProps> = ({ teachers }) => {
                                 <td>{teacher.email}</td>
                                 <td>{teacher.phone}</td>
                                 <td>
-                                    <button className="edit-button">
+                                    <button className="edit-button" onClick={() => handleEdit(teacher)}>
                                         <FaEdit />
                                     </button>
-                                    <button className="delete-button">
+                                    <button className="delete-button" onClick={() => handleDelete(teacher)}>
                                         <FaTrash />
                                     </button>
                                 </td>
@@ -74,6 +101,24 @@ const TeacherTable: React.FC<TeacherTableProps> = ({ teachers }) => {
                     )}
                 </tbody>
             </table>
+
+            {/* Modals */}
+            {selectedTeacher && (
+                <>
+                    <EditModal
+                        isOpen={isEditModalOpen}
+                        onClose={() => setIsEditModalOpen(false)}
+                        teacher={selectedTeacher}
+                        onSave={handleSave}
+                    />
+                    <DeleteModal
+                        isOpen={isDeleteModalOpen}
+                        onClose={() => setIsDeleteModalOpen(false)}
+                        onDelete={handleDeleteConfirm}
+                        teacherName={selectedTeacher.name}
+                    />
+                </>
+            )}
         </>
     );
 };
