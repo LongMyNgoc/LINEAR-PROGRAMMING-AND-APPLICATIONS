@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../../../../../styles/Modal.css';
+import '../../../../../styles/Modal.css'; // Chỉnh sửa CSS nếu cần
 
 interface EditModalProps {
     isOpen: boolean;
@@ -16,7 +16,8 @@ const EditModal: React.FC<EditModalProps> = ({ isOpen, onClose, student, onSave 
         setUpdatedStudent((prev) => ({ ...prev, [name]: value }));
     };
 
-    const handleSubmit = () => {
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
         onSave(updatedStudent);
         onClose();
     };
@@ -24,31 +25,73 @@ const EditModal: React.FC<EditModalProps> = ({ isOpen, onClose, student, onSave 
     return (
         <div className={`modal ${isOpen ? 'open' : ''}`}>
             <div className="modal-content">
-                <h2>Edit Student</h2>
-                <label>
-                    Name:
-                    <input type="text" name="name" value={updatedStudent.name} onChange={handleChange} />
-                </label>
-                <label>
-                    Class:
-                    <input type="text" name="class" value={updatedStudent.class} onChange={handleChange} />
-                </label>
-                <label>
-                    Sex:
-                    <input type="text" name="sex" value={updatedStudent.sex} onChange={handleChange} />
-                </label>
-                <label>
-                    Email:
-                    <input type="email" name="email" value={updatedStudent.email} onChange={handleChange} />
-                </label>
-                <label>
-                    Phone:
-                    <input type="text" name="phone" value={updatedStudent.phone} onChange={handleChange} />
-                </label>
-                <div className="modal-actions">
-                    <button onClick={onClose}>Cancel</button>
-                    <button onClick={handleSubmit}>Save</button>
-                </div>
+                <h3>Chỉnh sửa thông tin sinh viên</h3>
+                <form onSubmit={handleSubmit} className="add-teacher-form">
+                    <div className="input-group">
+                        <label htmlFor="name">Tên Sinh Viên</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            value={updatedStudent.name}
+                            onChange={handleChange}
+                            placeholder="Nhập tên sinh viên"
+                            required
+                        />
+                    </div>
+                    <div className="input-group">
+                        <label htmlFor="class">Lớp</label>
+                        <input
+                            type="text"
+                            id="class"
+                            name="class"
+                            value={updatedStudent.class}
+                            onChange={handleChange}
+                            placeholder="Nhập lớp"
+                            required
+                        />
+                    </div>
+                    <div className="input-group">
+                        <label htmlFor="sex">Giới Tính</label>
+                        <input
+                            type="text"
+                            id="sex"
+                            name="sex"
+                            value={updatedStudent.sex}
+                            onChange={handleChange}
+                            placeholder="Nhập giới tính"
+                            required
+                        />
+                    </div>
+                    <div className="input-group">
+                        <label htmlFor="email">Email</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            value={updatedStudent.email}
+                            onChange={handleChange}
+                            placeholder="Nhập email"
+                            required
+                        />
+                    </div>
+                    <div className="input-group">
+                        <label htmlFor="phone">Số Điện Thoại</label>
+                        <input
+                            type="text"
+                            id="phone"
+                            name="phone"
+                            value={updatedStudent.phone}
+                            onChange={handleChange}
+                            placeholder="Nhập số điện thoại"
+                            required
+                        />
+                    </div>
+                    <div className="modal-actions">
+                        <button type="button" onClick={onClose}>Hủy</button>
+                        <button type="submit">Lưu</button>
+                    </div>
+                </form>
             </div>
         </div>
     );

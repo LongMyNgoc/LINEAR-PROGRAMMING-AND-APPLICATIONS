@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../../../../styles/Modal.css';
 
 interface DeleteModalProps {
     isOpen: boolean;
@@ -9,17 +10,15 @@ interface DeleteModalProps {
 
 const DeleteModal: React.FC<DeleteModalProps> = ({ isOpen, onClose, onDelete, teacherName }) => {
     return (
-        isOpen && (
-            <div className="modal">
-                <div className="modal-content">
-                    <h2>Chắc chắn muốn xóa giáo viên {teacherName}?</h2>
-                    <div>
-                        <button onClick={onDelete}>Xóa</button>
-                        <button onClick={onClose}>Đóng</button>
-                    </div>
+        <div className={`modal ${isOpen ? 'open' : ''}`}>
+            <div className="modal-content">
+                <h3>Bạn có chắc muốn xóa {teacherName}?</h3>
+                <div className="modal-actions">
+                    <button type="button" className="cancel-button" onClick={onClose}>Hủy</button>
+                    <button type="button" className="delete-button" onClick={onDelete}>Xóa</button>
                 </div>
             </div>
-        )
+        </div>
     );
 };
 

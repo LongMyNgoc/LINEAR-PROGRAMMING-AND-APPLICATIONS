@@ -12,10 +12,10 @@ const DeleteModal: React.FC<DeleteModalProps> = ({ isOpen, onClose, onDelete, st
     return (
         <div className={`modal ${isOpen ? 'open' : ''}`}>
             <div className="modal-content">
-                <h2>Are you sure you want to delete {studentName}?</h2>
+                <h3>Bạn có chắc muốn xóa {studentName}?</h3>
                 <div className="modal-actions">
-                    <button onClick={onClose}>Cancel</button>
-                    <button onClick={onDelete}>Delete</button>
+                    <button type="button" className="cancel-button" onClick={onClose}>Hủy</button>
+                    <button type="button" className="delete-button" onClick={onDelete}>Xóa</button>
                 </div>
             </div>
         </div>
