@@ -5,7 +5,7 @@ import Account from '../../../../assets/Admin/Account.png';
 import Classes from '../../../../assets/Teacher/Classes.png';
 import NewsEvent from '../../../../assets/Admin/NewsEvent.png';
 
-const Sidebar = () => {
+const Sidebar = ({ setActiveTab }: { setActiveTab: (tab: string | null) => void }) => {
     return (
         <nav className="sidebar">
             {/* Thêm logo vào đầu sidebar */}
@@ -14,16 +14,16 @@ const Sidebar = () => {
             </div>
 
             <ul>
-                <li>
+                <li onClick={() => setActiveTab('account')}>
                     <img src={Account} alt="Account" className="account-icon" />
                 </li>
-                <li>
+                <li onClick={() => setActiveTab('dashboard')}>
                     <img src={DashBoard} alt="Dashboard" className="dashboard-icon" />
                 </li>
-                <li>
+                <li onClick={() => setActiveTab('classes')}>
                     <img src={Classes} alt="Classes" className="classes-icon" />
                 </li>
-                <li>
+                <li onClick={() => setActiveTab('newsevent')}>
                     <img src={NewsEvent} alt="NewsEvent" className="newsevent-icon" />
                 </li>
             </ul>

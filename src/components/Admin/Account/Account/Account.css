@@ -1,0 +1,89 @@
+.account-container {
+    padding: 20px;
+    position: relative;
+    width: 100%;
+    margin-right: 1%;
+}
+
+.table-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #0C4874;
+    color: white;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: fit-content;
+    position: absolute;
+    top: -30px;
+    left: 0;
+    z-index: 1;
+    margin-top: 3%;
+    margin-left: 1.5%;
+}
+
+.pin-icon {
+    color: white;
+    font-size: 20px;
+}
+
+/* Button Role - Update for positioning at top-right of table */
+.role-dropdown {
+    position: absolute;
+    top: 10px; /* Vị trí từ trên xuống */
+    right: 8%; /* Canh vào góc phải */
+    z-index: 2; /* Đảm bảo dropdown nằm trên bảng */
+    width: 7%;
+    display: flex;
+    gap: 20px;
+}
+
+.role-button {
+    padding: 10px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    background-color: #2DA5D8;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    gap: 8px;
+}
+
+.dropdown-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    list-style: none;
+    padding: 0;
+    margin: 5px 0;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-list li {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.dropdown-list li:hover {
+    background-color: #f4f4f4;
+}
+
+/* Button Add New */
+.add-new-button {
+    padding: 10px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    background-color: #2DA5D8;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    gap: 8px;
+}

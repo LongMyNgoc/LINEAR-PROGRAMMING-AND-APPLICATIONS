@@ -71,22 +71,6 @@ const TeacherInformation: React.FC<TeacherInformationProps> = ({ name, sex, phon
                     </div>
                 </div>
                 <div className='separator'></div>
-                <div className='info-item'>
-                    <div className='label-container'>
-                        <label htmlFor='className'>Số Điện Thoại:</label>
-                    </div>
-                    <div className='input-container'>
-                        <input
-                            type='text'
-                            id='className'
-                            name='className'
-                            value={formData.phone}
-                            onChange={handleChange}
-                            readOnly
-                        />
-                    </div>
-                </div>
-                <div className='separator'></div>
 
                 {/* Nút Cập Nhật Thông Tin */}
                 <div className='info-item-button-container'>

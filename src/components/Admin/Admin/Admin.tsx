@@ -1,22 +1,22 @@
 // StudentNavbar.tsx
 import Sidebar from '../Navbar/Sidebar/Sidebar.tsx'
 import Topbar from '../Navbar/Topbar/Topbar.tsx';
+import { useState } from 'react';
+import AdminMUI from '../Main_UI/AdminMUI.tsx';
 import './Admin.css';
 
 const Teacher = () => {
+const [activeTab, setActiveTab] = useState<string | null>('dashboard');
 
     return (
-        <div className="layout">
+        <div>
             {/* Thanh Navbar Dọc */}
-            <Sidebar />
+            <Sidebar setActiveTab={setActiveTab}/>
 
-            <div className="main">
             <Topbar />
 
-                {/* Nội dung chính */}
-                <div className="content">
-                    <p>Chào mừng đến với trang quản lý admin!</p>
-                </div>
+            <div className="admin-container">
+                <AdminMUI activeTab={activeTab} setActiveTab={setActiveTab}/>
             </div>
         </div>
     );
