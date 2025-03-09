@@ -11,6 +11,11 @@ interface Student {
     sex: string;
     email: string;
     phone: string;
+    BT1: number;
+        BT2: number;
+        BT3: number;
+        BT4: number;
+        BT5: number;
 }
 
 interface StudentTableProps {
