@@ -71,7 +71,7 @@ const ChangePasswordModal: React.FC<ChangePasswordModalProps> = ({ isOpen, onClo
                         </div>
                         {error && <div className="error-message">{error}</div>}
                         <button type="submit">Xác nhận</button>
-                        <button type="button" onClick={onClose} className="cancel-button">Hủy</button>
+                        <button type="button" onClick={onClose} className="cancel-button">Hủy bỏ</button>
                     </form>
                 </div>
             </div>

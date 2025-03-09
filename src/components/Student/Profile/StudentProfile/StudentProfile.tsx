@@ -51,6 +51,7 @@ const StudentProfile = () => {
                     sex={user.sex}
                     className={user.class}
                     email={user.username} // Giả sử username là email
+                    phone={user.phone}
                 />
             )}
             <ChangePasswordModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />

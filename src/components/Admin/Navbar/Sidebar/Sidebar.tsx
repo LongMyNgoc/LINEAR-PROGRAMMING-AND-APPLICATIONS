@@ -1,9 +1,9 @@
 import './Sidebar.css';
 import Logo from '../../../../assets/Student/Logo.png';
-import DashBoard from '../../../../assets/Admin/DashBoard.png';
+//import DashBoard from '../../../../assets/Admin/DashBoard.png';
 import Account from '../../../../assets/Admin/Account.png';
-import Classes from '../../../../assets/Teacher/Classes.png';
-import NewsEvent from '../../../../assets/Admin/NewsEvent.png';
+//import Classes from '../../../../assets/Teacher/Classes.png';
+//import NewsEvent from '../../../../assets/Admin/NewsEvent.png';
 
 const Sidebar = ({ setActiveTab }: { setActiveTab: (tab: string | null) => void }) => {
     return (
@@ -17,7 +17,7 @@ const Sidebar = ({ setActiveTab }: { setActiveTab: (tab: string | null) => void 
                 <li onClick={() => setActiveTab('account')}>
                     <img src={Account} alt="Account" className="account-icon" />
                 </li>
-                <li onClick={() => setActiveTab('dashboard')}>
+                {/*<li onClick={() => setActiveTab('dashboard')}>
                     <img src={DashBoard} alt="Dashboard" className="dashboard-icon" />
                 </li>
                 <li onClick={() => setActiveTab('classes')}>
@@ -25,7 +25,7 @@ const Sidebar = ({ setActiveTab }: { setActiveTab: (tab: string | null) => void 
                 </li>
                 <li onClick={() => setActiveTab('newsevent')}>
                     <img src={NewsEvent} alt="NewsEvent" className="newsevent-icon" />
-                </li>
+                </li>*/}
             </ul>
         </nav>
     );

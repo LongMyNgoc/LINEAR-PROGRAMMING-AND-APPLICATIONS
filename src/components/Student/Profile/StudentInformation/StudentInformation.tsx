@@ -7,15 +7,17 @@ interface StudentInformationProps {
     sex: string;
     className: string;
     email: string;
+    phone: string;
 }
 
-const StudentInformation: React.FC<StudentInformationProps> = ({ mssv, name, sex, className, email }) => {
+const StudentInformation: React.FC<StudentInformationProps> = ({ mssv, name, sex, className, email, phone }) => {
     const [formData, setFormData] = useState({
         mssv,
         name,
         sex,
         className,
         email,
+        phone
     });
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -24,12 +26,6 @@ const StudentInformation: React.FC<StudentInformationProps> = ({ mssv, name, sex
             ...prev,
             [name]: value,
         }));
-    };
-
-    const handleUpdate = () => {
-        // Thực hiện hành động cập nhật thông tin ở đây
-        console.log('Thông tin sinh viên đã được cập nhật:', formData);
-        // Bạn có thể thêm logic để gửi thông tin đến server hoặc thực hiện hành động khác
     };
 
     return (
@@ -88,13 +84,6 @@ const StudentInformation: React.FC<StudentInformationProps> = ({ mssv, name, sex
                     </div>
                 </div>
                 <div className='separator'></div>
-
-                {/* Nút Cập Nhật Thông Tin */}
-                <div className='info-item-button-container'>
-                    <button onClick={handleUpdate} className='update-button'>
-                        Cập Nhật Thông Tin
-                    </button>
-                </div>
             </div>
         </div>
     );

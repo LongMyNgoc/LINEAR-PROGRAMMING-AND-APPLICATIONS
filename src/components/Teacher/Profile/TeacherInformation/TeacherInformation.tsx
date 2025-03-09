@@ -24,12 +24,6 @@ const TeacherInformation: React.FC<TeacherInformationProps> = ({ name, sex, phon
         }));
     };
 
-    const handleUpdate = () => {
-        // Thực hiện hành động cập nhật thông tin ở đây
-        console.log('Thông tin sinh viên đã được cập nhật:', formData);
-        // Bạn có thể thêm logic để gửi thông tin đến server hoặc thực hiện hành động khác
-    };
-
     return (
         <div className='outer-info-container'>
             <div className='inner-info-container'>
@@ -71,13 +65,6 @@ const TeacherInformation: React.FC<TeacherInformationProps> = ({ name, sex, phon
                     </div>
                 </div>
                 <div className='separator'></div>
-
-                {/* Nút Cập Nhật Thông Tin */}
-                <div className='info-item-button-container'>
-                    <button onClick={handleUpdate} className='update-button'>
-                        Cập Nhật Thông Tin
-                    </button>
-                </div>
             </div>
         </div>
     );

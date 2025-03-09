@@ -29,7 +29,7 @@
 .info-container {
     display: flex;
     flex-direction: column;
-    margin-top: 2.5rem; /* 55px = 3.4375rem */
+    margin-top: 3.3%; 
     width: 100%;
 }
 
@@ -79,20 +79,6 @@ input:focus {
 .info-item-button-container {
     display: flex;
     justify-content: flex-end; /* Căn giữa các item trong container về phía bên phải */
-}
-
-.update-button {
-    padding: 0.625rem 1.25rem; /* Tạo không gian cho nút */
-    background-color: #007bff; /* Màu nền nổi bật */
-    color: white; /* Màu chữ */
-    border: none; /* Ẩn viền */
-    border-radius: 0.3125rem; /* 5px = 0.3125rem */
-    cursor: pointer; /* Đổi con trỏ khi hover */
-    transition: background-color 0.3s; /* Hiệu ứng chuyển tiếp */
-}
-
-.update-button:hover {
-    background-color: #0056b3; /* Đổi màu nền khi hover */
 }
 
 /* Media Queries */
