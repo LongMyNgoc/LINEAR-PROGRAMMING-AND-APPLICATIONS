@@ -11,7 +11,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ searchTerm, onSearchChange }) => 
     placeholder="Thanh Tìm Kiếm..."
     value={searchTerm}
     onChange={(e) => onSearchChange(e.target.value)}
-    className="search-input"
+    className="search-input-student"
   />
 );
 

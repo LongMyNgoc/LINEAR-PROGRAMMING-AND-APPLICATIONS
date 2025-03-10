@@ -82,7 +82,7 @@ const StudentTable: React.FC<StudentTableProps> = ({ students }) => {
                         <th>Giới tính</th>
                         <th>Email</th>
                         <th>Số điện thoại</th>
-                        <th>Thao tác</th> {/* Thêm cột Thao tác */}
+                        <th className="action-column">Thao tác</th> {/* Thêm cột Thao tác */}
                     </tr>
                 </thead>
                 <tbody>

@@ -15,7 +15,6 @@ const StudentTable: React.FC<StudentTableProps> = ({ students, fileData, openMod
     <table className="bt1-table">
       <thead>
         <tr>
-          <th>STT</th>
           <th>MSSV</th>
           <th>Tên</th>
           <th>Lớp</th>
@@ -26,9 +25,8 @@ const StudentTable: React.FC<StudentTableProps> = ({ students, fileData, openMod
         </tr>
       </thead>
       <tbody>
-        {students.map((student, index) => (
-          <tr key={index}>
-            <td>{index + 1}</td>
+        {students.map((student) => (
+          <tr key={student.mssv}>
             <td>{student.mssv}</td>
             <td>{student.name}</td>
             <td>{student.class}</td>

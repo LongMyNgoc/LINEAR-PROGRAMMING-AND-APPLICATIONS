@@ -66,7 +66,7 @@ const QuyHoachTuyenTinhContent = () => {
                 )}
             </div>
 
-            <QuyHoachTuyenTinhSidebar />
+            {!["1.6", "2.8", "3.4", "4.4", "5.4"].includes(selectedItem ?? "") && <QuyHoachTuyenTinhSidebar />}
 
             <VideoModal visible={isModalVisible} videoUrl={currentVideo} onClose={handleCancel} getContainer={false} />
         </>

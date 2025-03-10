@@ -28,9 +28,19 @@
     background-color: #f1f1f1;
 }
 
+/* Thêm Flexbox vào các ô có nút Edit và Delete */
+.student-table td.action-column {
+    border: 1px solid #ddd;
+    padding: 12px 15px; /* Điều chỉnh padding để bảng thoáng hơn */
+    text-align: center;
+    font-size: 14px;
+    display: flex; /* Đặt các nút vào trong flexbox */
+    justify-content: flex-start; /* Đặt nút ở bên trái */
+    gap: 10px; /* Khoảng cách giữa các nút */
+}
+
 /* Nút edit và delete */
-.edit-button,
-.delete-button {
+.edit-button, .delete-button {
     padding: 6px 12px;
     font-size: 16px;
     border: none;
@@ -38,9 +48,6 @@
     background-color: transparent;
     border-radius: 4px;
     transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 /* Hiệu ứng hover cho nút edit */
