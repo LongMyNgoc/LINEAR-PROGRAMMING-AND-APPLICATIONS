@@ -115,7 +115,7 @@ const TeacherTable: React.FC<TeacherTableProps> = ({ teachers }) => {
                         isOpen={isDeleteModalOpen}
                         onClose={() => setIsDeleteModalOpen(false)}
                         onDelete={handleDeleteConfirm}
-                        teacherName={selectedTeacher.name}
+                        teacher={selectedTeacher}
                     />
                 </>
             )}
