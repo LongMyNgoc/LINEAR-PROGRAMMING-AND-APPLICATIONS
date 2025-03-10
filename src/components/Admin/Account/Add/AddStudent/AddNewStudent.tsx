@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './AddNewStudent.css';
+import { addStudent } from '../../../../../hooks/addStudent';
+import { registerUser } from '../../../../../hooks/authService';
 
 const AddNewStudent = () => {
     const [mssv, setMssv] = useState('');
@@ -8,17 +10,56 @@ const AddNewStudent = () => {
     const [sex, setSex] = useState('');
     const [className, setClassName] = useState('');
     const [phone, setPhone] = useState('');
+    const [password] = useState('123456'); // Mật khẩu mặc định
+    const [loading, setLoading] = useState(false);
+    const [message, setMessage] = useState('');
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        const newStudent = { mssv, name, email, sex, className, phone };
-        console.log(newStudent);
-        // Call your API or other functions to save the new student data
+        setLoading(true);
+        setMessage('');
+
+        try {
+            // Bước 1: Đăng ký tài khoản Firebase Authentication
+            await registerUser(email, password);
+        } catch (error: any) {
+            // Kiểm tra nếu lỗi là do tài khoản đã tồn tại
+            if (error.code === 'auth/email-already-in-use') {
+                console.log('Tài khoản đã tồn tại, tiếp tục thêm thông tin vào Firestore...');
+            } else {
+                setMessage(`Lỗi đăng ký tài khoản: ${error.message}`);
+                setLoading(false);
+                return;
+            }
+        }
+
+        // Bước 2: Thêm sinh viên vào database
+        const newStudent = { mssv, name, email, sex, class: className, phone };
+
+        try {
+            const result = await addStudent(newStudent);
+            if (result.success) {
+                setMessage('Thêm sinh viên thành công!');
+                setMssv('');
+                setName('');
+                setEmail('');
+                setSex('');
+                setClassName('');
+                setPhone('');
+            } else {
+                setMessage(`Lỗi thêm sinh viên: ${result.error}`);
+            }
+        } catch (error) {
+            setMessage('Đã xảy ra lỗi khi thêm sinh viên.');
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
         <div className="add-student-container">
             <h3>Thêm Sinh Viên Mới</h3>
+            {message && <p className="message">{message}</p>}
             <form onSubmit={handleSubmit} className="add-student-form">
                 <div className="input-group">
                     <label htmlFor="mssv">MSSV</label>
@@ -86,7 +127,9 @@ const AddNewStudent = () => {
                         required
                     />
                 </div>
-                <button type="submit" className="submit-btn">Thêm</button>
+                <button type="submit" className="submit-btn" disabled={loading}>
+                    {loading ? 'Đang thêm...' : 'Thêm'}
+                </button>
             </form>
         </div>
     );

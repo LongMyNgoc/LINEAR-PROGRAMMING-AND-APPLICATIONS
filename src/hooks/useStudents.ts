@@ -15,6 +15,11 @@ interface Student {
   BT3: number;
   BT4: number;
   BT5: number;
+  TN1: number;
+  TN2: number;
+  TN3: number;
+  TN4: number;
+  TN5: number;
 }
 
 const useStudents = () => {

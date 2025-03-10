@@ -1,5 +1,5 @@
 import { db } from "./firebase"; // Đảm bảo đường dẫn đúng với cấu trúc dự án
-import { collection, addDoc } from "firebase/firestore";
+import { doc, setDoc } from "firebase/firestore";
 
 interface Student {
   mssv: string;
@@ -12,7 +12,7 @@ interface Student {
 
 export const addStudent = async (student: Student) => {
   try {
-    const studentsCollection = collection(db, "Students");
+    const studentRef = doc(db, "Students", student.email); // Đặt tên document bằng email
     const newStudent = {
       ...student,
       BT1: -1,
@@ -20,10 +20,15 @@ export const addStudent = async (student: Student) => {
       BT3: -1,
       BT4: -1,
       BT5: -1,
+      TN1: -1,
+      TN2: -1,
+      TN3: -1,
+      TN4: -1,
+      TN5: -1
     };
 
-    const docRef = await addDoc(studentsCollection, newStudent);
-    return { success: true, id: docRef.id, error: null };
+    await setDoc(studentRef, newStudent); // Dùng setDoc thay vì addDoc
+    return { success: true, id: student.email, error: null };
   } catch (error: any) {
     return { success: false, id: null, error: error.message };
   }
