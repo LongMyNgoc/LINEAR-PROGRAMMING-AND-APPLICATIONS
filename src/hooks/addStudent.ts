@@ -27,7 +27,7 @@ export const addStudent = async (student: Student) => {
       TN5: -1
     };
 
-    await setDoc(studentRef, newStudent); // Dùng setDoc thay vì addDoc
+    await setDoc(studentRef, newStudent); 
     return { success: true, id: student.email, error: null };
   } catch (error: any) {
     return { success: false, id: null, error: error.message };
