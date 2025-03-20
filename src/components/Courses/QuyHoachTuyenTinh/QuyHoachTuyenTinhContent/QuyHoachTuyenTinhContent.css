@@ -27,7 +27,7 @@ ul {
 /* Thiết kế mục danh sách */
 li {
     display: flex; /* Sử dụng Flexbox */
-    align-items: left; /* Căn giữa theo chiều dọc */
+    align-items: center; /* Căn giữa theo chiều dọc */
     padding: 1.5rem; /* Khoảng cách cho mục danh sách */
     border-bottom: 0.1rem solid #e0e0e0; /* Đường kẻ dưới */
     transition: background 0.3s ease-in-out, transform 0.2s ease-in-out; /* Hiệu ứng chuyển động */
@@ -35,7 +35,6 @@ li {
     font-weight: 600; /* Đậm chữ */
     color: #444; /* Màu chữ */
     border-radius: 0.5rem; /* Bo góc */
-    gap: 5%;
 }
 
 /* Hiệu ứng hover cho danh sách */
@@ -49,6 +48,7 @@ li:hover {
     font-size: 1.25rem; /* Kích thước biểu tượng pin */
     color: #bfbfbf; /* Màu biểu tượng pin */
     transition: color 0.3s ease-in-out, transform 0.2s ease-in-out; /* Hiệu ứng chuyển động */
+    margin-right: 5%;
 }
 
 /* Khi pin đầy */
