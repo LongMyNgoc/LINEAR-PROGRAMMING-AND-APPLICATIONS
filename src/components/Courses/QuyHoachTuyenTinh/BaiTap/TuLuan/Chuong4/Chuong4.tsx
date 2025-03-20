@@ -44,12 +44,12 @@ const Chuong4 = ({ setSelectedItem }: { setSelectedItem: (value: string | null) 
                 Turn in
             </button>
 
-            <h2>Bài tập Chương 4</h2>
+            <h2>Bài tập Chương 4 Phần 1</h2>
 
             {/* Hiển thị thông tin về file đề bài */}
             <AssignmentFile 
-    fileName={"Baitaptuan4.pdf"} 
-    fileUrl={"/documents/Baitap/Baitaptuan4.pdf"} 
+    fileName={"Baitaptuan4.1.pdf"} 
+    fileUrl={"/documents/Baitap/Baitaptuan4.1.pdf"} 
 />
 
             {/* Modal hiển thị file */}

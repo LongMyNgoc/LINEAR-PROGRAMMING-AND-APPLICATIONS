@@ -20,12 +20,12 @@ const BaiTapRenderer = ({ selectedItem, setSelectedItem }: BaiTapRendererProps) 
         case "2.7": return <Chuong2 setSelectedItem={setSelectedItem}/>;
         case "3.3": return <Chuong3 setSelectedItem={setSelectedItem}/>;
         case "4.3": return <Chuong4 setSelectedItem={setSelectedItem}/>;
-        case "5.3": return <Chuong5 setSelectedItem={setSelectedItem}/>;
+        case "4.7": return <Chuong5 setSelectedItem={setSelectedItem}/>;
         case "1.6": return <TN1 setSelectedItem={setSelectedItem} />;
         case "2.8": return <TN2 setSelectedItem={setSelectedItem} />;
         case "3.4": return <TN3 setSelectedItem={setSelectedItem} />;
         case "4.4": return <TN4 setSelectedItem={setSelectedItem} />;
-        case "5.4": return <TN5 setSelectedItem={setSelectedItem} />;
+        case "4.8": return <TN5 setSelectedItem={setSelectedItem} />;
         default: return null;
     }
 };

@@ -8,7 +8,7 @@ export const useChuong4Logic = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [fileData, setFileData] = useState<{ fileUrl: string; fileName: string; submissionDate: string } | null>(null);
 
-    const fileUrl = "/documents/Baitap/Baitaptuan4.pdf";
+    const fileUrl = "/documents/Baitap/Baitaptuan4.1.pdf";
     const fileType = "pdf";
     const fileName = "Baitaptuan4.pdf";
 

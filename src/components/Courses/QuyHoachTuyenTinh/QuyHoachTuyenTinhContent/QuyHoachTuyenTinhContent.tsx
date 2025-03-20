@@ -41,9 +41,9 @@ const QuyHoachTuyenTinhContent = () => {
                                                 onClick={() => {
                                                     const mapping: Record<string, string> = {
                                                         "1.5": "1.5", "2.7": "2.7", "3.3": "3.3",
-                                                        "4.3": "4.3", "5.3": "5.3", "1.6": "1.6",
+                                                        "4.3": "4.3", "4.7": "4.7", "1.6": "1.6",
                                                         "2.8": "2.8", "3.4": "3.4", "4.4": "4.4",
-                                                        "5.4": "5.4"
+                                                        "4.8": "4.8"
                                                     };
 
                                                     const matchedItem = Object.keys(mapping).find(key =>
@@ -66,7 +66,7 @@ const QuyHoachTuyenTinhContent = () => {
                 )}
             </div>
 
-            {!["1.6", "2.8", "3.4", "4.4", "5.4"].includes(selectedItem ?? "") && <QuyHoachTuyenTinhSidebar />}
+            {!["1.6", "2.8", "3.4", "4.4", "4.8"].includes(selectedItem ?? "") && <QuyHoachTuyenTinhSidebar />}
 
             <VideoModal visible={isModalVisible} videoUrl={currentVideo} onClose={handleCancel} getContainer={false} />
         </>
