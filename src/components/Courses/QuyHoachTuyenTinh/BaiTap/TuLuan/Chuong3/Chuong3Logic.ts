@@ -27,21 +27,27 @@ export const useChuong3Logic = () => {
         }
     };
 
-    const handleSubmit = async () => {
+    const handleSubmit = async (mssv: string) => {
         if (!file) {
             toast.warn("Vui lòng chọn file trước khi nộp!");
             return;
         }
-
+    
+        const fileNameWithoutExtension = file.name.substring(0, file.name.lastIndexOf(".")); // Lấy phần tên file trước dấu chấm cuối cùng
+        if (fileNameWithoutExtension !== mssv) {
+            toast.warn(`Tên file phải là ${mssv}.`);
+            return;
+        }        
+    
         try {
-            await submitFile(file, "TuLuanChuong3");
+            await submitFile(file, "TuLuanChuong1");
             toast.success("Bài tập đã được nộp thành công!");
             setFile(null);
         } catch (error) {
             console.error("Lỗi khi nộp bài: ", error);
             toast.error("Lỗi khi nộp bài tập, vui lòng thử lại!");
         }
-    };
+    };    
 
     return {
         file,

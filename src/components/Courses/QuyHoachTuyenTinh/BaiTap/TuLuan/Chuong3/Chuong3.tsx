@@ -40,9 +40,18 @@ const Chuong3 = ({ setSelectedItem }: { setSelectedItem: (value: string | null) 
         <div className="chuong1-container">
             <ArrowLeftOutlined className="back-icon" onClick={() => setSelectedItem(null)} />
 
-            <button className="turn-in-file-button" onClick={handleSubmit}>
-                Turn in
-            </button>
+            <button
+  className="turn-in-file-button"
+  onClick={() => {
+    if (user?.mssv) {
+      handleSubmit(user.mssv); // Gọi handleSubmit chỉ khi mssv không phải undefined
+    } else {
+      alert("MSSV không hợp lệ.");
+    }
+  }}
+>
+  Turn in
+</button>
 
             <h2>Bài tập Chương 3</h2>
 
