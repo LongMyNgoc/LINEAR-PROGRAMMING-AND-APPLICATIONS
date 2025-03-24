@@ -4,7 +4,10 @@ import axios from "axios";
 // Hàm lấy thông tin file từ server
 export const getFileData = async (mssv: string, folderName: string) => {
     try {
-        const response = await axios.get(`https://nckh-qhtt-be.onrender.com/api/file/${mssv}?folderName=${folderName}`);
+        const timestamp = new Date().getTime(); // Tạo timestamp mới
+        const response = await axios.get(
+            `https://nckh-qhtt-be.onrender.com/api/file/${mssv}?folderName=${folderName}&t=${timestamp}`
+        );
         return response.data;
     } catch (error) {
         console.error("Lỗi khi lấy file từ server: ", error);

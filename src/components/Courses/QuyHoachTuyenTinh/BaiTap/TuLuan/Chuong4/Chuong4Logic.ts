@@ -43,6 +43,7 @@ export const useChuong4Logic = () => {
             await submitFile(file, "TuLuanChuong1");
             toast.success("Bài tập đã được nộp thành công!");
             setFile(null);
+            fetchFileData(mssv);
         } catch (error) {
             console.error("Lỗi khi nộp bài: ", error);
             toast.error("Lỗi khi nộp bài tập, vui lòng thử lại!");
