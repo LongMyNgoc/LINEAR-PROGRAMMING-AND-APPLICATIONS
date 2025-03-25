@@ -1,4 +1,4 @@
-import { db } from "./firebase"; // Đảm bảo đường dẫn đúng với cấu trúc của bạn
+import { db } from "../firebase"; // Đảm bảo đường dẫn đúng với cấu trúc của bạn
 import { doc, updateDoc } from "firebase/firestore";
 
 interface Teacher {

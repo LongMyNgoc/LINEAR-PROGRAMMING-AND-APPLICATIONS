@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './AddNewStudent.css';
-import { addStudent } from '../../../../../hooks/addStudent';
+import { addStudent } from '../../../../../hooks/firebase/CRUD/addStudent';
 import { registerUser } from '../../../../../hooks/authService';
 
 const AddNewStudent = () => {

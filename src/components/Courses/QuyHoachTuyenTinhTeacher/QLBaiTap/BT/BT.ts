@@ -4,7 +4,7 @@ import BT2 from "../BT2/BT2";
 import BT3 from "../BT3/BT3";
 import BT4 from "../BT4/BT4";
 import BT5 from "../BT5/BT5";
-import useStudents from "../../../../../hooks/useStudents";
+import useStudents from "../../../../../hooks/firebase/Get/useStudents";
 
 export type Assignment = {
   chapter: string;

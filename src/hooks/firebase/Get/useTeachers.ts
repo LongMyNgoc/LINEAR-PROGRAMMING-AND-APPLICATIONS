@@ -1,6 +1,6 @@
 // src/hooks/useTeachers.ts
 import { useState, useEffect } from "react";
-import { db } from "./firebase"; // Đảm bảo đường dẫn đúng với cấu trúc của bạn
+import { db } from "../firebase"; // Đảm bảo đường dẫn đúng với cấu trúc của bạn
 import { collection, onSnapshot } from "firebase/firestore";
 
 interface Teacher {

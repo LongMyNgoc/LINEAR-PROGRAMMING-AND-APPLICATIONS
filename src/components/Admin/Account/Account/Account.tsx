@@ -1,10 +1,10 @@
 import './Account.css';
-import useStudents from '../../../../hooks/useStudents';
+import useStudents from '../../../../hooks/firebase/Get/useStudents.ts';
 import { FaThumbtack, FaCaretDown, FaPlus, FaTimes } from 'react-icons/fa';
 import { useState } from 'react';
 import StudentTable from '../StudentTable/StudentTable';
 import TeacherTable from '../TeacherTable/TeacherTable';
-import useTeachers from '../../../../hooks/useTeachers';
+import useTeachers from '../../../../hooks/firebase/Get/useTeachers.ts';
 import AddNewStudent from '../Add/AddStudent/AddNewStudent.tsx';
 import AddNewTeacher from '../Add/AddTeacher/AddNewTeacher.tsx';
 

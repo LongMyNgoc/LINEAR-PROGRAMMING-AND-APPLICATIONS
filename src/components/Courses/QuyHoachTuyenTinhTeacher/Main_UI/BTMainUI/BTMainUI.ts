@@ -1,6 +1,6 @@
 // src/hooks/useBTMainUI.ts
 import { useState } from "react";
-import useStudents from "../../../../../hooks/useStudents";
+import useStudents from "../../../../../hooks/firebase/Get/useStudents";
 
 const useBTMainUI = () => {
   const [selectedTab, setSelectedTab] = useState("hoc-vien");

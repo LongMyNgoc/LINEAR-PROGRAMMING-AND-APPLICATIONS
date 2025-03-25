@@ -1,5 +1,5 @@
 import { doc, updateDoc } from "firebase/firestore";
-import { db } from "./firebase"; // Đảm bảo đường dẫn đúng với cấu trúc của bạn
+import { db } from "../firebase"; // Đảm bảo đường dẫn đúng với cấu trúc của bạn
 
 interface Student {
   mssv: string;

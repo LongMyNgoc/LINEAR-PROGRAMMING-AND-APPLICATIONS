@@ -1,6 +1,6 @@
 // src/hooks/useStudentByEmail.ts
 import { useState, useEffect } from "react";
-import { db } from "./firebase"; // Đảm bảo đường dẫn đúng với cấu trúc của bạn
+import { db } from "../firebase"; // Đảm bảo đường dẫn đúng với cấu trúc của bạn
 import { doc, getDoc } from "firebase/firestore"; // Sử dụng getDoc để lấy document theo ID
 
 interface Student {

@@ -1,5 +1,5 @@
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
-import { auth } from "./firebase"; // Import auth từ file Firebase config
+import { auth } from "./firebase/firebase"; // Import auth từ file Firebase config
 
 /**
  * Đăng ký user với email và password

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import '../../../../../styles/Modal.css';
-import { deleteStudent } from '../../../../../hooks/deleteStudent';
+import { deleteStudent } from '../../../../../hooks/firebase/CRUD/deleteStudent';
 
 interface Student {
     mssv: string;

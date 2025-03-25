@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react';
 import { questions } from './questions';
 import '../../../../../../styles/TN.css';
 import { ArrowLeftOutlined } from "@ant-design/icons";
-import useStudentByEmail from '../../../../../../hooks/useStudentByEmail';
+import useStudentByEmail from '../../../../../../hooks/firebase/Get/useStudentByEmail';
 import { doc, updateDoc } from "firebase/firestore";
-import { db } from "../../../../../../hooks/firebase";  // Nhớ import db từ firebase.ts
+import { db } from "../../../../../../hooks/firebase/firebase";  // Nhớ import db từ firebase.ts
 
 const TN5 = ({ setSelectedItem }: { setSelectedItem: (value: string | null) => void }) => {
   const [answers, setAnswers] = useState<{ [key: number]: string }>({});

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { editStudent } from '../../../../../hooks/editStudent'; // Đảm bảo đường dẫn chính xác
+import { editStudent } from '../../../../../hooks/firebase/CRUD/editStudent'; // Đảm bảo đường dẫn chính xác
 import '../../../../../styles/Modal.css';
 
 interface EditModalProps {

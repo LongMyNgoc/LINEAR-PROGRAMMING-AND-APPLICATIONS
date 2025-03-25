@@ -2,7 +2,7 @@
 import { useState } from "react";
 import useFileData from "./useBT1Logic.ts";
 import FileModal from "../../../../FileModal/FileViewer.tsx";
-import useStudents from "../../../../../hooks/useStudents.ts";
+import useStudents from "../../../../../hooks/firebase/Get/useStudents.ts";
 import Filter from "../Filter/Filter/Filter.tsx";
 import "../../../../../styles/BT.css";
 

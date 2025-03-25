@@ -1,5 +1,5 @@
 import { deleteUser } from "firebase/auth";
-import { auth } from "./firebase";
+import { auth } from "../firebase";
 
 /**
  * Xóa tài khoản của người dùng hiện tại

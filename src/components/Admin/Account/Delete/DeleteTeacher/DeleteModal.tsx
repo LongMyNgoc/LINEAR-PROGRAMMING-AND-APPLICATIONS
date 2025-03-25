@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import '../../../../../styles/Modal.css';
-import { deleteTeacher } from '../../../../../hooks/deleteTeacher';
+import { deleteTeacher } from '../../../../../hooks/firebase/CRUD/deleteTeacher';
 
 interface Teacher {
     name: string;

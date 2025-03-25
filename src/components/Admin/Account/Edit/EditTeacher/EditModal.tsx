@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../../../../../styles/Modal.css";
-import useEditTeacher from "../../../../../hooks/editTeacher.ts";
+import useEditTeacher from "../../../../../hooks/firebase/CRUD/editTeacher.ts";
 
 interface EditModalProps {
     isOpen: boolean;
