@@ -25,7 +25,6 @@ export const useTN5Quiz = (userEmail: string | null) => {
       if (remainingTime === 0) {
         clearInterval(timer);
         handleSubmit();
-        localStorage.removeItem("tn5_start_time");  // Xóa thời gian khi hết thời gian
       }
     };
     
@@ -43,6 +42,7 @@ export const useTN5Quiz = (userEmail: string | null) => {
   const handleSubmit = async () => {
     if (!userEmail || submitted) return;
     setSubmitted(true);
+    localStorage.removeItem("tn5_start_time");  // Xóa thời gian khi hết thời gian
     try {
       await updateDoc(doc(db, "Students", userEmail), { TN5: calculateScore() });
     } catch (error) {

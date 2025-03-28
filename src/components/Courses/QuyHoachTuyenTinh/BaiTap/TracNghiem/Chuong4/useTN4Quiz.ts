@@ -25,7 +25,6 @@ export const useTN4Quiz = (userEmail: string | null) => {
       if (remainingTime === 0) {
         clearInterval(timer);
         handleSubmit();
-        localStorage.removeItem("tn4_start_time");  // Xóa thời gian khi hết thời gian
       }
     };
     
@@ -43,6 +42,7 @@ export const useTN4Quiz = (userEmail: string | null) => {
   const handleSubmit = async () => {
     if (!userEmail || submitted) return;
     setSubmitted(true);
+    localStorage.removeItem("tn4_start_time");  // Xóa thời gian khi hết thời gian
     try {
       await updateDoc(doc(db, "Students", userEmail), { TN4: calculateScore() });
     } catch (error) {
