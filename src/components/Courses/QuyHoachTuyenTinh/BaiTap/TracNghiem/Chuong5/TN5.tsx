@@ -29,7 +29,7 @@ const TN5 = ({ setSelectedItem }: { setSelectedItem: (value: string | null) => v
         <div className="tn1-result-container">
           <h2 className="tn1-result-title">Bạn đã hoàn thành bài thi</h2>
           <p className="tn1-result-text">
-            Điểm số của bạn: <strong>{student.TN1}</strong> / 10
+            Điểm số của bạn: <strong>{student.TN5}</strong> / 10
           </p>
         </div>
       ) : (
