@@ -3,7 +3,6 @@ import QuyHoachTuyenTinh from '../../../../assets/Courses/QuyHoachTuyenTinh.png'
 
 const QuyHoachTuyenTinhCourse = ({ onView }: { onView: () => void }) => {
     const progress = 0;
-
     return (
         <div className="course-container">
             <img src={QuyHoachTuyenTinh} alt="QuyHoachTuyenTinh" className="course-image" />

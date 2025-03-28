@@ -4,7 +4,7 @@ import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../../../../../../hooks/firebase/firebase";
 import useStudentByEmail from "../../../../../../hooks/firebase/Get/useStudentByEmail";
 
-export const useTN5Quiz = (userEmail: string | null) => {
+export const useTN1Quiz = (userEmail: string | null) => {
   const [answers, setAnswers] = useState<{ [key: number]: string }>({});
   const [submitted, setSubmitted] = useState(false);
   const [timeLeft, setTimeLeft] = useState<number>(900); // 15 phút (900 giây)
@@ -13,9 +13,9 @@ export const useTN5Quiz = (userEmail: string | null) => {
   useEffect(() => {
     if (!userEmail) return;
     
-    const storedStartTime = localStorage.getItem("tn5_start_time");
+    const storedStartTime = localStorage.getItem("tn1_start_time");
     let startTime = storedStartTime ? new Date(storedStartTime) : new Date();
-    if (!storedStartTime) localStorage.setItem("tn5_start_time", startTime.toISOString());
+    if (!storedStartTime) localStorage.setItem("tn1_start_time", startTime.toISOString());
     
     const endTime = new Date(startTime.getTime() + 900 * 1000);
     
@@ -43,7 +43,7 @@ export const useTN5Quiz = (userEmail: string | null) => {
     if (!userEmail || submitted) return;
     setSubmitted(true);
     try {
-      await updateDoc(doc(db, "Students", userEmail), { TN5: calculateScore() });
+      await updateDoc(doc(db, "Students", userEmail), { TN1: calculateScore() });
     } catch (error) {
       console.error("Cập nhật điểm thi không thành công: ", error);
     }
