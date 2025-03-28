@@ -16,7 +16,7 @@ const TN4 = ({ setSelectedItem }: { setSelectedItem: (value: string | null) => v
   return (
     <div className="tn1-quiz-container">
       <ArrowLeftOutlined className="back-icon" onClick={() => setSelectedItem(null)} />
-      <h1 className="tn1-quiz-title">Bài Thi Trắc Nghiệm Quy Hoạch Tuyến Tính Chương 1</h1>
+      <h1 className="tn1-quiz-title">Bài Thi Trắc Nghiệm Quy Hoạch Tuyến Tính Chương 4 Phần 1</h1>
 
       {student.TN4 === -1 &&
       <div className="tn1-time-container">

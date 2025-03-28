@@ -17,7 +17,7 @@ export const useTN1Quiz = (userEmail: string | null) => {
     let startTime = storedStartTime ? new Date(storedStartTime) : new Date();
     if (!storedStartTime) localStorage.setItem("tn1_start_time", startTime.toISOString());
     
-    const endTime = new Date(startTime.getTime() + 60 * 1000);
+    const endTime = new Date(startTime.getTime() + 900 * 1000);
     
     const updateTimer = () => {
       const remainingTime = Math.max(Math.floor((endTime.getTime() - Date.now()) / 1000), 0);
