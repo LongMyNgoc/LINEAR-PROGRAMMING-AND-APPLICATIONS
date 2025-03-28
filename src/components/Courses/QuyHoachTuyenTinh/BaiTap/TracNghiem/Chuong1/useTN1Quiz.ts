@@ -11,13 +11,13 @@ export const useTN1Quiz = (userEmail: string | null) => {
   const student = useStudentByEmail(userEmail || "");
 
   useEffect(() => {
-    if (!userEmail) return;
-    
+    if (!userEmail || student?.TN1 !== -1) return;  // Kiểm tra TN1 trước khi lưu thời gian bắt đầu
+
     const storedStartTime = localStorage.getItem("tn1_start_time");
     let startTime = storedStartTime ? new Date(storedStartTime) : new Date();
     if (!storedStartTime) localStorage.setItem("tn1_start_time", startTime.toISOString());
     
-    const endTime = new Date(startTime.getTime() + 900 * 1000);
+    const endTime = new Date(startTime.getTime() + 60 * 1000);
     
     const updateTimer = () => {
       const remainingTime = Math.max(Math.floor((endTime.getTime() - Date.now()) / 1000), 0);
@@ -25,13 +25,14 @@ export const useTN1Quiz = (userEmail: string | null) => {
       if (remainingTime === 0) {
         clearInterval(timer);
         handleSubmit();
+        localStorage.removeItem("tn1_start_time");  // Xóa thời gian khi hết thời gian
       }
     };
     
     updateTimer();
     const timer = setInterval(updateTimer, 1000);
     return () => clearInterval(timer);
-  }, [userEmail]);
+  }, [userEmail, student?.TN1]);  // Thêm student?.TN1 vào dependency array
 
   const handleAnswerChange = (questionId: number, answer: string) => 
     setAnswers((prev) => ({ ...prev, [questionId]: answer }));

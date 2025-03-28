@@ -9,7 +9,6 @@ import ChangePasswordModal from '../../../Password/ChangePasswordModal/ChangePas
 const StudentProfile = () => {
     const [user, setUser] = useState<{ username: string; name: string; phone: string; sex: string; mssv: string; class: string } | null>(null);
     const [isModalOpen, setIsModalOpen] = useState(false); // State để kiểm soát modal
-    localStorage.removeItem("tn1_start_time");
 
     useEffect(() => {
         const storedUser = localStorage.getItem('user');

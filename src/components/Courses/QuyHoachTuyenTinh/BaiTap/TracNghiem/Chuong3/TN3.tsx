@@ -20,6 +20,7 @@ const TN3 = ({ setSelectedItem }: { setSelectedItem: (value: string | null) => v
 
       {student.TN3 === -1 &&
       <div className="tn1-time-container">
+        <p>Hết thời gian làm bài mà chưa nộp hệ thống sẽ tính 0 điểm</p>
         <p className="tn1-countdown">⏳ Thời gian còn lại: <strong>{formatTime(timeLeft)}</strong></p>
       </div>
 }

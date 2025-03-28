@@ -11,7 +11,7 @@ export const useTN5Quiz = (userEmail: string | null) => {
   const student = useStudentByEmail(userEmail || "");
 
   useEffect(() => {
-    if (!userEmail) return;
+    if (!userEmail || student?.TN5 !== -1) return;
     
     const storedStartTime = localStorage.getItem("tn5_start_time");
     let startTime = storedStartTime ? new Date(storedStartTime) : new Date();
@@ -25,13 +25,14 @@ export const useTN5Quiz = (userEmail: string | null) => {
       if (remainingTime === 0) {
         clearInterval(timer);
         handleSubmit();
+        localStorage.removeItem("tn5_start_time");  // Xóa thời gian khi hết thời gian
       }
     };
     
     updateTimer();
     const timer = setInterval(updateTimer, 1000);
     return () => clearInterval(timer);
-  }, [userEmail]);
+  }, [userEmail, student?.TN5]);
 
   const handleAnswerChange = (questionId: number, answer: string) => 
     setAnswers((prev) => ({ ...prev, [questionId]: answer }));
