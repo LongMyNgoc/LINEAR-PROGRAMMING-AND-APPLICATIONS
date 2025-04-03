@@ -1,6 +1,6 @@
 # LINEAR PROGRAMMING AND APPLICATIONS (FRONT-END)
 <p align="center">
-  <img src="assets/Home.jpg" alt="Home" width="100%" style="display: block; margin-bottom: 20px;">
+  <img src="assets/Home.png" alt="Home" width="100%" style="display: block; margin-bottom: 20px;">
   <img src="assets/Course.png" alt="Course" width="100%" style="display: block;">
 </p>
 
