@@ -1,4 +1,8 @@
 # LINEAR PROGRAMMING AND APPLICATIONS (FRONT-END)
+<p align="center">
+  <img src="assets/Home.png" alt="Home" width="100%" style="display: inline-block;">
+  <img src="assets/Course.jpg" alt="Course" width="100%" style="display: inline-block;">
+</p>
 
 ## Giới thiệu
 **Linear Programming and Applications** là hệ thống học trực tuyến được thiết kế dành riêng cho học phần **Quy hoạch tuyến tính và Ứng dụng** tại Trường Đại học Sư phạm TP.HCM. Hệ thống hỗ trợ sinh viên tiếp cận tài liệu học tập, bài giảng và bài tập một cách khoa học, giúp nâng cao chất lượng giảng dạy và học tập.
@@ -50,5 +54,3 @@ Mọi ý kiến đóng góp hoặc báo lỗi có thể được gửi qua hệ 
 
 ## Thông tin liên hệ
 📧 Email: longmyngoc2004@gmail.com  
-- 📌 **Lưu ý:** Đây là hệ thống nội bộ dành riêng cho học phần **Quy hoạch tuyến tính và Ứng dụng** tại Trường Đại học Sư phạm TP.HCM. Mọi thông tin và dữ liệu liên quan đến khóa học cần được bảo mật và tuân thủ quy định nhà trường.
-
